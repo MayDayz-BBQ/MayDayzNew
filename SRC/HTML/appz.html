@@ -89,26 +89,27 @@
 
     <section class="Items">
         <div id="APP-1">
-          <div class="Items">
-            <div class="item">
-              <div class="animated-image-container">
-                <img class="animated-frame frame-1" src="../ASSETS/IMAGES/APPZ-Plate.png" alt="Closed APP Plate" />
-                <img class="animated-frame frame-2" src="../ASSETS/IMAGES/Sandwhich.png" alt="Open Sandwhich" />
-              </div>
-              <div id="item-name">
-                <p class="name">SANDWHICHES</p>
-              </div>
-              <div id="price">
-                <p class="price">$8.00</p>
-              </div>
-              <button class="order-button" onclick="openPaymentModal('https://square.link/u/Y0cOImSn')">
+            <div class="Items">
+                <div class="item">
+                    <div class="animated-image-container">
+                        <img class="animated-frame frame-1" src="../ASSETS/IMAGES/APPZ-Plate.png"
+                            alt="Closed APP Plate" />
+                        <img class="animated-frame frame-2" src="../ASSETS/IMAGES/Sandwhich.png" alt="Open Sandwhich" />
+                    </div>
+                    <div id="item-name">
+                        <p class="name">SANDWHICHES</p>
+                    </div>
+                    <div id="price">
+                        <p class="price">$8.00</p>
+                    </div>
+                    <!-- <button class="order-button" onclick="openPaymentModal('https://square.link/u/Y0cOImSn')">
                 Order SANDWHICH
-              </button>
+              </button> -->
+                </div>
             </div>
-          </div>
         </div>
-      </section>
-      
+    </section>
+
 
     <div id="paymentModal">
         <span id="closeModal">&times;</span>
@@ -157,25 +158,25 @@
         }
     </script>
 
-<script>
-    function openPaymentModal(link) {
-        document.getElementById('paymentFrame').src = link;
-        document.getElementById('paymentModal').style.display = 'block';
-    }
+    <script>
+        function openPaymentModal(link) {
+            document.getElementById('paymentFrame').src = link;
+            document.getElementById('paymentModal').style.display = 'block';
+        }
 
-    document.getElementById('closeModal').onclick = function () {
-        document.getElementById('paymentModal').style.display = 'none';
-        document.getElementById('paymentFrame').src = '';
-    }
-
-    window.onclick = function (event) {
-        const modal = document.getElementById('paymentModal');
-        if (event.target === modal) {
-            modal.style.display = 'none';
+        document.getElementById('closeModal').onclick = function () {
+            document.getElementById('paymentModal').style.display = 'none';
             document.getElementById('paymentFrame').src = '';
         }
-    }
-</script>
+
+        window.onclick = function (event) {
+            const modal = document.getElementById('paymentModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.getElementById('paymentFrame').src = '';
+            }
+        }
+    </script>
 </body>
 
 </html>
