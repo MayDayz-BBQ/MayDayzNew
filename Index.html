@@ -26,6 +26,14 @@
     <link rel="stylesheet" href="src/css/Index.css" />
     <link rel="stylesheet" href="src/css/loading.css" />
     <meta http-equiv="cache-control" content="no-cache">
+    <style>
+        #time {
+            font-family: sans-serif;
+            text-align: center;
+            font-size: 2.7em;
+            margin-top: 0px;
+        }
+    </style>
 </head>
 
 <body class="appear">
@@ -78,19 +86,52 @@
                 <h1>WELCOME TO MAYDAYZ</h1>
             </div>
 
-            <div id="slogan">
+            <!-- <div id="slogan">
                 <h2>WE SMOKED OUT</h2>
-            </div>
+            </div> -->
         </div>
         <!-- <div>
                 <h3 style="color:white; font-size: 2.5em"> SEE YOU AGAIN SOON!!! <br>
                     SIGN UP FOR UPDATES </h3>
             </div> -->
-        <div id="order-sec">
+        <!-- <div id="order-sec">
             <a href="/SRC/HTML/option.html" target="_blank" class="order-button" onclick="orderPopup()">
                 ORDER NOW
             </a>
-        </div>
+        </div> -->
+        <h2 style="margin-bottom: 3px;">WE SMOKED OUT IN:</h2>
+        <h1 id="time"></h1>
+
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("Aug 16, 2025 12:00:00").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function () {
+
+                // Get today's date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Output the result in an element with id="demo"
+                document.getElementById("time").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("time").innerHTML = "EXPIRED";
+                }
+            }, 1000);
+        </script>
     </section>
 
     <!--Section for the footer-->
