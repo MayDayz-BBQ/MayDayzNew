@@ -2,165 +2,149 @@
 <html lang="en">
 
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN5PZ1Z3KG"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN5PZ1Z3KG"></script>
+      <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+              dataLayer.push(arguments);
+          }
+          gtag("js", new Date());
+  
+          gtag("config", "G-PN5PZ1Z3KG");
+      </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Maydayz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @font-face {
+            font-family: FontB;
+            src: url('/src/assets/Fonts/LTSuperior-SemiBold.otf');
+        }
 
-    gtag("config", "G-PN5PZ1Z3KG");
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maydayz - Login</title>
-  <link rel="icon" type="image/x-icon" href="/SRC/ASSETS/IMAGES/MAYDAYZ-FAV.png" />
-  <link rel="stylesheet" href="../css/login.css" />
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" href="../css/loading.css" />
-  <style>
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding-top: 60px;
-    }
+        @font-face {
+            font-family: FontC;
+            src: url('/src/assets/Fonts/Ricebox-Allcaps.ttf');
+        }
 
-    .modal-content {
-      background-color: #333;
-      margin: 5% auto;
-      padding: 30px;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 400px;
-      border-radius: 8px;
-      text-align: center;
-      color: white;
-    }
+        @font-face {
+            font-family: FontA;
+            src: url('/src/assets/Fonts/FIRES-PERSONAL-USE.ttf');
+        }
 
-    .modal-content h3 {
-      margin-bottom: 20px;
-      color: #fff;
-    }
+        @font-face {
+            font-family: FontD;
+            src: url('/src/assets/Fonts/VarsityTeam-Bold.otf');
+        }
 
-    .modal-content input[type="tel"] {
-      width: calc(100% - 20px);
-      padding: 10px;
-      margin-bottom: 20px;
-      border-radius: 5px;
-      border: 1px solid #555;
-      background-color: #444;
-      color: white;
-    }
-
-    .modal-content button {
-      background-color: red;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    .modal-content button:hover {
-      background-color: #45a049;
-    }
-  </style>
+        @font-face {
+            font-family: FontE;
+            src: url("/src/assets/Fonts/Pridi-Bold.ttf");
+        }
+    </style>
 </head>
 
-<body>
-  <div id="loading-screen">
-    <div class="loading-spinner"></div>
-    <p id="loadingText">Loading...</p>
-  </div>
-
-  <div id="Smalltabs">
-    <a href="../../Index.html">
-      <img src="/SRC/ASSETS/IMAGES/Maydayz-LOGO.svg" width="200px" height="200px" alt="Maydayz Logo" />
-    </a>
-
-    <div class="login-container">
-      <form id="loginFormCustom">
-        <h2>Log In</h2>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required /><br /><br />
-        <button type="submit">Log In with Email</button>
-      </form>
-      <!-- <form id="loginFormPhone">
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required /><br /><br />
-        <button type="submit">Log In with Phone</button>
-      </form> -->
-      <div id="otpVerificationSection" style="display: none;">
-        <form id="otpVerificationForm">
-          <h2>Verify Code</h2>
-          <p id="otpMessage"></p>
-          <input type="text" id="otpInput" placeholder="Enter your 6-digit code" required /><br /><br />
-          <button type="submit" id="verifyOtpButton">Verify Code</button> <button type="button" id="resendOtpButton"
-            style="margin-top: 10px;">Resend Code</button>
-        </form>
-      </div>
-
-      <div style="display: flex; flex-direction: column; align-items: center; text-transform: uppercase; margin-top:
-        20px;">
-        <p class="transparency">Or log in with Google</p>
-      </div>
-
-      <style>
-        .signup-link:hover {
-          color: yellow;
-        }
-      </style>
-
-      <div id="g_id_onload" data-client_id="313885668082-p6qra4vln2kcbms9lq0bbu57128fqmkp.apps.googleusercontent.com"
-        data-context="signin" data-ux_mode="popup" data-login_uri="http://localhost:5500" data-auto_prompt="false"
-        data-callback="handleSignInWithGoogle">
-      </div>
-
-      <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_black" data-text="signin_with"
-        data-size="large" data-logo_alignment="left">
-      </div>
-
-      <p class="transparency">
-        Maydayz will use the provided information for promotional purposes only.
-        <br />
-        Signing up confirms you will receive text and email updates from
-        Maydayz.
-        <br />
-        For any questions, call 980-499-8399.
-        <br />
-        <br />
-        WE SMOKED OUT!!
-      </p>
-      <div class="parent">
-        <a id="privacy" onclick="window.open('privacy-policy.html')">Privacy Policy</a>
-        <br> <br>
-        <a id="privacy" style="align-items: center;"
-          onclick="window.open('MaydayzSmoknBarBeCueLLCTermsofService.html')">Terms Of Service</a>
-      </div>
+<body class="bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0">
+    <div id="back-button" class="mt-10 pl-4 -mb-20">
+        <a href="/Index.html"
+            class="bg-red-600 text-3xl rounded-2xl p-5  uppercase text-white hover:bg-white hover:text-red-600 hover:cursor-pointer"
+            style="font-family: FontC">Go Back</a>
     </div>
-    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <script src="/src/js/login.js">
-    </script>
-    <script src="/src/js/loading.js"></script>
-  </div>
-
-  <div id="phoneNumberModal" class="modal">
-    <div class="modal-content">
-      <h3>WELCOME!! You appear new so please provide your phone numbe for updates!!!</h3>
-      <input type="tel" id="phoneNumberInput" placeholder="Enter phone number" required>
-      <p>Enter number without Dashes(-) or Parathenses</p>
-      <button onclick="submitPhoneNumber()">Submit</button>
-    </div>
-  </div>
+    <main class="flex items-center justify-center min-h-screen text-white">
+        <div id="sign-in" class="bg-gray-800 rounded-lg shadow-lg"></div>
+        <div id="user-button" class="mt-4 hidden"></div>
+    </main>
+    <section class="bg-transparent -mt-40 uppercase text-white mb-20 backdrop-blur-lg p-10" style="font-family: FontB;">
+        <div id="privacy-notice" class="text-center text-2xl">
+            <p>This sign up is purely for promotinal use.</p>
+            <p>MayDayz Smokn BBQ will never ask for personal information <br>
+                such as SSN, ID, etc.,</p>
+            <p>Read our <a class="hover:text-yellow-300 text-red-500" href="/src/html/privacy-policy.html">Privacy
+                    Policy</a> for more info.</p>
+        </div>
+    </section>
+    <footer class="bg-black mt-25 p-10 md:mb-0 text-2xl text-white uppercase md:bg-fixed md:bottom-1/1"
+        style="font-family: FontB;">
+        <div id="sm-pics" class="container ml-auto mr-auto gap-4 justify-center flex mt-10">
+            <div id="IG">
+                <a id="IG-Link" class="hover:cursor-pointer" href="https://www.instagram.com/maydayz_bbq/">
+                    <img src="/src/assets/Images/Instagram_Glyph_White.png" width="75" alt="Instagam Logo"
+                        aria-label="Follow Us on IG">
+                </a>
+            </div>
+            <div id="FB">
+                <a id="IG-Link" class="hover:cursor-pointer"
+                    href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/">
+                    <img src="/src/assets/Images//Facebook_Logo_Secondary.png" width="75" alt="Facebook Logo"
+                        aria-label="Follow Us on Facebook">
+                </a>
+            </div>
+            <div id="TT">
+                <a id="TikTok-Link" class="hover:cursor-pointer" href="https://www.tiktok.com/@maydayzbbq">
+                    <img src="/src/assets/Images/TikTok-logo-RGB-Stacked-white-simplified.png" width="75"
+                        alt="TikTok Logo" aria-label="Follow us on TikTok">
+                </a>
+            </div>
+        </div>
+        <div id="sm-text" class="mt-10 text-center" id="social-media ">
+            <h1>Follow us</h1>
+        </div>
+        <div id="soxiety-logo">
+            <div>
+                <h2 class="uppercase text-center mt-10" style="font-family: FontC;">Site created with detail by</h2>
+            </div>
+            <div class="uppercase text-center text-3xl" style="font-family: FontB;" id="logo">
+                <h3>SO<span class="text-red-500">XI</span>ETY</h3>
+            </div>
+        </div>
+        <div id="Terms-Links" class="flex gap-100 mt-6 justify-center">
+            <div id="terms-container">
+                <div id="priv-link-container" class="">
+                    <a id="privacy-policy" class="hover:cursor-pointer hover:text-red-600"
+                        href="/src/html/privacy-policy.html" target="_blank">
+                        Privacy Policy
+                    </a>
+                </div>
+                <div id="terms-link-container">
+                    <a id="terms-of-service" class="hover:cursor-pointer hover:text-red-600"
+                        href="/src/html/MaydayzSmoknBarBeCueLLCTermsofService.html" target="_blank">
+                        Terms of Service
+                    </a>
+                </div>
+            </div>
+            <div id="contant-link-container" class="">
+                <div id="email-link">
+                    <a id="email" class="hover:cursor-pointer hover:text-red-600" href="mailto:maydayzbbq@maydayz.com">
+                        Email Us
+                    </a>
+                </div>
+                <div id="phone-link">
+                    <a id="email" class="hover:cursor-pointer hover:text-red-600" href="tel:980-499-8399">
+                        Call Us
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="logo">
+            <div id="notice-container" class="">
+                <img src="/src/assets/Images/MAYDAYZ-FAV.png" class="ml-auto mr-auto" width="75">
+                <p class="text-center text-xs" style="font-family: FontB;">©2025 MayDayz Smokn BBQ</p>
+            </div>
+        </div>
+        <div id="ms-annette-tribute" class="text-xl justify-center mt-10 flex " style="font-family: FontB;"><span> <img
+                    src="/src/assets/Images/Ribbon.png" width="75" alt="colon-cancer-ribbon"> </span>
+            <p class="translate-y-7">In loving
+                memory of Annette Tomlin</p> <span><img src="/src/assets/Images/Ribbon.png" width="75"
+                    alt="colon-cancer-ribbon"></span>
+        </div>
+    </footer>
+    <script async crossorigin="anonymous"
+        data-clerk-publishable-key="pk_live_Y2xlcmsubWF5ZGF5ei5jb20k"
+        src="https://clerk.maydayz.com/npm/@clerk/clerk-js@5/dist/clerk.browser.js"
+        type="text/javascript">
+        </script>
+    <script src="/src/js/clerk-auth.js"></script>
 </body>
 
 </html>
