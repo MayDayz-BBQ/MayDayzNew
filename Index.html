@@ -15,7 +15,10 @@
 
         gtag("config", "G-PN5PZ1Z3KG");
     </script>
-    <link rel="stylesheet" href="/src/css/output.css">
+    <link rel="preload" href="/src/css/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="/src/css/output.css">
+    </noscript>
     <link rel="icon" type="image/png" href="/src/assets/Images/MAYDAYZ-FAV.png">
     <meta name="author" content="MayDayz Smokn BBQ">
     <meta charset="UTF-8">
@@ -136,8 +139,8 @@
 
     <section id="main" class="md:mt-20" style="font-family: FontB;">
         <div class="ml-auto mr-auto">
-            <img class="ml-auto mr-auto" src="/src/assets/Images/Maydayz-LOGO-TailGate.gif" alt="MayDayz Logo"
-                title="Maydayz Logo Animation" width="600">
+            <img class="ml-auto mr-auto" src="/src/assets/Images/Maydayz-LOGO-TailGate.gif" loading="lazy"
+                alt="MayDayz Logo" title="Maydayz Logo Animation" width="600">
         </div>
         <div id="welcome" class="text-center md:mt-10" style="font-family: FontA;">
             <h1 class="uppercase text-5xl text-red-500">Welcome to MayDayz</h1>
@@ -190,8 +193,8 @@
         <div id="items" class="flex mt-6 ml-auto mr-auto justify-center">
             <div id="Sampler" class="p-10 rounded-2xl">
                 <div id="sampler-img-container" class="hover:transform hover:-translate-y-5 hover:rounded-4xl">
-                    <img id="sampler-closed" src="/src/assets/Images/cls-plate.png" alt="Picture of Sampler" width="350"
-                        title="Sampler $32" class="hover:cursor-pointer">
+                    <img id="sampler-closed" src="/src/assets/Images/cls-plate.png" loading="lazy"
+                        alt="Picture of Sampler" width="350" title="Sampler $32" class="hover:cursor-pointer">
                 </div>
                 <div id="sampler-text-container" class="text-3xl">
                     <h3 class="text-white text-center">SAMPLER</h3>
@@ -200,9 +203,10 @@
             </div>
             <div id="Rib-Plate" class="p-10 rounded-2xl ">
                 <div id="rib-img-container" class="hover:transform hover:-translate-y-5 hover:rounded-4xl">
-                    <img id="ribplate-closed" src="/src/assets/Images/cls-plate.png" alt="Picture of the ribs"
-                        title="Rib Plate $22" width="350" onmouseover="ribappear('/src/assets/Images/rib-plate.png')"
-                        onmouseout="ribclose()" class="hover:cursor-pointer">
+                    <img id="ribplate-closed" src="/src/assets/Images/cls-plate.png" loading="lazy"
+                        alt="Picture of the ribs" title="Rib Plate $22" width="350"
+                        onmouseover="ribappear('/src/assets/Images/rib-plate.png')" onmouseout="ribclose()"
+                        class="hover:cursor-pointer">
                 </div>
                 <div id="sampler-text-container" class="text-3xl">
                     <h3 class="text-white text-center uppercase">Chef's Favorite Rib Plate</h3>
@@ -294,7 +298,7 @@
                     alt="colon-cancer-ribbon"></span>
         </div>
     </footer>
-    <script src="src/js/index.js">
+    <script src="src/js/index.js" defer>
 
     </script>
 </body>
