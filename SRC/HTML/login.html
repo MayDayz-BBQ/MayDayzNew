@@ -2,20 +2,29 @@
 <html lang="en">
 
 <head>
-      <!-- Google tag (gtag.js) -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN5PZ1Z3KG"></script>
-      <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-              dataLayer.push(arguments);
-          }
-          gtag("js", new Date());
-  
-          gtag("config", "G-PN5PZ1Z3KG");
-      </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Maydayz</title>
+    <title>Login - MayDayz Smokn BBQ</title>
+
+    <meta name="robots" content="noindex, nofollow">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN5PZ1Z3KG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        gtag("config", "G-PN5PZ1Z3KG");
+    </script>
+
+    <meta property="og:title" content="MayDayz Smokn BBQ Login">
+    <meta property="og:description" content="Log in to your MayDayz Smokn BBQ account.">
+    <meta property="og:image" content="https://www.maydayz.com/src/assets/Images/MAYDAYZ-FAV.png">
+    <meta property="og:url" content="https://www.maydayz.com/login.html">
+    <meta property="og:type" content="website">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @font-face {
@@ -43,6 +52,7 @@
             src: url("/src/assets/Fonts/Pridi-Bold.ttf");
         }
     </style>
+    <link rel="icon" type="image/png" href="/src/assets/Images/MAYDAYZ-FAV.png">
 </head>
 
 <body class="bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0">
@@ -51,11 +61,13 @@
             class="bg-red-600 text-3xl rounded-2xl p-5  uppercase text-white hover:bg-white hover:text-red-600 hover:cursor-pointer"
             style="font-family: FontC">Go Back</a>
     </div>
-    <main class="flex items-center justify-center min-h-screen text-white">
-        <div id="sign-in" class="bg-gray-800 rounded-lg shadow-lg"></div>
-        <div id="user-button" class="mt-4 hidden"></div>
-    </main>
-    <section class="bg-transparent -mt-40 uppercase text-white mb-20 backdrop-blur-lg p-10" style="font-family: FontB;">
+    <div class="mt-40">
+        <main class="flex items-center justify-center mt-10 text-white">
+            <div id="sign-in" class="bg-gray-800 rounded-lg shadow-lg"></div>
+            <div id="user-button" class="mt-4 hidden"></div>
+        </main>
+    </div>
+    <section class="bg-transparent mt-20 uppercase text-white mb-20 backdrop-blur-lg p-10" style="font-family: FontB;">
         <div id="privacy-notice" class="text-center text-2xl">
             <p>This sign up is purely for promotinal use.</p>
             <p>MayDayz Smokn BBQ will never ask for personal information <br>
@@ -139,10 +151,8 @@
                     alt="colon-cancer-ribbon"></span>
         </div>
     </footer>
-    <script async crossorigin="anonymous"
-        data-clerk-publishable-key="pk_live_Y2xlcmsubWF5ZGF5ei5jb20k"
-        src="https://clerk.maydayz.com/npm/@clerk/clerk-js@5/dist/clerk.browser.js"
-        type="text/javascript">
+    <script async crossorigin="anonymous" data-clerk-publishable-key="pk_live_Y2xlcmsubWF5ZGF5ei5jb20k"
+        src="https://clerk.maydayz.com/npm/@clerk/clerk-js@5/dist/clerk.browser.js" type="text/javascript">
         </script>
     <script src="/src/js/clerk-auth.js"></script>
 </body>

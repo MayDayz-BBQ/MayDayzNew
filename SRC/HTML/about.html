@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 
 <head>
     <!-- Google tag (gtag.js) -->
@@ -13,99 +13,149 @@
 
         gtag("config", "G-PN5PZ1Z3KG");
     </script>
-    <meta name="theme-color" content="red" />
-    <link rel="apple-touch-icon" href="src/css/assets/Images/maydayz__64_x_64_px___logo__lLA_icon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="MayDayz Smokn Bar-Be-Cue - Authentic BBQ flavors delivered fresh. Explore our menu and stay SMOKED OUT." />
-    <link rel="manifest" href="/manifest.json" />
-    <title>Maydayz - WHO ARE WE?</title>
-    <link rel="icon" type="x-icon" href="/SRC/ASSETS/IMAGES/MAYDAYZ-FAV.png" />
-    <link rel="stylesheet" href="../CSS/about.css" />
-    <link rel="stylesheet" href="src/css/loading.css" />
+    <style>
+        @font-face {
+            font-family: FontB;
+            src: url('/src/assets/Fonts/LTSuperior-SemiBold.otf');
+        }
+
+        @font-face {
+            font-family: FontC;
+            src: url('/src/assets/Fonts/Ricebox-Allcaps.ttf');
+        }
+
+        @font-face {
+            font-family: FontA;
+            src: url('/src/assets/Fonts/FIRES-PERSONAL-USE.ttf');
+        }
+
+        @font-face {
+            font-family: FontD;
+            src: url('/src/assets/Fonts/VarsityTeam-Bold.otf');
+        }
+
+        @font-face {
+            font-family: FontE;
+            src: url("/src/assets/Fonts/Pridi-Bold.ttf");
+        }
+    </style>
+    <link rel="stylesheet" href="/src/css/about.css">
+    <link rel="icon" type="x-icon" src="/src/assets/Images/MAYDAYZ-FAV.png">
 </head>
 
-<body>
-
-    <section class="logo-container">
-        <a id="about-logo" href="/Index.html">
-            <img src="../ASSETS/IMAGES/Maydayz-LOGO.svg" alt="logo-small" title="WELCOME TO MAYDAYZ" height="150"
-                width="150">
-        </a>
-    </section>
-
-    <section id="Nav-Left">
-        <div id="BIO">
-            <div id="Bio-Text" style="color: white; text-align: center;">
-                Welcome to Maydayz Smokn BBQ - where smoke meets soul.
-
-                Founded in 2024 by Charlotte native and pitmaster Ed May, Maydayz Smokn BBQ is more than just a BBQ
-                joint -
-                it's a family-run passion project built on bold flavor, slow-smoked tradition, and a whole lotta love.
-
-                We specialize in authentic smoked BBQ, cooked low and slow to juicy, smoky perfection. From tender
-                brisket
-                to ribs that fall off the bone, every bite is seasoned with our signature house-made rub - a carefully
-                crafted blend of spices that brings out the best in every cut.
-
-                And lets not forget our sauces - the stars of the show. Our rich cherry glaze and zesty tangy blend are
-                both made in-house, pairing perfectly with everything we smoke. They're sweet, they're bold, and they've
-                got
-                just the right kick.
-
-                At Maydayz, BBQ is personal. We're a family-managed crew serving up real-deal flavor with Southern
-                charm.
-                Whether you're stopping by for your first plate or your fiftieth, we'll treat you like one of our own:
-                plate stacked high, napkins ready.
-
-                Maydayz Smokn BBQ - WE SMOKED OUT.
+<body class="bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0">
+    <section>
+        <div id="back-button" class="mt-10 pl-4">
+            <a href="/Index.html"
+                class="bg-red-600 text-3xl rounded-2xl p-5 uppercase text-white hover:bg-white hover:text-red-600 hover:cursor-pointer"
+                style="font-family: FontC">Go Back</a>
+        </div>
+        <div id="ed-may-pic" class="mt-10 p-10 pb-20 flex flex-col bg-black">
+            <div id="image-container" class="">
+                <img src="/src/assets/Images/Aboutus-Pic.png" alt="Founder Ed May"
+                    class="w-2/3 rounded-2xl justify-center ml-auto mr-auto">
+            </div>
+            <div id="founder-container">
+                <div id="founder-header">
+                    <h1 class="text-white text-3xl mt-10 text-center" style="font-family: FontE;">FOUNDER <br> Edward
+                        May
+                    </h1>
+                </div>
+            </div>
+            <p class="text-white text-3xl mt-10 text-center">––––––––––––––––––––––––––––––––––––––––––––––</p>
+            <div id="text-container" class="text-white text-3xl mt-10 ml-auto mr-auto w-2/3">
+                <p>
+                    Welcome to Maydayz Smokn BBQ - where smoke meets soul. Founded in 2024 by Charlotte native and
+                    pitmaster Ed May, Maydayz Smokn BBQ is more than just a BBQ joint - it's a family-run passion
+                    project built on bold flavor, slow-smoked tradition, and a whole lotta love. We specialize in
+                    authentic smoked BBQ, cooked low and slow to juicy, smoky perfection. From tender brisket to ribs
+                    that fall off the bone, every bite is seasoned with our signature house-made rub - a carefully
+                    crafted blend of spices that brings out the best in every cut. And lets not forget our sauces - the
+                    stars of the show. Our rich cherry glaze and zesty tangy blend are both made in-house, pairing
+                    perfectly with everything we smoke. They're sweet, they're bold, and they've got just the right
+                    kick. At Maydayz, BBQ is personal. We're a family-managed crew serving up real-deal flavor with
+                    Southern charm. Whether you're stopping by for your first plate or your fiftieth, we'll treat you
+                    like one of our own: plate stacked high, napkins ready. Maydayz Smokn BBQ - WE SMOKED OUT.
+                </p>
             </div>
         </div>
     </section>
-
-
-    <!--Section for the footer-->
-    <section class="Footer">
-        <footer>
-            <div id="soxiety-notice">
-                <p>Site Created by <br></p>
+    <footer class="bg-black pt-30 p-10 md:mb-0 text-2xl text-white uppercase md:bg-fixed md:bottom-1/1"
+        style="font-family: FontB;">
+        <div id="sm-pics" class="container ml-auto mr-auto gap-4 justify-center flex mt-10">
+            <div id="IG">
+                <a id="IG-Link" class="hover:cursor-pointer" href="https://www.instagram.com/maydayz_bbq/">
+                    <img src="/src/assets/Images/Instagram_Glyph_White.png" width="75" alt="Instagam Logo"
+                        aria-label="Follow Us on IG">
+                </a>
             </div>
-            <div id="soxiety-logo">
-                <p>SO<span id="red" style="color:red">XI</span>ETY</p>
+            <div id="FB">
+                <a id="IG-Link" class="hover:cursor-pointer"
+                    href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/">
+                    <img src="/src/assets/Images//Facebook_Logo_Secondary.png" width="75" alt="Facebook Logo"
+                        aria-label="Follow Us on Facebook">
+                </a>
             </div>
-            <nav class="social-media">
-                <div id="Social-Media">
-                    <p>Follow Maydayz</p>
+            <div id="TT">
+                <a id="TikTok-Link" class="hover:cursor-pointer" href="https://www.tiktok.com/@maydayzbbq">
+                    <img src="/src/assets/Images/TikTok-logo-RGB-Stacked-white-simplified.png" width="75"
+                        alt="TikTok Logo" aria-label="Follow us on TikTok">
+                </a>
+            </div>
+        </div>
+        <div id="sm-text" class="mt-10 text-center" id="social-media ">
+            <h1>Follow us</h1>
+        </div>
+        <div id="soxiety-logo">
+            <div>
+                <h2 class="uppercase text-center mt-10" style="font-family: FontC;">Site created with detail by</h2>
+            </div>
+            <div class="uppercase text-center text-3xl" style="font-family: FontB;" id="logo">
+                <h3>SO<span class="text-red-500">XI</span>ETY</h3>
+            </div>
+        </div>
+        <div id="Terms-Links" class="flex gap-100 mt-6 justify-center">
+            <div id="terms-container">
+                <div id="priv-link-container" class="">
+                    <a id="privacy-policy" class="hover:cursor-pointer hover:text-red-600"
+                        href="/src/html/privacy-policy.html">
+                        Privacy Policy
+                    </a>
                 </div>
-                <div id="Ig">
-                    <a href="https://www.instagram.com/maydayz_bbq/" target="_blank"><img
-                            src="/SRC/ASSETS/IMAGES/IG.webp" alt="IG" title="FOLLOW US" height="30px" width="30px"></a>
+                <div id="terms-link-container">
+                    <a id="terms-of-service" class="hover:cursor-pointer hover:text-red-600"
+                        href="/src/html/MaydayzSmoknBarBeCueLLCTermsofService.html">
+                        Terms of Service
+                    </a>
                 </div>
-            </nav>
-        </footer>
-    </section>
+            </div>
+            <div id="contant-link-container" class="">
+                <div id="email-link">
+                    <a id="email" class="hover:cursor-pointer hover:text-red-600" href="mailto:maydayzbbq@maydayz.com">
+                        Email Us
+                    </a>
+                </div>
+                <div id="phone-link">
+                    <a id="email" class="hover:cursor-pointer hover:text-red-600" href="tel:980-499-8399">
+                        Call Us
+                    </a>
+                </div>
+            </div>
 
-    <!--Script for Page Loading-->
-    <script src="/SRC/JS/loading.js"></script>
-
-    <!--Script for the service worker-->
-    <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker
-                    .register("/service-worker.js")
-                    .then((registration) => {
-                        console.log(
-                            "Service Worker registered with scope:",
-                            registration.scope
-                        );
-                    })
-                    .catch((error) => {
-                        console.error("Service Worker registration failed:", error);
-                    });
-            });
-        }
-    </script>
+        </div>
+        <div id="logo">
+            <div id="notice-container" class="">
+                <img src="/src/assets/Images/MAYDAYZ-FAV.png" class="ml-auto mr-auto" width="75">
+                <p class="text-center text-xs" style="font-family: FontB;">©2025 MayDayz Smokn BBQ</p>
+            </div>
+        </div>
+        <div id="ms-annette-tribute" class="text-xl justify-center mt-10 flex " style="font-family: FontB;"><span> <img
+                    src="/src/assets/Images/Ribbon.png" width="75" alt="colon-cancer-ribbon"> </span>
+            <p class="translate-y-7">In loving
+                memory of Annette Tomlin</p> <span><img src="/src/assets/Images/Ribbon.png" width="75"
+                    alt="colon-cancer-ribbon"></span>
+        </div>
+    </footer>
 </body>
 
 </html>
