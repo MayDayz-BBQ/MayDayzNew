@@ -36,6 +36,8 @@
     <meta name="twitter:description"
         content="Authentic Southern BBQ in Charlotte, NC, delivered to your door on weekends!">
     <meta name="twitter:image" content="https://www.maydayz.com/src/assets/Images/MAYDAYZ-FAV.png">
+    <meta name="theme-color" content="black">
+    <link rel="apple-touch-icon" href="/SRC/ASSETS/IMAGES/MAYDAYZ-FAV.png">
 
     <script type="application/ld+json">
         {
@@ -271,7 +273,7 @@
                     </a>
                 </div>
                 <div id="phone-link">
-                    <a id="email" class="hover:cursor-pointer hover:text-red-600" href="tel:980-499-8399">
+                    <a id="phone" class="hover:cursor-pointer hover:text-red-600" href="tel:980-499-8399">
                         Call Us
                     </a>
                 </div>
@@ -297,6 +299,19 @@
     <script src="src/js/index.js" defer>
 
     </script>
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('sw.js')
+                        .then(registration => {
+                            console.log('Service Worker registered with scope:', registration.scope);
+                        })
+                        .catch(error => {
+                            console.log('Service Worker registration failed:', error);
+                        });
+                });
+            }
+        </script>
 </body>
 
 </html>
