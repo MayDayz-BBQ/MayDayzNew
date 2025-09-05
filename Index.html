@@ -71,14 +71,40 @@
             "servesCuisine": "Southern BBQ"
 }
     </script>
+    <style>
+        @font-face {
+            font-family: FontB;
+            src: url('/src/assets/Fonts/LTSuperior-SemiBold.otf');
+        }
+
+        @font-face {
+            font-family: FontC;
+            src: url('/src/assets/Fonts/Ricebox-Allcaps.ttf');
+        }
+
+        @font-face {
+            font-family: FontA;
+            src: url('/src/assets/Fonts/FIRES-PERSONAL-USE.ttf');
+        }
+
+        @font-face {
+            font-family: FontD;
+            src: url('/src/assets/Fonts/VarsityTeam-Bold.otf');
+        }
+
+        @font-face {
+            font-family: FontE;
+            src: url("src/assets/Fonts/Pridi-Bold.ttf");
+        }
+    </style>
 </head>
 
 <body class="bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0">
-    <section id="top-section" class="md:mt-5" style="font-family: FontC;">
-        <div id="Tabs-left" class="flex ml-3 md:gap-3 md:text-4xl">
+    <section id="top-section" class="mt-5 md:mt-5" style="font-family: FontC;">
+        <div id="Tabs-left" class="flex flex-col items-center md:flex-row md:ml-2 gap-7 md:gap-3 sm:text-2xl md:text-4xl sm:justify-center">
             <div id="About-Us" class="md:mt-5 ">
                 <a id="about-us-button" href="/src/html/about.html"
-                    class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:cursor-pointer hover:bg-white hover:text-black">About
+                    class="text-white uppercase rounded-2xl bg-red-700 p-3.5 md:p-4 hover:cursor-pointer hover:bg-white hover:text-black">About
                     Us</a>
             </div>
             <div id="Menu" class="md:mt-5">
@@ -94,7 +120,7 @@
                     class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:cursor-pointer hover:bg-white hover:text-black">Gift
                     Card</a>
             </div>
-            <div id="right-signup-nav" class="ml-auto">
+            <div id="right-signup-nav" class="ml-auto sm:ml-auto mr-auto md:mr-0 mb-10 md:mb-0">
                 <div id="Sign-up" class="mr-4 md:mt-5">
                     <a id="signup-button" href="/src/html/login.html"
                         class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:cursor-pointer hover:bg-white hover:text-black ml-auto">Sign
@@ -104,23 +130,24 @@
         </div>
     </section>
 
-    <section id="main" class="md:mt-20" style="font-family: FontB;">
+    <section id="main" class="mt-5 md:mt-20" style="font-family: FontB;">
         <div class="ml-auto mr-auto">
-            <video class="ml-auto mr-auto" playsinline autoPlay muted loop width="600" title="MayDayz BBQ logo">
-                <source src="src/assets/Images/MayDayz-Logo-Tailgate-animation.webm" type="video/webm" title="MayDayz BBQ Tailgate Logo">
+            <video class="ml-auto mr-auto w-1/1 md:w-1/2" playsinline autoPlay muted loop title="MayDayz BBQ logo">
+                <source src="src/assets/Images/MayDayz-Logo-Tailgate-animation.webm" type="video/webm"
+                    title="MayDayz BBQ Tailgate Logo">
                 Your browser does not support the video tag.
             </video>
         </div>
-        <div id="welcome" class="text-center md:mt-10" style="font-family: FontA;">
-            <h1 class="uppercase text-5xl text-red-500">Welcome to MayDayz BBQ</h1>
+        <div id="welcome" class="text-center mt-2" style="font-family: FontA;">
+            <h1 class="uppercase text-4xl md:text-6xl text-red-500">Welcome to MayDayz BBQ</h1>
         </div>
-        <div id="slogan" class="text-center md:mt-3" style="font-family: FontC;">
-            <h2 class="uppercase text-3xl text-white">We smoked out</h2>
+        <div id="slogan" class="text-center mt-1 md:mt-3" style="font-family: FontC;">
+            <h2 class="uppercase text-3xl md:text-4xl text-white">We smoked out</h2>
         </div>
-        <div id="CTA" class="md:mt-10 justify-center flex">
+        <div id="CTA" class="mt-10 justify-center flex">
             <div id="order" style="font-family: FontC;">
                 <a id="order-button" href="/src/html/option.html"
-                    class=" text-white text-5xl uppercase rounded-4xl bg-red-700 p-4 hover:cursor-pointer hover:bg-white hover:text-red-500">Order
+                    class=" text-white text-4xl md:text-6xl uppercase rounded-4xl bg-red-700 p-4 hover:cursor-pointer hover:bg-white hover:text-red-500">Order
                     Now</a>
                 <style>
                     @keyframes pulseRedWhite {
@@ -149,10 +176,10 @@
             </div>
         </div>
     </section>
-    <section id="Featured-Items" class="md:mt-32 justify-center md:mr-auto md:ml-auto" style="font-family: FontD;">
+    <section id="Featured-Items" class="mt-20 justify-center md:mr-auto md:ml-auto" style="font-family: FontD;">
         <div id="Featured-Title" class="text-4xl text-gray-50 uppercase justify-center text-center flex">
             <span><img src="/src/assets/Images/span-football.png" width="150" alt="football" title="Football"></span>
-            <h2 class="translate-y-15">IT'S THAT SEASON</h2> <span><img src="/src/assets/Images/span-jersey.png"
+            <h2 class="md:translate-y-15">IT'S THAT SEASON</h2> <span><img src="/src/assets/Images/span-jersey.png"
                     alt="jersey" width="150" title="Jersey"></span>
         </div>
         <h3 class="text-3xl text-center text-gray-50 mt-6" style="font-family: FontD;">Bringing the <span
@@ -222,7 +249,7 @@
                 <h3>SO<span class="text-red-500">XI</span>ETY</h3>
             </div>
         </div>
-        <div id="Terms-Links" class="flex gap-100 mt-6 justify-center">
+        <div id="Terms-Links" class="flex gap-20 md:gap-100 mt-6 justify-center">
             <div id="terms-container">
                 <div id="priv-link-container" class="">
                     <a id="privacy-policy" class="hover:cursor-pointer hover:text-red-600"
@@ -260,7 +287,7 @@
         </div>
         <div id="ms-annette-tribute" class="text-xl justify-center mt-10 flex " style="font-family: FontB;"><span> <img
                     src="/src/assets/Images/Ribbon.png" width="75" alt="colon-cancer-ribbon"> </span>
-            <p class="translate-y-7"
+            <p class="md:translate-y-7"
                 title="Honoring Annette Tomlin who was a loved member of the Charlotte Community and MayDayz family.">In
                 loving
                 memory of Annette Tomlin</p> <span><img src="/src/assets/Images/Ribbon.png" width="75"
