@@ -204,6 +204,12 @@
   }
 }
 @layer utilities {
+  .bottom-1 {
+    bottom: calc(var(--spacing) * 1);
+  }
+  .bottom-1\/1 {
+    bottom: calc(1/1 * 100%);
+  }
   .isolate {
     isolation: isolate;
   }
