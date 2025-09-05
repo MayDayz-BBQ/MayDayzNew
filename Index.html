@@ -134,11 +134,14 @@
 
     <section id="main" class="mt-5 md:mt-20" style="font-family: FontB;">
         <div class="ml-auto mr-auto">
-            <video class="ml-auto mr-auto w-1/1 md:w-1/2" playsinline autoPlay muted loop title="MayDayz BBQ logo">
-                <source src="src/assets/Images/MayDayz-Logo-Tailgate-animation.webm" type="video/webm"
-                    title="MayDayz BBQ Tailgate Logo">
-                Your browser does not support the video tag.
-            </video>
+            <div class="logo-container">
+                <video id="logo-video" class="hidden md:block w-1/1 md:w-1/2 ml-auto mr-auto" playsinline autoPlay muted loop title="MayDayz BBQ logo">
+                    <source src="src/assets/Images/MayDayz-Logo-Tailgate-animation.webm" type="video/webm" title="MayDayz BBQ Tailgate Logo">
+                    Your browser does not support the video tag.
+                </video>
+            
+                <img id="logo-image" src="SRC/ASSETS/IMAGES/Maydayz-LOGO-TailGate-GS.png" class="md:hidden w-1/1 md:w-1/2" title="MayDayz BBQ logo">
+            </div>
         </div>
         <div id="welcome" class="text-center mt-2" style="font-family: FontA;">
             <h1 class="uppercase text-4xl md:text-6xl text-red-500">Welcome to MayDayz BBQ</h1>

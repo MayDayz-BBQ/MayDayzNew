@@ -59,3 +59,11 @@ function handleSamplerImage() {
 handleSamplerImage();
 
 window.addEventListener("resize", handleRibplateImage);
+
+function serveLogo()
+{
+  if (window.outerWidth() < 768)
+  {
+    document.getElementById("logo-animation-main").src = "/SRC/ASSETS/IMAGES/Maydayz-LOGO-TailGate-GS.png"
+  }
+}
