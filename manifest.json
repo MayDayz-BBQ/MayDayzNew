@@ -1,0 +1,21 @@
+{
+    "name": "MayDayz Smokn BBQ",
+    "short_name": "MayDayz BBQ",
+    "description": "Authentic Southern BBQ in Charlotte, NC, delivered to your door on weekends!",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#b91c1c",
+    "icons": [
+      {
+        "src": "/src/assets/Images/MAYDAYZ-FAV.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/src/assets/Images/MAYDAYZ-FAV.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
