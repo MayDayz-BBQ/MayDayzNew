@@ -1,42 +1,28 @@
-self.addEventListener("install", (event) => {
-    console.log("[SW] Installing self-destructing Service Worker...");
-    event.waitUntil(self.skipWaiting());
-  });
-  
-  self.addEventListener("activate", (event) => {
-    console.log("[SW] Activating self-destructing Service Worker...");
-    event.waitUntil(
-      caches
-        .keys()
-        .then((cacheNames) => {
-          // Delete ALL caches controlled by this origin
-          return Promise.all(
-            cacheNames.map((cacheName) => {
-              console.log(`[SW] Deleting cache: ${cacheName}`);
-              return caches.delete(cacheName);
-            })
-          );
-        })
-        .then(() => {
-          console.log("[SW] All caches cleared. Unregistering self.");
-          // Get all clients controlled by this Service Worker
-          return self.clients.claim().then(() => {
-            // Find the controlling Service Worker and unregister it
-            return self.registration.unregister();
-          });
-        })
-        .then(() => {
-          console.log(
-            "[SW] Service Worker successfully unregistered. Please refresh the page."
-          );
-        })
-        .catch((error) => {
-          console.error("[SW] Error during unregistration:", error);
+const cacheName = 'maydayz-smokn-bbq-v1';
+const filesToCache = [
+    '/',
+    '/src/html/about.html',
+    '/src/html/catering.html',
+    '/src/html/option.html',
+    '/src/html/login.html',
+    '/src/css/output.css',
+    '/src/js/index.js',
+    '/src/assets/Images/MAYDAYZ-FAV.png',
+    '/manifest.json'
+];
+
+self.addEventListener('install', (e) => {
+    e.waitUntil(
+        caches.open(cacheName).then((cache) => {
+            return cache.addAll(filesToCache);
         })
     );
-  });
-  
-  self.addEventListener("fetch", (event) => {
-    // console.log('[SW] Fetch event - passing through for unregistering SW:', event.request.url);
-    event.respondWith(fetch(event.request));
-  });
+});
+
+self.addEventListener('fetch', (e) => {
+    e.respondWith(
+        caches.match(e.request).then((response) => {
+            return response || fetch(e.request);
+        })
+    );
+});
