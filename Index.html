@@ -154,8 +154,8 @@
     <section id="main" class="mt-5 md:mt-20" style="font-family: FontB;">
         <div class="ml-auto mr-auto">
             <div class="logo-container">
-                <video id="logo-video" class="hidden md:visible md:block w-1/1 md:w-1/2 ml-auto mr-auto" playsinline autoPlay muted
-                    loop title="MayDayz BBQ logo">
+                <video id="logo-video" class="hidden md:visible md:block w-1/1 md:w-1/2 ml-auto mr-auto" playsinline
+                    autoPlay muted loop title="MayDayz BBQ logo">
                     <source src="src/assets/Images/MayDayz-Logo-Tailgate-animation.webm" type="video/webm"
                         title="MayDayz BBQ Tailgate Logo" width="1000" height="1000">
                     Your browser does not support the video tag.
@@ -336,14 +336,19 @@
 
     </script>
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js', { scope: '/' })
-                    .then(registration => {
-                        console.log('Service Worker registered with scope:', registration.scope);
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("/service-worker.js")
+                    .then((registration) => {
+                        console.log(
+                            "Service Worker registered with scope:",
+                            "Service Worker registration initiated for unregistration:",
+                            registration.scope
+                        );
                     })
-                    .catch(error => {
-                        console.log('Service Worker registration failed:', error);
+                    .catch((error) => {
+                        console.error("Service Worker registration failed:", error);
                     });
             });
         }
