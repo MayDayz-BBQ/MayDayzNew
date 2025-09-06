@@ -14,7 +14,11 @@
         gtag("config", "G-PN5PZ1Z3KG");
     </script>
 
-    <link rel="stylesheet" href="/src/css/output.css">
+    <link rel="preload" href="/src/css/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="/src/css/output.css">
+    </noscript>
+    <link rel="preload" as="image" href="/src/assets/images/MenuBackground.webp">
     <link rel="icon" type="image/png" href="/src/assets/Images/MAYDAYZ-FAV.png">
     <title>MayDayz Smokn BBQ | Best BBQ in Charlotte</title>
     <meta name="author" content="MayDayz Smokn BBQ">
@@ -42,7 +46,8 @@
     <link rel="apple-touch-icon" href="/SRC/ASSETS/IMAGES/MAYDAYZ-FAV.png">
     <link rel="manifest" href="/manifest.json">
 
-    <script type="application/ld+json">
+
+    <script type="application/ld+json" async>
         {
             "@context": "https://schema.org",
             "@type": "Restaurant",
@@ -76,35 +81,40 @@
             "servesCuisine": "Southern BBQ"
 }
     </script>
+    <link rel="preconnect" href="https://www.maydayz.com" crossorigin>
     <style>
         @font-face {
             font-family: FontB;
             src: url('/src/assets/Fonts/LTSuperior-SemiBold.otf');
             font-display: swap;
         }
-    
+
         @font-face {
             font-family: FontC;
             src: url('/src/assets/Fonts/Ricebox-Allcaps.ttf');
             font-display: swap;
         }
-    
+
         @font-face {
             font-family: FontA;
             src: url('/src/assets/Fonts/FIRES-PERSONAL-USE.ttf');
             font-display: swap;
         }
-    
+
         @font-face {
             font-family: FontD;
             src: url('/src/assets/Fonts/VarsityTeam-Bold.otf');
             font-display: swap;
         }
-    
+
         @font-face {
             font-family: FontE;
             src: url("src/assets/Fonts/Pridi-Bold.ttf");
             font-display: swap;
+        }
+
+        body{
+            background-color: black;
         }
     </style>
 </head>
@@ -151,9 +161,12 @@
                     Your browser does not support the video tag.
                 </video>
 
-                <img id="logo-image" src="SRC/ASSETS/IMAGES/Maydayz-LOGO-TailGate-GS.webp"
-                    class="md:hidden w-1/1 md:w-1/2" alt="MayDayz BBQ logo" title="MayDayz BBQ logo" width="1000"
-                    height="1000">
+                <picture>
+                    <source srcset="SRC/ASSETS/IMAGES/Maydayz-LOGO-TailGate-GS.avif" type="image/avif">
+                    <img id="logo-image" src="SRC/ASSETS/IMAGES/Maydayz-LOGO-TailGate-GS.webp"
+                        class="md:hidden w-1/1 md:w-1/2" alt="MayDayz BBQ logo" title="MayDayz BBQ logo" width="1000"
+                        height="1000" decoding="async">
+                </picture>
             </div>
         </div>
         <div id="welcome" class="text-center mt-2" style="font-family: FontA;">
@@ -196,10 +209,12 @@
     </section>
     <section id="Featured-Items" class="mt-20 justify-center md:mr-auto md:ml-auto" style="font-family: FontD;">
         <div id="Featured-Title" class="text-4xl text-gray-50 uppercase justify-center text-center flex">
-            <span><img src="/src/assets/Images/span-football.webp" width="150" height="150" alt="football"
-                    title="Football"></span>
+            <span>
+                <picture><img src="/src/assets/Images/span-football.webp" width="150" height="150" alt="football"
+                        title="Football" decoding="async"></picture>
+            </span>
             <h2 class="md:translate-y-15">IT'S THAT SEASON</h2> <span><img src="/src/assets/Images/span-jersey.webp"
-                    alt="jersey" width="150" height="150" title="Jersey"></span>
+                    alt="jersey" width="150" height="150" title="Jersey" decoding="async"></span>
         </div>
         <h3 class="text-3xl text-center text-gray-50 mt-6" style="font-family: FontD;">Bringing the <span
                 class="text-amber-300" style="font-family: FontA;">HEAT</span> this season <br> with bold flavors and
@@ -208,9 +223,11 @@
         <div id="items" class="flex mt-6 ml-auto mr-auto justify-center">
             <div id="Sampler" class="p-10 rounded-2xl">
                 <div id="sampler-img-container" class="hover:transform hover:-translate-y-5 hover:rounded-4xl">
-                    <img id="sampler-closed" src="/src/assets/Images/cls-plate.webp" loading="lazy"
-                        alt="Picture of Sampler" width="350" height="350" title="Sampler $32"
-                        class="hover:cursor-pointer">
+                    <picture>
+                        <img id="sampler-closed" src="/src/assets/Images/cls-plate.webp" loading="lazy"
+                            alt="Picture of Sampler" width="350" height="350" title="Sampler $32"
+                            class="hover:cursor-pointer" decoding="async">
+                    </picture>
                 </div>
                 <div id="sampler-text-container" class="text-3xl">
                     <h3 class="text-white text-center">SAMPLER</h3>
@@ -219,10 +236,12 @@
             </div>
             <div id="Rib-Plate" class="p-10 rounded-2xl ">
                 <div id="rib-img-container" class="hover:transform hover:-translate-y-5 hover:rounded-4xl">
-                    <img id="ribplate-closed" src="/src/assets/Images/cls-plate.webp" loading="lazy"
-                        alt="Picture of the ribs" title="Rib Plate $22" width="350" height="350"
-                        onmouseover="ribappear('/src/assets/Images/rib-plate.webp')" onmouseout="ribclose()"
-                        class="hover:cursor-pointer">
+                    <picture>
+                        <img id="ribplate-closed" src="/src/assets/Images/cls-plate.webp" loading="lazy"
+                            alt="Picture of the ribs" title="Rib Plate $22" width="350" height="350"
+                            onmouseover="ribappear('/src/assets/Images/rib-plate.webp')" onmouseout="ribclose()"
+                            class="hover:cursor-pointer" decoding="async">
+                    </picture>
                 </div>
                 <div id="sampler-text-container" class="text-3xl">
                     <h3 class="text-white text-center uppercase">Chef's Favorite Rib Plate</h3>
@@ -240,20 +259,21 @@
             <div id="IG">
                 <a id="IG-Link" class="hover:cursor-pointer" href="https://www.instagram.com/maydayz_bbq/">
                     <img src="/src/assets/Images/Instagram_Glyph_White.webp" width="75" height="75" alt="Instagam Logo"
-                        aria-label="Follow Us on IG" title="Follow us on IG">
+                        aria-label="Follow Us on IG" title="Follow us on IG" decoding="async">
                 </a>
             </div>
             <div id="FB">
                 <a id="FB-Link" class="hover:cursor-pointer"
                     href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/">
                     <img src="/src/assets/Images//Facebook_Logo_Secondary.webp" width="75" height="75"
-                        alt="Facebook Logo" aria-label="Follow Us on Facebook" title="Follow us on Facebook">
+                        alt="Facebook Logo" aria-label="Follow Us on Facebook" title="Follow us on Facebook"
+                        decoding="async">
                 </a>
             </div>
             <div id="TT">
                 <a id="TikTok-Link" class="hover:cursor-pointer" href="https://www.tiktok.com/@maydayzbbq">
                     <img src="/src/assets/Images/TikTok-logo-RGB-Stacked-white-simplified.webp" width="75" height="75"
-                        alt="TikTok Logo" aria-label="Follow us on TikTok" title="Follow us on TikTok">
+                        alt="TikTok Logo" aria-label="Follow us on TikTok" title="Follow us on TikTok" decoding="async">
                 </a>
             </div>
         </div>
@@ -301,20 +321,21 @@
         <div id="logo">
             <div id="notice-container" class="">
                 <img src="/src/assets/Images/MAYDAYZ-FAV.png" alt="Maydayz Logo for copyright" class="ml-auto mr-auto"
-                    width="75" height="75" title="Maydayz Logo">
+                    width="75" height="75" title="Maydayz Logo" decoding="async">
                 <p class="text-center text-xs" style="font-family: FontB;">©2025 MayDayz Smokn BBQ</p>
             </div>
         </div>
         <div id="ms-annette-tribute" class="text-xl justify-center mt-10 flex " style="font-family: FontB;"><span> <img
-                    src="/src/assets/Images/Ribbon.webp" width="75" height="75" alt="colon-cancer-ribbon"> </span>
+                    src="/src/assets/Images/Ribbon.webp" width="75" height="75" alt="colon-cancer-ribbon"
+                    decoding="async"> </span>
             <p class="md:translate-y-7"
                 title="Honoring Annette Tomlin who was a loved member of the Charlotte Community and MayDayz family.">In
                 loving
                 memory of Annette Tomlin</p> <span><img src="/src/assets/Images/Ribbon.webp" width="75" height="75"
-                    alt="colon-cancer-ribbon"></span>
+                    alt="colon-cancer-ribbon" decoding="async"></span>
         </div>
     </footer>
-    <script src="src/js/index.js" defer>
+    <script src="src/js/index.js" async>
 
     </script>
     <script>
