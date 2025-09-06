@@ -13,7 +13,13 @@
         gtag("js", new Date());
         gtag("config", "G-PN5PZ1Z3KG");
     </script>
-
+   </script>
+   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <script>
+     function onSubmit(token) {
+       document.getElementById("demo-form").submit();
+     }
+   </script>
     <link rel="preload" href="/src/css/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="/src/css/output.css">
@@ -119,6 +125,10 @@
 </head>
 
 <body class="bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0">
+    <form id="demo-form" action="?" method="POST">
+        <button class="g-recaptcha" data-sitekey="6Ld9A8ArAAAAAM3Fowe-46q0zR6991UL_u3-AXkp" data-callback="onSubmit">Submit</button>
+        <br/>
+    </form>
     <section id="top-section" class="mt-5 md:mt-5" style="font-family: FontC;">
         <div id="Tabs-left"
             class="flex flex-col items-center md:flex-row md:ml-2 gap-7 md:gap-3 sm:text-2xl md:text-4xl sm:justify-center">
@@ -128,21 +138,21 @@
                     Us</a>
             </div>
             <div id="Menu" class="md:mt-5">
-                <a id="menu-button" href="/SRC/HTML/menu.html"
+                <a id="menu-button" href="/src/html/menu.html" aria-label="View Our Menu"
                     class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:cursor-pointer hover:bg-white hover:text-black">Menu</a>
             </div>
             <div id="Catering" class="md:mt-5">
-                <a id="catering-button" href="/src/html/catering.html"
+                <a id="catering-button" href="/src/html/catering.html" aria-label="Get a Quote!!"
                     class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:cursor-pointer hover:bg-white hover:text-black">Catering</a>
             </div>
             <div id="Gift-Card" class="md:mt-5">
-                <a id="giftcard-button" href="https://app.squareup.com/gift/MLENTYY5WR8XF/order" target="_blank"
+                <a id="giftcard-button" href="https://app.squareup.com/gift/MLENTYY5WR8XF/order" target="_blank" aria-label="Buy One for a Friend"
                     class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:cursor-pointer hover:bg-white hover:text-black">Gift
                     Card</a>
             </div>
             <div id="right-signup-nav" class="ml-auto sm:ml-auto mr-auto md:mr-0 mb-10 md:mb-0">
                 <div id="Sign-up" class="mr-4 md:mt-5">
-                    <a id="signup-button" href="/src/html/login.html"
+                    <a id="signup-button" href="/src/html/login.html" aria-label="Sign Up Today!!"
                         class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:cursor-pointer hover:bg-white hover:text-black ml-auto">Sign
                         Up/Login</a>
                 </div>
@@ -160,7 +170,7 @@
                     Your browser does not support the video tag.
                 </video>
                 <picture>
-                    <img id="logo-image" src="SRC/ASSETS/IMAGES/Maydayz-LOGO-TailGate-GS.webp"
+                    <img id="logo-image" src="src/assets/images/Maydayz-LOGO-TailGate-GS.webp"
                         class="md:hidden w-1/1 md:w-1/2" alt="MayDayz BBQ logo" title="MayDayz BBQ logo" width="1000"
                         height="1000" decoding="async">
                 </picture>
@@ -340,11 +350,8 @@
                 navigator.serviceWorker
                     .register("/service-worker.js")
                     .then((registration) => {
-                        console.log(
-                            "Service Worker registered with scope:",
-                            "Service Worker registration initiated for unregistration:",
-                            registration.scope
-                        );
+                        console.log("Service Worker registered with scope:", registration.scope);
+
                     })
                     .catch((error) => {
                         console.error("Service Worker registration failed:", error);
