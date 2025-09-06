@@ -15,14 +15,6 @@
     </script>
     <script
         src="https://www.google.com/recaptcha/enterprise.js?render=6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN"></script>
-    <script>
-        function onClick(e) {
-            e.preventDefault();
-            grecaptcha.enterprise.ready(async () => {
-                const token = await grecaptcha.enterprise.execute('6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN', { action: 'LOGIN' });
-            });
-        }
-    </script>
     <link rel="preload" href="/src/css/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="/src/css/output.css">
@@ -160,7 +152,7 @@
         </div>
     </nav>
 
-    <main id="main" class="mt-5 md:mt-20" style="font-family: FontB;">
+    <main id="main-section" class="mt-5 md:mt-20" style="font-family: FontB;">
         <div class="ml-auto mr-auto">
             <div class="logo-container">
                 <video id="logo-video" class="hidden md:visible md:block w-1/2 ml-auto mr-auto" playsinline muted loop
@@ -314,7 +306,7 @@
             <div>
                 <h2 class="uppercase text-center mt-10" style="font-family: FontC;">Site created with detail by</h2>
             </div>
-            <div class="uppercase text-center text-3xl" style="font-family: FontB;" id="logo"
+            <div class="uppercase text-center text-3xl" style="font-family: FontB;" id="soxiety-logo"
                 title="©Soxiety Technolgy Soltions">
                 <h3>SO<span class="text-red-500">XI</span>ETY</h3>
             </div>
@@ -379,6 +371,21 @@
                     });
             });
         }
+    </script>
+    <script>
+        grecaptcha.enterprise.ready(() => {
+            const orderBtn = document.getElementById("order-button");
+
+            orderBtn.addEventListener("click", async function (e) {
+
+                const token = await grecaptcha.enterprise.execute('6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN', {
+                    action: 'order_now'
+                });
+
+                // You can now send `token` to your server or log it
+                console.log("reCAPTCHA token:", token);
+            });
+        });
     </script>
 </body>
 
