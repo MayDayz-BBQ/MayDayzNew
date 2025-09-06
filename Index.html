@@ -14,11 +14,16 @@
         gtag("config", "G-PN5PZ1Z3KG");
     </script>
    </script>
-   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN"></script>
    <script>
-     function onSubmit(token) {
-       document.getElementById("demo-form").submit();
-     }
+    function onClick(e) {
+      e.preventDefault();
+      grecaptcha.enterprise.ready(async () => {
+        const token = await grecaptcha.enterprise.execute('6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN', {action: 'LOGIN'});
+      });
+    }
+  </script>
+
    </script>
     <link rel="preload" href="/src/css/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
@@ -125,10 +130,7 @@
 </head>
 
 <body class="bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0">
-    <form id="demo-form" action="?" method="POST">
-        <button class="g-recaptcha" data-sitekey="6Ld9A8ArAAAAAM3Fowe-46q0zR6991UL_u3-AXkp" data-callback="onSubmit">Submit</button>
-        <br/>
-    </form>
+
     <section id="top-section" class="mt-5 md:mt-5" style="font-family: FontC;">
         <div id="Tabs-left"
             class="flex flex-col items-center md:flex-row md:ml-2 gap-7 md:gap-3 sm:text-2xl md:text-4xl sm:justify-center">
