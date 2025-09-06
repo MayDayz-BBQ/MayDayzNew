@@ -48,7 +48,7 @@ USAGE IS PROHIBITED!!!
     </style>
     <link rel="stylesheet" href="/src/css/output.css">
     <link rel="icon" type="x-icon" src="/src/assets/Images/MAYDAYZ-FAV.png">
-    <meta name="viewport" content="maximum-scale=.5, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body class="bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0">
@@ -58,111 +58,119 @@ USAGE IS PROHIBITED!!!
                     alt="MayDayz Logo"></a>
         </div>
     </div>
-    <section class="mt-30">
+    <nav class="mt-30">
         <div id="online-bg"
-            class="flex justify-center bg-cover bg-center bg-no-repeat p-30 grayscale-100 hover:grayscale-0 transition delay-100"
+            class="flex justify-center bg-cover bg-center bg-no-repeat p-20 grayscale-100 hover:grayscale-0 transition delay-100"
             style="background-image: url('/src/assets/Images/MayDayz-DoorDash.png');">
             <div id="order-online" class="justify-center text-center">
-                <a class="bg-white p-5 rounded-3xl text-center grayscale-100 hover:grayscale-0 hover:translate-3 w-1/2 uppercase text-5xl hover:bg-black hover:text-red-600"
+                <a class="bg-white p-3 md:p-5 rounded-3xl text-center grayscale-100 hover:grayscale-0 hover:translate-3 w-auto md:w-1/2 uppercase text-xl md:text-5xl hover:bg-black hover:text-red-600"
                     style="font-family: FontC;" href="/src/html/order.html">
                     Order Online
                 </a>
-                <p class="text-white mt-5 text-3xl uppercase text-center" style="font-family: FontB;">Use this to order
+                <p class="text-white mt-5 text-xl md:text-2xl uppercase text-center" style="font-family: FontB;">Use
+                    this to order
                     with
                     Doordash or Uber Eats</p>
             </div>
         </div>
         <div id="web-bg"
-            class="flex justify-center bg-red-600 bg-cover bg-center bg-no-repeat p-30 grayscale-100 hover:grayscale-0 transition delay-100">
+            class="flex-row md:flex justify-center bg-red-600 bg-cover bg-center bg-no-repeat p-20 grayscale-100 hover:grayscale-0 transition delay-100">
             <div id="order-online" class="justify-center text-center">
-                <a class="bg-white p-5 rounded-3xl text-center grayscale-100 hover:grayscale-0 hover:translate-3 w-1/2 uppercase text-5xl hover:bg-black hover:text-red-600"
+                <a class="bg-white p-3 md:p-5 rounded-3xl text-center grayscale-100 hover:grayscale-0 hover:translate-3 md:w-1/2 uppercase text-2xl md:text-5xl hover:bg-black hover:text-red-600"
                     style="font-family: FontC;"
                     href="https://order.online/store/maydayz-smokn-bbq-charlotte-35338400/?hideModal=true&pickup=false&redirected=true">
                     Order on our Website
                 </a>
-                <p class="text-white mt-5 text-3xl uppercase text-center" style="font-family: FontB;">Use this to order
+                <p class="text-white mt-5 md:text-3xl uppercase text-center" style="font-family: FontB;">Use this to
+                    order
                     on the
                     site</p>
             </div>
         </div>
-        <footer class="bg-black mt-25 p-10 md:mb-0 text-2xl text-white uppercase md:bg-fixed md:bottom-1/1"
-            style="font-family: FontB;">
-            <div id="sm-pics" class="container ml-auto mr-auto gap-4 justify-center flex mt-10">
-                <div id="IG">
-                    <a id="IG-Link" class="hover:cursor-pointer" href="https://www.instagram.com/maydayz_bbq/">
-                        <img src="/src/assets/Images/Instagram_Glyph_White.png" width="75" alt="Instagam Logo"
-                            aria-label="Follow Us on IG">
+    </nav>
+    <footer class="bg-black mt-25 p-10 md:mb-0 text-2xl text-white uppercase bg-fixed bottom-1/1"
+        style="font-family: FontB;">
+        <div id="sm-pics" class="container ml-auto mr-auto gap-4 justify-center flex mt-10">
+            <div id="IG">
+                <a id="IG-Link" class="hover:cursor-pointer" href="https://www.instagram.com/maydayz_bbq/">
+                    <img src="/src/assets/Images/Instagram_Glyph_White.webp" width="75" height="75" alt="Instagam Logo"
+                        aria-label="Follow Us on IG" title="Follow us on IG" decoding="async">
+                </a>
+            </div>
+            <div id="FB">
+                <a id="FB-Link" class="hover:cursor-pointer"
+                    href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/">
+                    <img src="/src/assets/Images/Facebook_Logo_Secondary.webp" width="75" height="75"
+                        alt="Facebook Logo" aria-label="Follow Us on Facebook" title="Follow us on Facebook"
+                        decoding="async">
+                </a>
+            </div>
+            <div id="TT">
+                <a id="TikTok-Link" class="hover:cursor-pointer" href="https://www.tiktok.com/@maydayzbbq">
+                    <img src="/src/assets/Images/TikTok-logo-RGB-Stacked-white-simplified.webp" width="75" height="75"
+                        alt="TikTok Logo" aria-label="Follow us on TikTok" title="Follow us on TikTok" decoding="async">
+                </a>
+            </div>
+        </div>
+        <div id="sm-text" class="mt-10 text-center" id="social-media">
+            <h1>Follow us</h1>
+        </div>
+        <div id="soxiety-logo">
+            <div>
+                <h2 class="uppercase text-center mt-10" style="font-family: FontC;">Site created with detail by</h2>
+            </div>
+            <div class="uppercase text-center text-3xl" style="font-family: FontB;" id="soxiety-logo"
+                title="©Soxiety Technolgy Soltions">
+                <h3>SO<span class="text-red-500">XI</span>ETY</h3>
+            </div>
+        </div>
+        <div id="Terms-Links" class="flex gap-20 md:gap-100 mt-6 justify-center">
+            <div id="terms-container">
+                <div id="priv-link-container" class="">
+                    <a id="privacy-policy" class="hover:cursor-pointer hover:text-red-600"
+                        href="/src/html/privacy-policy.html" target="_blank">
+                        Privacy Policy
                     </a>
                 </div>
-                <div id="FB">
-                    <a id="IG-Link" class="hover:cursor-pointer"
-                        href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/">
-                        <img src="/src/assets/Images//Facebook_Logo_Secondary.png" width="75" alt="Facebook Logo"
-                            aria-label="Follow Us on Facebook">
-                    </a>
-                </div>
-                <div id="TT">
-                    <a id="TikTok-Link" class="hover:cursor-pointer" href="https://www.tiktok.com/@maydayzbbq">
-                        <img src="/src/assets/Images/TikTok-logo-RGB-Stacked-white-simplified.png" width="75"
-                            alt="TikTok Logo" aria-label="Follow us on TikTok">
+                <div id="terms-link-container">
+                    <a id="terms-of-service" class="hover:cursor-pointer hover:text-red-600"
+                        href="/src/html/MaydayzSmoknBarBeCueLLCTermsofService.html" target="_blank">
+                        Terms of Service
                     </a>
                 </div>
             </div>
-            <div id="sm-text" class="mt-10 text-center" id="social-media ">
-                <h1>Follow us</h1>
+            <div id="contant-link-container" class="">
+                <div id="email-link">
+                    <a id="email" class="hover:cursor-pointer hover:text-red-600" href="mailto:maydayzbbq@maydayz.com">
+                        Email Us
+                    </a>
+                </div>
+                <div id="phone-link">
+                    <a id="phone" class="hover:cursor-pointer hover:text-red-600" href="tel:980-499-8399">
+                        Call Us
+                    </a>
+                </div>
             </div>
-            <div id="soxiety-logo">
-                <div>
-                    <h2 class="uppercase text-center mt-10" style="font-family: FontC;">Site created with detail by</h2>
-                </div>
-                <div class="uppercase text-center text-3xl" style="font-family: FontB;" id="logo">
-                    <h3>SO<span class="text-red-500">XI</span>ETY</h3>
-                </div>
-            </div>
-            <div id="Terms-Links" class="flex gap-100 mt-6 justify-center">
-                <div id="terms-container">
-                    <div id="priv-link-container" class="">
-                        <a id="privacy-policy" class="hover:cursor-pointer hover:text-red-600"
-                            href="/src/html/privacy-policy.html" target="_blank">
-                            Privacy Policy
-                        </a>
-                    </div>
-                    <div id="terms-link-container">
-                        <a id="terms-of-service" class="hover:cursor-pointer hover:text-red-600"
-                            href="/src/html/MaydayzSmoknBarBeCueLLCTermsofService.html" target="_blank">
-                            Terms of Service
-                        </a>
-                    </div>
-                </div>
-                <div id="contant-link-container" class="">
-                    <div id="email-link">
-                        <a id="email" class="hover:cursor-pointer hover:text-red-600"
-                            href="mailto:maydayzbbq@maydayz.com">
-                            Email Us
-                        </a>
-                    </div>
-                    <div id="phone-link">
-                        <a id="email" class="hover:cursor-pointer hover:text-red-600" href="tel:980-499-8399">
-                            Call Us
-                        </a>
-                    </div>
-                </div>
 
+        </div>
+        <div id="footer-logo">
+            <div id="notice-container" class="">
+                <img src="/src/assets/Images/MAYDAYZ-FAV.png" alt="Maydayz Logo for copyright" class="ml-auto mr-auto"
+                    width="75" height="75" title="Maydayz Logo" decoding="async">
+                <p class="text-center text-xs" style="font-family: FontB;">©2025 MayDayz Smokn BBQ</p>
             </div>
-            <div id="logo">
-                <div id="notice-container" class="">
-                    <img src="/src/assets/Images/MAYDAYZ-FAV.png" class="ml-auto mr-auto" width="75">
-                    <p class="text-center text-xs" style="font-family: FontB;">©2025 MayDayz Smokn BBQ</p>
-                </div>
-            </div>
-            <div id="ms-annette-tribute" class="text-xl justify-center mt-10 flex " style="font-family: FontB;"><span>
-                    <img src="/src/assets/Images/Ribbon.png" width="75" alt="colon-cancer-ribbon"> </span>
-                <p class="translate-y-7">In loving
-                    memory of Annette Tomlin</p> <span><img src="/src/assets/Images/Ribbon.png" width="75"
-                        alt="colon-cancer-ribbon"></span>
-            </div>
-        </footer>
-    </section>
+        </div>
+        <div id="ms-annette-tribute" class="text-xl justify-center mt-10 flex " style="font-family: FontB;"><span> <img
+                    src="/src/assets/Images/Ribbon.webp" width="75" height="75" alt="colon-cancer-ribbon"
+                    decoding="async"> </span>
+            <p class="md:translate-y-7"
+                title="Honoring Annette Tomlin who was a loved member of the Charlotte Community and MayDayz family.">In
+                loving
+                memory of Annette Tomlin</p> <span><img src="/src/assets/Images/Ribbon.webp" width="75" height="75"
+                    alt="colon-cancer-ribbon" decoding="async"></span>
+        </div>
+    </footer>
+
     <script>
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", () => {
