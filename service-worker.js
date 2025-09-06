@@ -20,6 +20,7 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
     // We want to handle all GET requests that are not coming from external domains.
     if (e.request.method !== 'GET') {
+        // Corrected: Return early for non-GET requests to prevent the `put` error.
         return;
     }
 
@@ -27,11 +28,12 @@ self.addEventListener('fetch', (e) => {
         caches.match(e.request).then((cachedResponse) => {
             // A request for the network, we must clone it because a request can only be used once.
             const fetchPromise = fetch(e.request).then((networkResponse) => {
-                // We must check if the response is valid before caching.
+                // Corrected: We must check if the response is valid before caching.
                 // Status 200 is good, type 'basic' means it's from the same origin.
-                if (networkResponse.status === 200) {
+                if (networkResponse.status === 200 && networkResponse.type === 'basic') {
                     const clonedResponse = networkResponse.clone();
                     caches.open(cacheName).then((cache) => {
+                        // The put() operation is now safe to execute.
                         cache.put(e.request, clonedResponse);
                     });
                 }
