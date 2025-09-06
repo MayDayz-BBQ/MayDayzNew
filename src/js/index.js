@@ -41,20 +41,4 @@ setupHoverEffect(
 );
 
 
-const logoAnimationMain = document.getElementById("logo-animation-main");
-const logoImage = document.getElementById("logo-image");
 
-function serveLogo() {
-  if (logoAnimationMain && logoImage) {
-    if (window.innerWidth < 768) {
-      logoAnimationMain.classList.add("hidden");
-      logoImage.classList.remove("hidden");
-    } else {
-      logoAnimationMain.classList.remove("hidden");
-      logoImage.classList.add("hidden");
-    }
-  }
-}
-
-serveLogo(); 
-window.addEventListener("resize", serveLogo); 
