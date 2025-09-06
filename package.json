@@ -87,5 +87,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JQbeCoding/MayDayzNew.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JQbeCoding/MayDayzNew/issues"
+  },
+  "homepage": "https://github.com/JQbeCoding/MayDayzNew#readme",
   "description": ""
 }

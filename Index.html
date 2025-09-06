@@ -128,7 +128,7 @@
 </head>
 
 <body class="bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0">
-    <section id="top-section" class="mt-5 md:mt-5" style="font-family: FontC;">
+    <nav id="top-section" class="mt-5 md:mt-5" style="font-family: FontC;">
         <div id="Tabs-left"
             class="flex flex-col items-center md:flex-row md:ml-2 gap-7 md:gap-3 sm:text-2xl md:text-4xl sm:justify-center">
             <div id="About-Us" class="md:mt-5 ">
@@ -158,16 +158,15 @@
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <section id="main" class="mt-5 md:mt-20" style="font-family: FontB;">
+    <main id="main" class="mt-5 md:mt-20" style="font-family: FontB;">
         <div class="ml-auto mr-auto">
             <div class="logo-container">
-                <video id="logo-video" class="hidden md:visible md:block w-1/1 md:w-1/2 ml-auto mr-auto" playsinline
-                    autoPlay muted loop title="MayDayz BBQ logo">
+                <video id="logo-video" class="hidden md:visible md:block w-1/2 ml-auto mr-auto" playsinline muted loop
+                    title="MayDayz BBQ logo" preload="none">
                     <source src="src/assets/Images/MayDayz-Logo-Tailgate-animation.webm" type="video/webm"
-                        title="MayDayz BBQ Tailgate Logo" width="1000" height="1000">
-                    Your browser does not support the video tag.
+                        title="MayDayz BBQ Tailgate Logo">
                 </video>
                 <picture>
                     <img id="logo-image" src="src/assets/images/Maydayz-LOGO-TailGate-GS.webp"
@@ -175,6 +174,31 @@
                         height="1000" decoding="async">
                 </picture>
             </div>
+
+            <script>
+                function getOS() {
+                    const userAgent = window.navigator.userAgent;
+                    if (/Android/i.test(userAgent) || /iPhone|iPad|iPod/i.test(userAgent)) {
+                        return 'Mobile';
+                    }
+                    console.log("Serving the desktop version")
+                    return 'Desktop';
+                }
+
+                const video = document.getElementById('logo-video');
+                const image = document.getElementById('logo-image');
+                const userOS = getOS();
+
+                if (userOS === 'Desktop') {
+                    // If it's a desktop OS, show the video
+                    video.setAttribute('autoplay', '');
+                } else {
+                    // If it's a mobile OS, hide the video and show the image
+                    video.style.display = 'none';
+                    image.style.display = 'block';
+                }
+            </script>
+
         </div>
         <div id="welcome" class="text-center mt-2" style="font-family: FontA;">
             <h1 class="uppercase text-4xl md:text-6xl text-red-500">Welcome to MayDayz BBQ</h1>
@@ -213,8 +237,8 @@
                 </style>
             </div>
         </div>
-    </section>
-    <section id="Featured-Items" class="mt-20 justify-center md:mr-auto md:ml-auto" style="font-family: FontD;">
+    </main>
+    <nav id="Featured-Items" class="mt-20 justify-center md:mr-auto md:ml-auto" style="font-family: FontD;">
         <div id="Featured-Title" class="text-4xl text-gray-50 uppercase justify-center text-center flex">
             <span>
                 <picture><img src="/src/assets/Images/span-football.webp" width="150" height="150" alt="football"
@@ -231,7 +255,7 @@
             <div id="Sampler" class="p-10 rounded-2xl">
                 <div id="sampler-img-container" class="hover:transform hover:-translate-y-5 hover:rounded-4xl">
                     <picture>
-                        <img id="sampler-closed" src="/src/assets/Images/cls-plate.webp" loading="lazy"
+                        <img id="sampler-open" src="/src/assets/Images/Sampler.webp" loading="lazy"
                             alt="Picture of Sampler" width="350" height="350" title="Sampler $32"
                             class="hover:cursor-pointer" decoding="async">
                     </picture>
@@ -244,7 +268,7 @@
             <div id="Rib-Plate" class="p-10 rounded-2xl ">
                 <div id="rib-img-container" class="hover:transform hover:-translate-y-5 hover:rounded-4xl">
                     <picture>
-                        <img id="ribplate-closed" src="/src/assets/Images/cls-plate.webp" loading="lazy"
+                        <img id="ribplate-closed" src="/src/assets/Images/Rib-Plate.webp" loading="lazy"
                             alt="Picture of the ribs" title="Rib Plate $22" width="350" height="350"
                             class="hover:cursor-pointer" decoding="async" />
                     </picture>
@@ -258,7 +282,7 @@
 
             </div>
         </div>
-    </section>
+    </nav>
     <footer class="bg-black mt-25 p-10 md:mb-0 text-2xl text-white uppercase bg-fixed bottom-1/1"
         style="font-family: FontB;">
         <div id="sm-pics" class="container ml-auto mr-auto gap-4 justify-center flex mt-10">
@@ -341,9 +365,6 @@
                     alt="colon-cancer-ribbon" decoding="async"></span>
         </div>
     </footer>
-    <script src="src/js/index.js" defer>
-
-    </script>
     <script>
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", () => {
