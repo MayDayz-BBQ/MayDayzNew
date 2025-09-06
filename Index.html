@@ -162,6 +162,7 @@
                 </video>
 
                 <picture>
+
                     <img id="logo-image" src="SRC/ASSETS/IMAGES/Maydayz-LOGO-TailGate-GS.webp"
                         class="md:hidden w-1/1 md:w-1/2" alt="MayDayz BBQ logo" title="MayDayz BBQ logo" width="1000"
                         height="1000" decoding="async">
@@ -340,7 +341,7 @@
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('service-worker.js')
+                navigator.serviceWorker.register('service-worker.js', { scope: '/' })
                     .then(registration => {
                         console.log('Service Worker registered with scope:', registration.scope);
                     })
