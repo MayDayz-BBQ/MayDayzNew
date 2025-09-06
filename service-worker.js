@@ -1,9 +1,8 @@
-// A simple service worker for a stale-while-revalidate caching strategy.
+// A robust service worker for a stale-while-revalidate caching strategy.
 
 const cacheName = 'maydayz-smokn-bbq-v2';
 
 // The activate event is used to clean up old caches.
-// This is important for preventing old, stale content from being served.
 self.addEventListener('activate', (e) => {
     e.waitUntil(
         caches.keys().then((keyList) => {
@@ -19,30 +18,32 @@ self.addEventListener('activate', (e) => {
 
 // The fetch event is where the magic happens.
 self.addEventListener('fetch', (e) => {
-    // Only handle HTTP/HTTPS requests
-    if (!e.request.url.startsWith('http')) {
+    // We want to handle all GET requests that are not coming from external domains.
+    if (e.request.method !== 'GET') {
         return;
     }
 
     e.respondWith(
         caches.match(e.request).then((cachedResponse) => {
-            // Immediately serve the cached response, if available.
-            // This makes the page load instantly for repeat visitors.
-            const networkFetch = fetch(e.request).then((networkResponse) => {
-                // After getting the new response, open the cache and update it.
-                // We use a clone because a response can only be read once.
-                const clonedResponse = networkResponse.clone();
-                caches.open(cacheName).then((cache) => {
-                    cache.put(e.request, clonedResponse);
-                });
+            // A request for the network, we must clone it because a request can only be used once.
+            const fetchPromise = fetch(e.request).then((networkResponse) => {
+                // We must check if the response is valid before caching.
+                // Status 200 is good, type 'basic' means it's from the same origin.
+                if (networkResponse.status === 200) {
+                    const clonedResponse = networkResponse.clone();
+                    caches.open(cacheName).then((cache) => {
+                        cache.put(e.request, clonedResponse);
+                    });
+                }
                 return networkResponse;
             }).catch(() => {
-                // If the network request fails, we can return a fallback response here,
-                // but for this simple version, we'll just let the fetch fail silently.
+                // If the network fails, but a cached response exists, we return the cached response.
+                // If both fail, the browser will handle the network error.
+                return cachedResponse;
             });
 
-            // Return the cached response if it exists, otherwise return the network fetch.
-            return cachedResponse || networkFetch;
+            // Return the cached response immediately if it exists, otherwise return the network promise.
+            return cachedResponse || fetchPromise;
         })
     );
 });
