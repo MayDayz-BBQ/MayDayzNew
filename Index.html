@@ -13,18 +13,16 @@
         gtag("js", new Date());
         gtag("config", "G-PN5PZ1Z3KG");
     </script>
-   </script>
-   <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN"></script>
-   <script>
-    function onClick(e) {
-      e.preventDefault();
-      grecaptcha.enterprise.ready(async () => {
-        const token = await grecaptcha.enterprise.execute('6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN', {action: 'LOGIN'});
-      });
-    }
-  </script>
-
-   </script>
+    <script
+        src="https://www.google.com/recaptcha/enterprise.js?render=6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN"></script>
+    <script>
+        function onClick(e) {
+            e.preventDefault();
+            grecaptcha.enterprise.ready(async () => {
+                const token = await grecaptcha.enterprise.execute('6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN', { action: 'LOGIN' });
+            });
+        }
+    </script>
     <link rel="preload" href="/src/css/output.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="/src/css/output.css">
@@ -54,7 +52,7 @@
         content="Authentic Southern BBQ in Charlotte, NC, delivered to your door on weekends!">
     <meta name="twitter:image" content="https://www.maydayz.com/src/assets/Images/MAYDAYZ-FAV.png">
     <meta name="theme-color" content="black">
-    <link rel="apple-touch-icon" href="/SRC/ASSETS/IMAGES/MAYDAYZ-FAV.png">
+    <link rel="apple-touch-icon" href="/src/assets/images/MAYDAYZ-FAV.png">
     <link rel="manifest" href="/manifest.json">
 
 
@@ -119,7 +117,7 @@
 
         @font-face {
             font-family: FontE;
-            src: url("src/assets/Fonts/Pridi-Bold.ttf");
+            src: url("/src/assets/Fonts/Pridi-Bold.ttf");
             font-display: swap;
         }
 
@@ -130,7 +128,6 @@
 </head>
 
 <body class="bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0">
-
     <section id="top-section" class="mt-5 md:mt-5" style="font-family: FontC;">
         <div id="Tabs-left"
             class="flex flex-col items-center md:flex-row md:ml-2 gap-7 md:gap-3 sm:text-2xl md:text-4xl sm:justify-center">
@@ -148,7 +145,8 @@
                     class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:cursor-pointer hover:bg-white hover:text-black">Catering</a>
             </div>
             <div id="Gift-Card" class="md:mt-5">
-                <a id="giftcard-button" href="https://app.squareup.com/gift/MLENTYY5WR8XF/order" target="_blank" aria-label="Buy One for a Friend"
+                <a id="giftcard-button" href="https://app.squareup.com/gift/MLENTYY5WR8XF/order" target="_blank"
+                    aria-label="Buy One for a Friend"
                     class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:cursor-pointer hover:bg-white hover:text-black">Gift
                     Card</a>
             </div>
@@ -251,7 +249,7 @@
                             class="hover:cursor-pointer" decoding="async" />
                     </picture>
                 </div>
-                <div id="sampler-text-container" class="text-3xl">
+                <div id="rib-text-container" class="text-3xl">
                     <h3 class="text-white text-center uppercase">Chef's Favorite Rib Plate</h3>
                     <h3 class="text-white text-center">$22</h3>
                 </div>
@@ -273,7 +271,7 @@
             <div id="FB">
                 <a id="FB-Link" class="hover:cursor-pointer"
                     href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/">
-                    <img src="/src/assets/Images//Facebook_Logo_Secondary.webp" width="75" height="75"
+                    <img src="/src/assets/Images/Facebook_Logo_Secondary.webp" width="75" height="75"
                         alt="Facebook Logo" aria-label="Follow Us on Facebook" title="Follow us on Facebook"
                         decoding="async">
                 </a>
@@ -285,7 +283,7 @@
                 </a>
             </div>
         </div>
-        <div id="sm-text" class="mt-10 text-center" id="social-media ">
+        <div id="sm-text" class="mt-10 text-center" id="social-media">
             <h1>Follow us</h1>
         </div>
         <div id="soxiety-logo">
@@ -326,7 +324,7 @@
             </div>
 
         </div>
-        <div id="logo">
+        <div id="footer-logo">
             <div id="notice-container" class="">
                 <img src="/src/assets/Images/MAYDAYZ-FAV.png" alt="Maydayz Logo for copyright" class="ml-auto mr-auto"
                     width="75" height="75" title="Maydayz Logo" decoding="async">
