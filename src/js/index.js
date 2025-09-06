@@ -11,24 +11,6 @@ function setupHoverEffect(elementId, hoverSrc, originalSrc) {
   }
 }
 
-// A function to handle the image source based on screen size.
-function handleResponsiveImage(elementId, mobileSrc, desktopSrc) {
-  const element = document.getElementById(elementId);
-  if (!element) return;
-
-  const updateSrc = () => {
-    if (window.innerWidth < 768) {
-      element.src = mobileSrc;
-    } else {
-      element.src = desktopSrc;
-    }
-  };
-
-  updateSrc(); 
-  window.addEventListener("resize", updateSrc); 
-}
-
-
 setupHoverEffect(
   "sampler-closed",
   "/src/assets/Images/Sampler.webp",
@@ -39,6 +21,3 @@ setupHoverEffect(
   "/src/assets/Images/Rib-Plate.webp",
   "/src/assets/Images/Cls-plate.webp"
 );
-
-
-
