@@ -1,0 +1,1 @@
+{"version":3,"file":"deleteTagGroupResponse.js","sourceRoot":"","sources":["../../model/deleteTagGroupResponse.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,sBAAsB;IAW/B,MAAM,CAAC,mBAAmB;QACtB,OAAO,sBAAsB,CAAC,gBAAgB,CAAC;IACnD,CAAC;;AAbL,wDAcC;AAVU,uCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,0BAA0B;KACrC;CAAK,CAAC"}

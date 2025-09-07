@@ -1,0 +1,1 @@
+{"version":3,"file":"patchCatalogItemResponse.js","sourceRoot":"","sources":["../../model/patchCatalogItemResponse.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,wBAAwB;IAWjC,MAAM,CAAC,mBAAmB;QACtB,OAAO,wBAAwB,CAAC,gBAAgB,CAAC;IACrD,CAAC;;AAbL,4DAcC;AAVU,yCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,6BAA6B;KACxC;CAAK,CAAC"}

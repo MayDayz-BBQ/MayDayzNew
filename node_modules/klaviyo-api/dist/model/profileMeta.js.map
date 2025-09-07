@@ -1,0 +1,1 @@
+{"version":3,"file":"profileMeta.js","sourceRoot":"","sources":["../../model/profileMeta.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,WAAW;IAWpB,MAAM,CAAC,mBAAmB;QACtB,OAAO,WAAW,CAAC,gBAAgB,CAAC;IACxC,CAAC;;AAbL,kCAcC;AAVU,4BAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,iBAAiB;QACzB,UAAU,EAAE,kBAAkB;QAC9B,MAAM,EAAE,4BAA4B;KACvC;CAAK,CAAC"}

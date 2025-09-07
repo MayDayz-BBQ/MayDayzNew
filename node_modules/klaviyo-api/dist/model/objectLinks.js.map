@@ -1,0 +1,1 @@
+{"version":3,"file":"objectLinks.js","sourceRoot":"","sources":["../../model/objectLinks.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAGH,MAAa,WAAW;IAWpB,MAAM,CAAC,mBAAmB;QACtB,OAAO,WAAW,CAAC,gBAAgB,CAAC;IACxC,CAAC;;AAbL,kCAcC;AAVU,4BAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,QAAQ;KACnB;CAAK,CAAC"}

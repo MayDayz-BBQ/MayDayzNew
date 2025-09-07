@@ -1,0 +1,1 @@
+{"version":3,"file":"couponCodeCreateJobCreateQuery.js","sourceRoot":"","sources":["../../model/couponCodeCreateJobCreateQuery.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,8BAA8B;IAWvC,MAAM,CAAC,mBAAmB;QACtB,OAAO,8BAA8B,CAAC,gBAAgB,CAAC;IAC3D,CAAC;;AAbL,wEAcC;AAVU,+CAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,8CAA8C;KACzD;CAAK,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"getTagGroupResponse.js","sourceRoot":"","sources":["../../model/getTagGroupResponse.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,mBAAmB;IAW5B,MAAM,CAAC,mBAAmB;QACtB,OAAO,mBAAmB,CAAC,gBAAgB,CAAC;IAChD,CAAC;;AAbL,kDAcC;AAVU,oCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,wCAAwC;KACnD;CAAK,CAAC"}

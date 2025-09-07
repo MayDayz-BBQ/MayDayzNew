@@ -1,0 +1,1 @@
+{"version":3,"file":"patchTemplateResponse.js","sourceRoot":"","sources":["../../model/patchTemplateResponse.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,qBAAqB;IAW9B,MAAM,CAAC,mBAAmB;QACtB,OAAO,qBAAqB,CAAC,gBAAgB,CAAC;IAClD,CAAC;;AAbL,sDAcC;AAVU,sCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,0BAA0B;KACrC;CAAK,CAAC"}

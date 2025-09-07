@@ -1,0 +1,1 @@
+{"version":3,"file":"segmentValuesRequestDTO.js","sourceRoot":"","sources":["../../model/segmentValuesRequestDTO.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,uBAAuB;IAWhC,MAAM,CAAC,mBAAmB;QACtB,OAAO,uBAAuB,CAAC,gBAAgB,CAAC;IACpD,CAAC;;AAbL,0DAcC;AAVU,wCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,uCAAuC;KAClD;CAAK,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"emailChannel.js","sourceRoot":"","sources":["../../model/emailChannel.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,YAAY;IAWrB,MAAM,CAAC,mBAAmB;QACtB,OAAO,YAAY,CAAC,gBAAgB,CAAC;IACzC,CAAC;;AAbL,oCAcC;AAVU,6BAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,WAAW;QACnB,UAAU,EAAE,WAAW;QACvB,MAAM,EAAE,gBAAgB;KAC3B;CAAK,CAAC"}

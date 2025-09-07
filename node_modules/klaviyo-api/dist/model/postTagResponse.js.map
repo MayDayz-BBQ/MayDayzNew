@@ -1,0 +1,1 @@
+{"version":3,"file":"postTagResponse.js","sourceRoot":"","sources":["../../model/postTagResponse.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,eAAe;IAWxB,MAAM,CAAC,mBAAmB;QACtB,OAAO,eAAe,CAAC,gBAAgB,CAAC;IAC5C,CAAC;;AAbL,0CAcC;AAVU,gCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,qBAAqB;KAChC;CAAK,CAAC"}

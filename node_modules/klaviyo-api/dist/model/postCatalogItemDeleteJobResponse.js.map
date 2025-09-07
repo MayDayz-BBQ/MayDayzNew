@@ -1,0 +1,1 @@
+{"version":3,"file":"postCatalogItemDeleteJobResponse.js","sourceRoot":"","sources":["../../model/postCatalogItemDeleteJobResponse.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,gCAAgC;IAWzC,MAAM,CAAC,mBAAmB;QACtB,OAAO,gCAAgC,CAAC,gBAAgB,CAAC;IAC7D,CAAC;;AAbL,4EAcC;AAVU,iDAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,sCAAsC;KACjD;CAAK,CAAC"}

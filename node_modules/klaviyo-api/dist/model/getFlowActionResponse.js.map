@@ -1,0 +1,1 @@
+{"version":3,"file":"getFlowActionResponse.js","sourceRoot":"","sources":["../../model/getFlowActionResponse.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,qBAAqB;IAW9B,MAAM,CAAC,mBAAmB;QACtB,OAAO,qBAAqB,CAAC,gBAAgB,CAAC;IAClD,CAAC;;AAbL,sDAcC;AAVU,sCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,0CAA0C;KACrD;CAAK,CAAC"}

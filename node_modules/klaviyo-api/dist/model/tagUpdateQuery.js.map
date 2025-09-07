@@ -1,0 +1,1 @@
+{"version":3,"file":"tagUpdateQuery.js","sourceRoot":"","sources":["../../model/tagUpdateQuery.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,cAAc;IAWvB,MAAM,CAAC,mBAAmB;QACtB,OAAO,cAAc,CAAC,gBAAgB,CAAC;IAC3C,CAAC;;AAbL,wCAcC;AAVU,+BAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,8BAA8B;KACzC;CAAK,CAAC"}

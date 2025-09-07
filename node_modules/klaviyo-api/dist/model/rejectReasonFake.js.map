@@ -1,0 +1,1 @@
+{"version":3,"file":"rejectReasonFake.js","sourceRoot":"","sources":["../../model/rejectReasonFake.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,gBAAgB;IAWzB,MAAM,CAAC,mBAAmB;QACtB,OAAO,gBAAgB,CAAC,gBAAgB,CAAC;IAC7C,CAAC;;AAbL,4CAcC;AAVU,iCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,QAAQ;QAChB,UAAU,EAAE,QAAQ;QACpB,MAAM,EAAE,UAAU;KACrB;CAAK,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"pushChannel.js","sourceRoot":"","sources":["../../model/pushChannel.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,WAAW;IAWpB,MAAM,CAAC,mBAAmB;QACtB,OAAO,WAAW,CAAC,gBAAgB,CAAC;IACxC,CAAC;;AAbL,kCAcC;AAVU,4BAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,WAAW;QACnB,UAAU,EAAE,WAAW;QACvB,MAAM,EAAE,eAAe;KAC1B;CAAK,CAAC"}

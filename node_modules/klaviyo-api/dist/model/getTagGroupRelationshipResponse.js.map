@@ -1,0 +1,1 @@
+{"version":3,"file":"getTagGroupRelationshipResponse.js","sourceRoot":"","sources":["../../model/getTagGroupRelationshipResponse.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,+BAA+B;IAWxC,MAAM,CAAC,mBAAmB;QACtB,OAAO,+BAA+B,CAAC,gBAAgB,CAAC;IAC5D,CAAC;;AAbL,0EAcC;AAVU,gDAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,qCAAqC;KAChD;CAAK,CAAC"}

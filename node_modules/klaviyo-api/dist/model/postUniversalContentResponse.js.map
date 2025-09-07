@@ -1,0 +1,1 @@
+{"version":3,"file":"postUniversalContentResponse.js","sourceRoot":"","sources":["../../model/postUniversalContentResponse.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,4BAA4B;IAWrC,MAAM,CAAC,mBAAmB;QACtB,OAAO,4BAA4B,CAAC,gBAAgB,CAAC;IACzD,CAAC;;AAbL,oEAcC;AAVU,6CAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,kCAAkC;KAC7C;CAAK,CAAC"}

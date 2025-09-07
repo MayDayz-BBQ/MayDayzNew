@@ -1,0 +1,1 @@
+{"version":3,"file":"getProfileResponse.js","sourceRoot":"","sources":["../../model/getProfileResponse.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,kBAAkB;IAW3B,MAAM,CAAC,mBAAmB;QACtB,OAAO,kBAAkB,CAAC,gBAAgB,CAAC;IAC/C,CAAC;;AAbL,gDAcC;AAVU,mCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,wBAAwB;KACnC;CAAK,CAAC"}

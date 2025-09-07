@@ -1,0 +1,1 @@
+{"version":3,"file":"conditionalBranchActionData.js","sourceRoot":"","sources":["../../model/conditionalBranchActionData.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,2BAA2B;IAWpC,MAAM,CAAC,mBAAmB;QACtB,OAAO,2BAA2B,CAAC,gBAAgB,CAAC;IACxD,CAAC;;AAbL,kEAcC;AAVU,4CAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,eAAe;QACvB,UAAU,EAAE,gBAAgB;QAC5B,MAAM,EAAE,0CAA0C;KACrD;CAAK,CAAC"}

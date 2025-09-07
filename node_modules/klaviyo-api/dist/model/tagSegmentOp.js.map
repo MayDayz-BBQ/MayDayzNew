@@ -1,0 +1,1 @@
+{"version":3,"file":"tagSegmentOp.js","sourceRoot":"","sources":["../../model/tagSegmentOp.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,YAAY;IAWrB,MAAM,CAAC,mBAAmB;QACtB,OAAO,YAAY,CAAC,gBAAgB,CAAC;IACzC,CAAC;;AAbL,oCAcC;AAVU,6BAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,8BAA8B;KACzC;CAAK,CAAC"}

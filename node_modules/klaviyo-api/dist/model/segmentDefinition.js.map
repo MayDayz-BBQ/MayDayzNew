@@ -1,0 +1,1 @@
+{"version":3,"file":"segmentDefinition.js","sourceRoot":"","sources":["../../model/segmentDefinition.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,iBAAiB;IAW1B,MAAM,CAAC,mBAAmB;QACtB,OAAO,iBAAiB,CAAC,gBAAgB,CAAC;IAC9C,CAAC;;AAbL,8CAcC;AAVU,kCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,iBAAiB;QACzB,UAAU,EAAE,kBAAkB;QAC9B,MAAM,EAAE,uBAAuB;KAClC;CAAK,CAAC"}

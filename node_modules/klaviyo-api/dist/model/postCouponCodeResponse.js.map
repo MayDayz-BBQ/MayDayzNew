@@ -1,0 +1,1 @@
+{"version":3,"file":"postCouponCodeResponse.js","sourceRoot":"","sources":["../../model/postCouponCodeResponse.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,sBAAsB;IAW/B,MAAM,CAAC,mBAAmB;QACtB,OAAO,sBAAsB,CAAC,gBAAgB,CAAC;IACnD,CAAC;;AAbL,wDAcC;AAVU,uCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,4BAA4B;KACvC;CAAK,CAAC"}

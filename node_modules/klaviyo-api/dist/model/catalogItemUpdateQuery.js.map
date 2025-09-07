@@ -1,0 +1,1 @@
+{"version":3,"file":"catalogItemUpdateQuery.js","sourceRoot":"","sources":["../../model/catalogItemUpdateQuery.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,sBAAsB;IAW/B,MAAM,CAAC,mBAAmB;QACtB,OAAO,sBAAsB,CAAC,gBAAgB,CAAC;IACnD,CAAC;;AAbL,wDAcC;AAVU,uCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,sCAAsC;KACjD;CAAK,CAAC"}

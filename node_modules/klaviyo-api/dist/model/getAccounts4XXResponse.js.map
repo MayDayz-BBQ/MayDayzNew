@@ -1,0 +1,1 @@
+{"version":3,"file":"getAccounts4XXResponse.js","sourceRoot":"","sources":["../../model/getAccounts4XXResponse.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,sBAAsB;IAW/B,MAAM,CAAC,mBAAmB;QACtB,OAAO,sBAAsB,CAAC,gBAAgB,CAAC;IACnD,CAAC;;AAbL,wDAcC;AAVU,uCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,QAAQ;QAChB,UAAU,EAAE,QAAQ;QACpB,MAAM,EAAE,0CAA0C;KACrD;CAAK,CAAC"}

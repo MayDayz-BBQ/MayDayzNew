@@ -1,0 +1,1 @@
+{"version":3,"file":"emailSubscriptionParameters.js","sourceRoot":"","sources":["../../model/emailSubscriptionParameters.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,2BAA2B;IAWpC,MAAM,CAAC,mBAAmB;QACtB,OAAO,2BAA2B,CAAC,gBAAgB,CAAC;IACxD,CAAC;;AAbL,kEAcC;AAVU,4CAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,WAAW;QACnB,UAAU,EAAE,WAAW;QACvB,MAAM,EAAE,wBAAwB;KACnC;CAAK,CAAC"}

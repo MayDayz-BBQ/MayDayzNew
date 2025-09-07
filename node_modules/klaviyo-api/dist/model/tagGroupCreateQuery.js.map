@@ -1,0 +1,1 @@
+{"version":3,"file":"tagGroupCreateQuery.js","sourceRoot":"","sources":["../../model/tagGroupCreateQuery.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,mBAAmB;IAW5B,MAAM,CAAC,mBAAmB;QACtB,OAAO,mBAAmB,CAAC,gBAAgB,CAAC;IAChD,CAAC;;AAbL,kDAcC;AAVU,oCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,mCAAmC;KAC9C;CAAK,CAAC"}

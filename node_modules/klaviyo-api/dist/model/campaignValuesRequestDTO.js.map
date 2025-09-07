@@ -1,0 +1,1 @@
+{"version":3,"file":"campaignValuesRequestDTO.js","sourceRoot":"","sources":["../../model/campaignValuesRequestDTO.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,wBAAwB;IAWjC,MAAM,CAAC,mBAAmB;QACtB,OAAO,wBAAwB,CAAC,gBAAgB,CAAC;IACrD,CAAC;;AAbL,4DAcC;AAVU,yCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,wCAAwC;KACnD;CAAK,CAAC"}

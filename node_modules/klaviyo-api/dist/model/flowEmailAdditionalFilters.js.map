@@ -1,0 +1,1 @@
+{"version":3,"file":"flowEmailAdditionalFilters.js","sourceRoot":"","sources":["../../model/flowEmailAdditionalFilters.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,0BAA0B;IAWnC,MAAM,CAAC,mBAAmB;QACtB,OAAO,0BAA0B,CAAC,gBAAgB,CAAC;IACvD,CAAC;;AAbL,gEAcC;AAVU,2CAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,iBAAiB;QACzB,UAAU,EAAE,kBAAkB;QAC9B,MAAM,EAAE,uDAAuD;KAClE;CAAK,CAAC"}

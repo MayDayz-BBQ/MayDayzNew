@@ -1,0 +1,1 @@
+{"version":3,"file":"tagCampaignOp.js","sourceRoot":"","sources":["../../model/tagCampaignOp.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,aAAa;IAWtB,MAAM,CAAC,mBAAmB;QACtB,OAAO,aAAa,CAAC,gBAAgB,CAAC;IAC1C,CAAC;;AAbL,sCAcC;AAVU,8BAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,+BAA+B;KAC1C;CAAK,CAAC"}

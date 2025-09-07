@@ -1,0 +1,1 @@
+{"version":3,"file":"emailUnsubscriptionParameters.js","sourceRoot":"","sources":["../../model/emailUnsubscriptionParameters.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,6BAA6B;IAWtC,MAAM,CAAC,mBAAmB;QACtB,OAAO,6BAA6B,CAAC,gBAAgB,CAAC;IAC1D,CAAC;;AAbL,sEAcC;AAVU,8CAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,WAAW;QACnB,UAAU,EAAE,WAAW;QACvB,MAAM,EAAE,0BAA0B;KACrC;CAAK,CAAC"}

@@ -1,0 +1,1 @@
+{"version":3,"file":"flowValuesRequestDTO.js","sourceRoot":"","sources":["../../model/flowValuesRequestDTO.ts"],"names":[],"mappings":";AAAA;;;;;;;;;GASG;;;AAIH,MAAa,oBAAoB;IAW7B,MAAM,CAAC,mBAAmB;QACtB,OAAO,oBAAoB,CAAC,gBAAgB,CAAC;IACjD,CAAC;;AAbL,oDAcC;AAVU,qCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,MAAM;QACd,UAAU,EAAE,MAAM;QAClB,MAAM,EAAE,oCAAoC;KAC/C;CAAK,CAAC"}

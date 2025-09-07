@@ -63,25 +63,27 @@
     <main id="main-content">
         <div id="sign-up-form" class="mt-10 uppercase font-bold flex items-center justify-center text-3xl text-white "
             style="font-family: Arial, Helvetica, sans-serif;">
-            <form action="/src/html/uncc.html" method="post" class="text-center bg-[#A49665] p-10 shadow-2xl">
+            <form id="email-form" action="/verify-uncc-student" method="post"
+                class="text-center bg-[#A49665] p-10 shadow-2xl">
                 <label for="name">Name:</label><br>
                 <input class="bg-white rounded-xl p-2 text-black text-2xl mt-3 font-light"
                     style="font-family: sans-serif;" type="text" id="name" name="name" required><br><br>
                 <label for="email">Student Email:</label><br>
                 <input class="bg-white rounded-xl p-2 text-black text-2xl mt-3 font-light"
-                    style="font-family: sans-serif;" type="email" id="student-email" name="email" required> <span
-                    id="email-error" class="text-red-600 text-sm font-normal"></span><br><br>
-                <input type="submit" value="Submit">
+                    style="font-family: sans-serif;" type="email" id="student-email" name="email" required><br> <span
+                    id="email-error" class="text-red-700 text-sm font-normal"></span><br>
+                <input
+                    class="bg-white p-4 text-center uppercase text-xl mt-2 rounded-full text-[#005035] hover:bg-gray-400 hover:cursor-pointer"
+                    type="submit" value="Submit">
             </form>
-
+            <div id="response-message" class="mt-4 text-center text-2xl font-bold"></div>
         </div>
 
     </main>
-    <nav class="bg-transparent mt-10 uppercase text-white mb-10 md:mt-20 backdrop-blur-lg p-10"
-        style="font-family: FontB;">
+    <nav class="bg-black mt-10 uppercase text-white mb-10 md:mt-20 backdrop-blur-2xl p-10" style="font-family: FontB;">
         <div id="privacy-notice" class="text-center text-2xl">
             <p>This sign up is purely for promotinal use.</p>
-            <p>MayDayz Smokn BBQ will never ask for personal information <br>
+            <p>MayDayz Smokn BBQ will never ask for personal information
                 such as SSN, ID, etc.,</p>
             <p>Read our <a class="hover:text-yellow-300 text-red-500" href="/src/html/privacy-policy.html">Privacy
                     Policy</a> for more info.</p>
@@ -172,26 +174,35 @@
     <script>
         const form = document.getElementById("email-form");
         const emailError = document.getElementById("email-error");
+        const responseMessage = document.getElementById("response-message");
 
         form.addEventListener("submit", async function (event) {
-            // Prevent the default form submission.
             event.preventDefault();
 
-            // Get form data
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
+            // Clear previous error messages
+            emailError.textContent = "";
+            responseMessage.textContent = "";
 
+            // Get form data
+            const emailInput = document.getElementById("student-email");
+            const email = emailInput.value;
+            const nameInput = document.getElementById("name");
+            const name = nameInput.value;
+
+            const data = {
+                email: email,
+                name: name
+            };
+
+            console.log(email);
             // First, check the email on the client-side for quick feedback
             if (!data.email.includes("@charlotte.edu")) {
                 emailError.textContent = "Please enter a valid Charlotte student email.";
-                return; // Stop execution if validation fails
+                return;
             }
 
-            emailError.textContent = ""; // Clear any previous errors
-
             try {
-                // Send the form data to the server using fetch
-                const response = await fetch("/html/uncc.html", {
+                const response = await fetch("/verify-uncc-student", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -199,19 +210,23 @@
                     body: JSON.stringify(data)
                 });
 
-                // Parse the JSON data from the server's response
                 const result = await response.json();
 
                 if (result.success) {
-                    // If the server confirms validation passed, redirect the user
-                    window.location.href = result.redirectUrl;
+                    // Display the success message from the server
+                    responseMessage.textContent = result.message;
+                    responseMessage.className = "mt-4 text-center text-green-500 font-bold";
+                    // You might want to clear the form after a successful submission
+                    form.reset();
                 } else {
                     // If validation failed on the server, display the server's error message
                     emailError.textContent = result.message;
+                    responseMessage.className = "mt-4 text-center text-red-600 font-bold";
                 }
             } catch (error) {
                 console.error("Error during form submission:", error);
                 emailError.textContent = "An unexpected error occurred. Please try again.";
+                responseMessage.className = "mt-4 text-center text-red-600 font-bold";
             }
         });
     </script>
