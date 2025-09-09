@@ -45,6 +45,7 @@
     "inherits": "^2.0.4",
     "ipaddr.js": "^1.9.1",
     "klaviyo-api": "^19.0.2",
+    "klaviyo-node": "^1.0.8",
     "math-intrinsics": "^1.1.0",
     "media-typer": "^0.3.0",
     "merge-descriptors": "^1.0.3",
