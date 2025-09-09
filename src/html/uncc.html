@@ -13,7 +13,7 @@
     </script>
     <script
         src="https://www.google.com/recaptcha/enterprise.js?render=6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN"></script>
-
+    <script src="https://cdn.tailwindcss.com"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preload" href="/src/css/uncc.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <style>
@@ -76,9 +76,9 @@
                     class="bg-white p-4 text-center uppercase text-xl mt-2 rounded-full text-[#005035] hover:bg-gray-400 hover:cursor-pointer"
                     type="submit" value="Submit">
             </form>
-            <div id="response-message" class="mt-4 text-center text-2xl font-bold"></div>
+            <br>
+            <div id="response-message" class="mt-4 text-center text-2xl font-bold"><br></div>
         </div>
-
     </main>
     <nav class="bg-black mt-10 uppercase text-white mb-10 md:mt-20 backdrop-blur-2xl p-10" style="font-family: FontB;">
         <div id="privacy-notice" class="text-center text-2xl">
@@ -94,22 +94,21 @@
         <div id="sm-pics" class="container ml-auto mr-auto gap-4 justify-center flex mt-10">
             <div id="IG">
                 <a id="IG-Link" class="hover:cursor-pointer" href="https://www.instagram.com/maydayz_bbq/">
-                    <img src="/src/assets/Images/Instagram_Glyph_White.webp" width="75" height="75" alt="Instagam Logo"
+                    <img src="https://placehold.co/75x75/000/fff?text=IG" width="75" height="75" alt="Instagam Logo"
                         aria-label="Follow Us on IG" title="Follow us on IG" decoding="async">
                 </a>
             </div>
             <div id="FB">
                 <a id="FB-Link" class="hover:cursor-pointer"
                     href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/">
-                    <img src="/src/assets/Images/Facebook_Logo_Secondary.webp" width="75" height="75"
-                        alt="Facebook Logo" aria-label="Follow Us on Facebook" title="Follow us on Facebook"
-                        decoding="async">
+                    <img src="https://placehold.co/75x75/000/fff?text=FB" width="75" height="75" alt="Facebook Logo"
+                        aria-label="Follow Us on Facebook" title="Follow us on Facebook" decoding="async">
                 </a>
             </div>
             <div id="TT">
                 <a id="TikTok-Link" class="hover:cursor-pointer" href="https://www.tiktok.com/@maydayzbbq">
-                    <img src="/src/assets/Images/TikTok-logo-RGB-Stacked-white-simplified.webp" width="75" height="75"
-                        alt="TikTok Logo" aria-label="Follow us on TikTok" title="Follow us on TikTok" decoding="async">
+                    <img src="https://placehold.co/75x75/000/fff?text=TT" width="75" height="75" alt="TikTok Logo"
+                        aria-label="Follow us on TikTok" title="Follow us on TikTok" decoding="async">
                 </a>
             </div>
         </div>
@@ -156,19 +155,19 @@
         </div>
         <div id="footer-logo">
             <div id="notice-container" class="">
-                <img src="/src/assets/Images/MAYDAYZ-FAV.png" alt="Maydayz Logo for copyright" class="ml-auto mr-auto"
-                    width="75" height="75" title="Maydayz Logo" decoding="async">
+                <img src="https://placehold.co/75x75/A49665/000?text=Logo" alt="Maydayz Logo for copyright"
+                    class="ml-auto mr-auto" width="75" height="75" title="Maydayz Logo" decoding="async">
                 <p class="text-center text-xs" style="font-family: FontB;">©2025 MayDayz Smokn BBQ</p>
             </div>
         </div>
         <div id="ms-annette-tribute" class="text-xl justify-center mt-10 flex " style="font-family: FontB;"><span> <img
-                    src="/src/assets/Images/Ribbon.webp" width="75" height="75" alt="colon-cancer-ribbon"
-                    decoding="async"> </span>
+                    src="https://placehold.co/75x75/000/fff?text=Ribbon" width="75" height="75"
+                    alt="colon-cancer-ribbon" decoding="async"> </span>
             <p class="md:translate-y-7"
                 title="Honoring Annette Tomlin who was a loved member of the Charlotte Community and MayDayz family.">In
                 loving
-                memory of Annette Tomlin</p> <span><img src="/src/assets/Images/Ribbon.webp" width="75" height="75"
-                    alt="colon-cancer-ribbon" decoding="async"></span>
+                memory of Annette Tomlin</p> <span><img src="https://placehold.co/75x75/000/fff?text=Ribbon" width="75"
+                    height="75" alt="colon-cancer-ribbon" decoding="async"></span>
         </div>
     </footer>
     <script>
@@ -179,11 +178,9 @@
         form.addEventListener("submit", async function (event) {
             event.preventDefault();
 
-            // Clear previous error messages
             emailError.textContent = "";
             responseMessage.textContent = "";
 
-            // Get form data
             const emailInput = document.getElementById("student-email");
             const email = emailInput.value;
             const nameInput = document.getElementById("name");
@@ -195,8 +192,8 @@
             };
 
             console.log(email);
-            // First, check the email on the client-side for quick feedback
-            if (!data.email.includes("@charlotte.edu")) {
+            // This is the updated line to match your server-side logic
+            if (!data.email.endsWith("@charlotte.edu")) {
                 emailError.textContent = "Please enter a valid Charlotte student email.";
                 return;
             }
@@ -212,14 +209,11 @@
 
                 const result = await response.json();
 
-                if (result.success) {
-                    // Display the success message from the server
+                if (response.ok) { // Check if the response status is 2xx
                     responseMessage.textContent = result.message;
                     responseMessage.className = "mt-4 text-center text-green-500 font-bold";
-                    // You might want to clear the form after a successful submission
                     form.reset();
                 } else {
-                    // If validation failed on the server, display the server's error message
                     emailError.textContent = result.message;
                     responseMessage.className = "mt-4 text-center text-red-600 font-bold";
                 }
@@ -249,15 +243,17 @@
         grecaptcha.enterprise.ready(() => {
             const orderBtn = document.getElementById("order-button");
 
-            orderBtn.addEventListener("click", async function (e) {
+            if (orderBtn) {
+                orderBtn.addEventListener("click", async function (e) {
 
-                const token = await grecaptcha.enterprise.execute('6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN', {
-                    action: 'order_now'
+                    const token = await grecaptcha.enterprise.execute('6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN', {
+                        action: 'order_now'
+                    });
+
+                    // You can now send `token` to your server or log it
+                    console.log("reCAPTCHA token:", token);
                 });
-
-                // You can now send `token` to your server or log it
-                console.log("reCAPTCHA token:", token);
-            });
+            }
         });
     </script>
 </body>

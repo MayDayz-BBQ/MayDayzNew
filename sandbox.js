@@ -1,18 +1,16 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
-const cors = require("cors");
 const path = require("path");
 const twilio = require("twilio");
 const KlaviyoClient = require("node-klaviyo");
-const { Client, Environment } = require("square");
 const crypto = require("crypto");
 
 dotenv.config();
 
 const klaviyoClient = new KlaviyoClient({
-  publicToken: "VRvqUj",
-  privateToken: "XXXX",
+  publicToken: process.env.KLAYVIO_PUBLIC_KEY,
+  privateToken: process.env.KLAYVIO_PRIVATE_KEY,
 });
 
 const app = express();
@@ -21,19 +19,6 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname)));
 
-const corsOptions = {
-  origin: [
-    "https://maydayz.com",
-    "https://maydayzsite.onrender.com",
-    "http://127.0.0.1:3000",
-    "http://127.0.0.1:5500",
-    "http://127.0.0.1:5500",
-  ],
-};
-
-app.use(cors());
-
-// The core function to create a unique coupon in Klaviyo
 async function createKlaviyoCoupon(couponName, discountId) {
   try {
     const response = await klaviyoClient.coupons.create({
@@ -53,14 +38,12 @@ async function createKlaviyoCoupon(couponName, discountId) {
   }
 }
 
-// A helper function to send an email with the coupon code.
-// This is a placeholder and would need to be replaced with a real email service.
 async function sendEmailWithCoupon(toEmail, couponCode) {
   console.log(`Sending email to ${toEmail} with code: ${couponCode}`);
 }
 
 app.post("/verify-uncc-student", async (req, res) => {
-  const email = req.body.email; // Using destructuring for clarity
+  const email = req.body.email;
   console.log(req.body);
 
   // Server-side email domain validation
@@ -73,24 +56,19 @@ app.post("/verify-uncc-student", async (req, res) => {
 
   console.log("Received email:", email);
 
-  // Generate a unique code based on the email
   const uniqueCouponName = `UNCC-${crypto
     .createHash("md5")
     .update(email)
     .digest("hex")
     .substring(0, 8)}`;
 
-  // This is the name of your discount from your Square Dashboard
   const squareDiscountName = "UNCC Students and Staff Discounts";
 
   try {
-    // Call the Klaviyo function to create the unique coupon
     await createKlaviyoCoupon(uniqueCouponName, squareDiscountName);
 
-    // Send the email to the student with their new code
     await sendEmailWithCoupon(email, uniqueCouponName);
 
-    // Send a success response back to the front-end
     return res.json({
       success: true,
       message:
@@ -105,7 +83,6 @@ app.post("/verify-uncc-student", async (req, res) => {
   }
 });
 
-// A route to serve your HTML page for the UNCC promotion
 app.get("/src/html/uncc.html", (req, res) => {
   res.sendFile(__dirname + "/src/html/uncc.html");
 });
