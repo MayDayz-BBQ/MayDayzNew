@@ -147,8 +147,6 @@ async function createKlaviyoCouponCode(couponId, discountCode) {
   }
 }
 
-async function createSquareDiscountCode(discountCode) {}
-
 /**
  * Generate a custom discount code with a prefix, timestamp, and random string.
  *
@@ -162,17 +160,27 @@ function generateCustomCode(prefix = "MAYDAYZ") {
 }
 
 /**
- * Stub function to send email to your work address.
- * You'll replace this with a real email service (e.g., Nodemailer).
- * * @param {string} studentEmail - The email of the UNCC student.
- * @param {string} couponCode - The static coupon code to be applied.
+ * Sends an email to the admin with details about a student's discount request.
+ *
+ * @async
+ * @function sendEmailWithCouponToAdmin
+ * @param {string} studentEmail - The email address of the student requesting the discount.
+ * @param {string} deliveryCode - The delivery code to be applied for free delivery.
+ * @param {string} percentCode - The percentage discount code to be applied.
+ * @description This function simulates sending an email to the admin with the student's email,
+ *              the discount percentage code, and the delivery code. The email includes instructions
+ *              for applying a 15% discount and free delivery to the student's order.
  */
-async function sendEmailWithCouponToAdmin(studentEmail, couponCode) {
+async function sendEmailWithCouponToAdmin(
+  studentEmail,
+  deliveryCode,
+  percentCode
+) {
   const adminEmail = "jaquis.franklin@maydayz.com";
   const subject = "New UNCC Student Discount Request";
   const emailBody = `A UNCC student has requested a discount.
     Student Email: ${studentEmail}
-    Coupon Code to Apply: ${couponCode}
+    Delivery Code to Apply: ${deliveryCode}
     
     Please apply the following for their order:
     - 15% off
@@ -196,7 +204,7 @@ app.post("/verify-uncc-student", async (req, res) => {
   }
 
   // The static code you will create manually in Square
-  const staticSquareCode = "UNCC_STUDENT_DISCOUNT";
+  const staticSquareDeliveryCode = generateCustomCode("UNCC");
 
   // Read the list of emails that have already received a coupon
   let emailsReceived = [];
@@ -237,7 +245,10 @@ app.post("/verify-uncc-student", async (req, res) => {
     console.log(`Email ${email} added to the list.`);
 
     // Send the static code to your work email for manual application
-    await sendEmailWithCouponToAdmin(email, staticSquareCode);
+    await sendEmailWithCouponToAdmin(
+      email,
+      staticSquareDeliveryCode
+    );
 
     return res.json({
       success: true,
