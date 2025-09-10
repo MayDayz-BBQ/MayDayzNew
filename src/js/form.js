@@ -3,6 +3,7 @@ document
   .addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent the default form submission
 
+    const form = document.getElementById("email-form"); // Moved inside the function
     const emailInput = document.getElementById("student-email");
     const nameInput = document.getElementById("name");
     const emailError = document.getElementById("email-error");
