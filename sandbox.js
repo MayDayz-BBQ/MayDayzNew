@@ -19,6 +19,7 @@ const crypto = require("crypto");
 const axios = require("axios");
 const fs = require("fs").promises;
 const EMAIL_LIST_FILE = "received_coupons.txt";
+const cors = require("cors");
 
 dotenv.config();
 
@@ -27,7 +28,13 @@ const apiKey = process.env.KLAVIYO_PRIVATE_KEY;
 const app = express();
 const port = process.env.PORT || 3000;
 
+const corsOptions = {
+  origin: "https://maydayz.com",
+  credentials: true,
+};
+
 app.use(bodyParser.json());
+app.use(corsOptions);
 app.use(express.static(path.join(__dirname)));
 
 /**
