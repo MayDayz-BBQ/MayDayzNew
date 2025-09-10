@@ -1,54 +1,58 @@
-const form = document.getElementById("email-form");
-const emailError = document.getElementById("email-error");
-const responseMessage = document.getElementById("response-message");
+document
+  .getElementById("email-form")
+  .addEventListener("submit", async function (event) {
+    event.preventDefault(); // Prevent the default form submission
 
-form.addEventListener("submit", async function (event) {
-  event.preventDefault();
+    const emailInput = document.getElementById("student-email");
+    const nameInput = document.getElementById("name");
+    const emailError = document.getElementById("email-error");
+    const responseMessage = document.getElementById("response-message");
 
-  emailError.textContent = "";
-  responseMessage.textContent = "";
+    // Clear previous messages
+    emailError.textContent = "";
+    responseMessage.textContent = "";
 
-  const emailInput = document.getElementById("student-email");
-  const email = emailInput.value;
-  const nameInput = document.getElementById("name");
-  const name = nameInput.value;
+    const email = emailInput.value;
+    const name = nameInput.value;
 
-  const data = {
-    email: email,
-    name: name,
-  };
+    const data = {
+      email: email,
+      name: name,
+    };
 
-  console.log(email);
-  // This is the updated line to match your server-side logic
-  if (!data.email.endsWith("@charlotte.edu")) {
-    emailError.textContent = "Please enter a valid Charlotte student email.";
-    return;
-  }
+    // Client-side validation
+    if (!data.email.endsWith("@charlotte.edu")) {
+      emailError.textContent = "Please enter a valid Charlotte student email.";
+      return;
+    }
 
-  try {
-    const response = await fetch("/verify-uncc-student", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    try {
+      const response = await fetch("https://maydayz.com/verify-uncc-student", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    const result = await response.json();
+      const result = await response.json();
 
-    if (response.ok) {
-      responseMessage.textContent = result.message;
-      responseMessage.className = "mt-4 text-center text-green-500 font-bold";
-      form.reset();
-      setTimeout(100);
-      window.location.href = "https://maydayz.com";
-    } else {
-      emailError.textContent = result.message;
+      if (response.ok) {
+        responseMessage.textContent = result.message;
+        responseMessage.className = "mt-4 text-center text-green-500 font-bold";
+        form.reset();
+        // Redirect after a short delay
+        setTimeout(() => {
+          window.location.href = "https://maydayz.com";
+        }, 100);
+      } else {
+        emailError.textContent = result.message;
+        responseMessage.className = "mt-4 text-center text-red-600 font-bold";
+      }
+    } catch (error) {
+      console.error("Error during form submission:", error);
+      emailError.textContent =
+        "An unexpected error occurred. Please try again.";
       responseMessage.className = "mt-4 text-center text-red-600 font-bold";
     }
-  } catch (error) {
-    console.error("Error during form submission:", error);
-    emailError.textContent = "An unexpected error occurred. Please try again.";
-    responseMessage.className = "mt-4 text-center text-red-600 font-bold";
-  }
-});
+  });
