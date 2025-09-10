@@ -213,6 +213,9 @@
   }
 }
 @layer utilities {
+  .static {
+    position: static;
+  }
   .bottom-1\/1 {
     bottom: calc(1/1 * 100%);
   }
@@ -311,9 +314,6 @@
   }
   .h-10 {
     height: calc(var(--spacing) * 10);
-  }
-  .min-h-screen {
-    min-height: 100vh;
   }
   .w-1\/1 {
     width: calc(1/1 * 100%);
@@ -421,9 +421,6 @@
   }
   .bg-\[\#005035\] {
     background-color: #005035;
-  }
-  .bg-\[\#005053\] {
-    background-color: #005053;
   }
   .bg-\[\#A49665\] {
     background-color: #A49665;
@@ -577,12 +574,6 @@
   }
   .text-green-800 {
     color: var(--color-green-800);
-  }
-  .text-red-300 {
-    color: var(--color-red-300);
-  }
-  .text-red-400 {
-    color: var(--color-red-400);
   }
   .text-red-500 {
     color: var(--color-red-500);

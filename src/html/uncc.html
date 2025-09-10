@@ -61,6 +61,13 @@
         </div>
     </nav>
     <main id="main-content">
+        <div id="Info">
+            <h1 id="notice" class="mt-4 uppercase text-2xl text-white text-center" style="font-family: FontB;">UNCC
+                Students and Staff Enter your
+                name and
+                email
+                for a 15% discount and free delivery!!</h1>
+        </div>
         <div id="sign-up-form" class="mt-10 uppercase font-bold flex items-center justify-center text-3xl text-white "
             style="font-family: Arial, Helvetica, sans-serif;">
             <form id="email-form" action="/verify-uncc-student" method="post"
@@ -77,8 +84,9 @@
                     type="submit" value="Submit">
             </form>
             <br>
-            <div id="response-message" class="mt-4 text-center text-2xl font-bold"><br></div>
+
         </div>
+        <div id="response-message" class="mt-4 text-center text-2xl font-bold"><br></div>
     </main>
     <nav class="bg-black mt-10 uppercase text-white mb-10 md:mt-20 backdrop-blur-2xl p-10" style="font-family: FontB;">
         <div id="privacy-notice" class="text-center text-2xl">
@@ -94,21 +102,22 @@
         <div id="sm-pics" class="container ml-auto mr-auto gap-4 justify-center flex mt-10">
             <div id="IG">
                 <a id="IG-Link" class="hover:cursor-pointer" href="https://www.instagram.com/maydayz_bbq/">
-                    <img src="https://placehold.co/75x75/000/fff?text=IG" width="75" height="75" alt="Instagam Logo"
+                    <img src="/src/assets/Images/Instagram_Glyph_White.webp" width="75" height="75" alt="Instagam Logo"
                         aria-label="Follow Us on IG" title="Follow us on IG" decoding="async">
                 </a>
             </div>
             <div id="FB">
                 <a id="FB-Link" class="hover:cursor-pointer"
                     href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/">
-                    <img src="https://placehold.co/75x75/000/fff?text=FB" width="75" height="75" alt="Facebook Logo"
-                        aria-label="Follow Us on Facebook" title="Follow us on Facebook" decoding="async">
+                    <img src="/src/assets/Images/Facebook_Logo_Secondary.webp" width="75" height="75"
+                        alt="Facebook Logo" aria-label="Follow Us on Facebook" title="Follow us on Facebook"
+                        decoding="async">
                 </a>
             </div>
             <div id="TT">
                 <a id="TikTok-Link" class="hover:cursor-pointer" href="https://www.tiktok.com/@maydayzbbq">
-                    <img src="https://placehold.co/75x75/000/fff?text=TT" width="75" height="75" alt="TikTok Logo"
-                        aria-label="Follow us on TikTok" title="Follow us on TikTok" decoding="async">
+                    <img src="/src/assets/Images/TikTok-logo-RGB-Stacked-white-simplified.webp" width="75" height="75"
+                        alt="TikTok Logo" aria-label="Follow us on TikTok" title="Follow us on TikTok" decoding="async">
                 </a>
             </div>
         </div>
@@ -155,19 +164,19 @@
         </div>
         <div id="footer-logo">
             <div id="notice-container" class="">
-                <img src="https://placehold.co/75x75/A49665/000?text=Logo" alt="Maydayz Logo for copyright"
-                    class="ml-auto mr-auto" width="75" height="75" title="Maydayz Logo" decoding="async">
+                <img src="/src/assets/Images/MAYDAYZ-FAV.png" alt="Maydayz Logo for copyright" class="ml-auto mr-auto"
+                    width="75" height="75" title="Maydayz Logo" decoding="async">
                 <p class="text-center text-xs" style="font-family: FontB;">©2025 MayDayz Smokn BBQ</p>
             </div>
         </div>
         <div id="ms-annette-tribute" class="text-xl justify-center mt-10 flex " style="font-family: FontB;"><span> <img
-                    src="https://placehold.co/75x75/000/fff?text=Ribbon" width="75" height="75"
-                    alt="colon-cancer-ribbon" decoding="async"> </span>
+                    src="/src/assets/Images/Ribbon.webp" width="75" height="75" alt="colon-cancer-ribbon"
+                    decoding="async"> </span>
             <p class="md:translate-y-7"
                 title="Honoring Annette Tomlin who was a loved member of the Charlotte Community and MayDayz family.">In
                 loving
-                memory of Annette Tomlin</p> <span><img src="https://placehold.co/75x75/000/fff?text=Ribbon" width="75"
-                    height="75" alt="colon-cancer-ribbon" decoding="async"></span>
+                memory of Annette Tomlin</p> <span><img src="/src/assets/Images/Ribbon.webp" width="75" height="75"
+                    alt="colon-cancer-ribbon" decoding="async"></span>
         </div>
     </footer>
     <script>
@@ -209,10 +218,12 @@
 
                 const result = await response.json();
 
-                if (response.ok) { // Check if the response status is 2xx
+                if (response.ok) {
                     responseMessage.textContent = result.message;
                     responseMessage.className = "mt-4 text-center text-green-500 font-bold";
                     form.reset();
+                    setTimeout(5);
+                    window.location.href = "https://maydayzorder.square.site"
                 } else {
                     emailError.textContent = result.message;
                     responseMessage.className = "mt-4 text-center text-red-600 font-bold";

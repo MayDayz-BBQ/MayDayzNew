@@ -17,6 +17,8 @@ const path = require("path");
 const twilio = require("twilio");
 const crypto = require("crypto");
 const axios = require("axios");
+const fs = require("fs").promises;
+const EMAIL_LIST_FILE = "received_coupons.txt";
 
 dotenv.config();
 
@@ -138,6 +140,8 @@ async function createKlaviyoCouponCode(couponId, discountCode) {
   }
 }
 
+async function createSquareDiscountCode(discountCode) {}
+
 /**
  * Generate a custom discount code with a prefix, timestamp, and random string.
  *
@@ -151,14 +155,26 @@ function generateCustomCode(prefix = "MAYDAYZ") {
 }
 
 /**
- * Stub function to send email with the coupon code.
- * Replace this with your actual email sending logic.
- *
- * @param {string} toEmail
- * @param {string} couponCode
+ * Stub function to send email to your work address.
+ * You'll replace this with a real email service (e.g., Nodemailer).
+ * * @param {string} studentEmail - The email of the UNCC student.
+ * @param {string} couponCode - The static coupon code to be applied.
  */
-async function sendEmailWithCoupon(toEmail, couponCode) {
-  console.log(`Sending email to ${toEmail} with code: ${couponCode}`);
+async function sendEmailWithCouponToAdmin(studentEmail, couponCode) {
+  const adminEmail = "jaquis.franklin@maydayz.com";
+  const subject = "New UNCC Student Discount Request";
+  const emailBody = `A UNCC student has requested a discount.
+    Student Email: ${studentEmail}
+    Coupon Code to Apply: ${couponCode}
+    
+    Please apply the following for their order:
+    - 15% off
+    - Free delivery`;
+
+  // This is a placeholder. You'll use an email sending library here.
+  console.log(`Sending email to ${adminEmail}`);
+  console.log(`Subject: ${subject}`);
+  console.log(`Body: ${emailBody}`);
 }
 
 app.post("/verify-uncc-student", async (req, res) => {
@@ -172,29 +188,54 @@ app.post("/verify-uncc-student", async (req, res) => {
     });
   }
 
-  console.log("Received email:", email);
+  // The static code you will create manually in Square
+  const staticSquareCode = "UNCC_STUDENT_DISCOUNT";
 
-  // Unique code generation
-  const discountCode = generateCustomCode("UNCC");
-  console.log("Generated discount code:", discountCode);
-
-  // This must match the coupon's external_id in Klaviyo exactly
-  const klaviyoCouponExternalId = "UNCC_Students_and_Staff_Disocunt";
-
+  // Read the list of emails that have already received a coupon
+  let emailsReceived = [];
   try {
-    // Find the coupon ID in Klaviyo by external_id
-    const couponId = await findCouponIdByName(klaviyoCouponExternalId);
+    const data = await fs.readFile(EMAIL_LIST_FILE, "utf8");
+    // Split the file content into an array of emails, trimming whitespace
+    emailsReceived = data
+      .split("\n")
+      .map((e) => e.trim())
+      .filter((e) => e.length > 0);
+  } catch (error) {
+    // This is expected the first time the program is run
+    if (error.code === "ENOENT") {
+      console.log("Email list file not found, creating a new one.");
+    } else {
+      console.error("Error reading email list file:", error);
+      return res.status(500).json({
+        success: false,
+        message: "An unexpected error occurred. Please try again later.",
+      });
+    }
+  }
 
-    // Create the coupon code under that coupon
-    await createKlaviyoCouponCode(couponId, discountCode);
+  // Check if the user's email is already in the list
+  if (emailsReceived.includes(email.toLowerCase())) {
+    console.log(`Email ${email} has already received a coupon.`);
+    return res.json({
+      success: false,
+      message:
+        "You have already requested a coupon. The code is only valid for one use per student.",
+    });
+  }
 
-    // Send the code to user by email
-    await sendEmailWithCoupon(email, discountCode);
+  // If the email is not found, proceed to send the code and update the list
+  try {
+    // Append the new email to the file
+    await fs.appendFile(EMAIL_LIST_FILE, `${email.toLowerCase()}\n`);
+    console.log(`Email ${email} added to the list.`);
+
+    // Send the static code to your work email for manual application
+    await sendEmailWithCouponToAdmin(email, staticSquareCode);
 
     return res.json({
       success: true,
       message:
-        "Success! Your discount code has been sent to your student email.",
+        "Success! Your request has been received. Your discount will be manually applied to your next order.",
     });
   } catch (error) {
     console.error("Error in UNCC form submission:", error);
