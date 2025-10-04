@@ -48,7 +48,7 @@ document
         // Redirect after a short delay
         setTimeout(() => {
           window.location.href = "https://maydayz.com";
-        }, 100);
+        }, 5);
       } else {
         emailError.textContent = result.message;
         responseMessage.className = "mt-4 text-center text-red-600 font-bold";
