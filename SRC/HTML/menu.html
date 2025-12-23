@@ -16,6 +16,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/css/output.css">
+    <link rel="preconnect" href="/Index.html">
+    <link rel="preload" as="image" href="/src/assets/images/MAYDAYZ-Menu-OCT-1819-25.png">
     <meta name="author" content="MayDayz Smokn BBQ">
     <style>
         @font-face {
@@ -163,6 +165,35 @@
                 });
         });
     }
+</script>
+<script>
+    window.onload = function () {
+        hidePreloader();
+    };
+
+    // Failsafe: Hide preloader after 5 seconds even if everything hasn't loaded
+    setTimeout(hidePreloader, 5000);
+
+    function hidePreloader() {
+        const preloader = document.getElementById('preloader');
+        if (preloader) {
+            preloader.classList.add('preloader-hidden');
+            // Wait for the CSS transition (0.5s) before removing from DOM
+            setTimeout(() => preloader.remove(), 500);
+        }
+    }</script>
+<script>
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('mouseenter', () => {
+            const linkHref = link.getAttribute('href');
+            if (linkHref && linkHref.startsWith('/')) {
+                const prefetchLink = document.createElement('link');
+                prefetchLink.rel = 'prefetch';
+                prefetchLink.href = linkHref;
+                document.head.appendChild(prefetchLink);
+            }
+        }, { once: true });
+    });
 </script>
 
 </html>
