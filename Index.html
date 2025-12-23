@@ -388,21 +388,7 @@
         </div>
     </footer>
 
-    <script>
-        grecaptcha.enterprise.ready(() => {
-            const orderBtn = document.getElementById("order-button");
 
-            orderBtn.addEventListener("click", async function (e) {
-
-                const token = await grecaptcha.enterprise.execute('6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN', {
-                    action: 'order_now'
-                });
-
-                // You can now send `token` to your server or log it
-                console.log("reCAPTCHA token:", token);
-            });
-        });
-    </script>
     <script>
         window.onload = function () {
             hidePreloader();
