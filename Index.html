@@ -164,12 +164,16 @@
             <a href="https://app.squareup.com/gift/MLENTYY5WR8XF/order" target="_blank"
                 class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:bg-white hover:text-black md:mt-5">Gift
                 Card</a>
-            <div class="ml-auto mr-auto md:mr-0 mb-10 md:mb-0">
-                <a href="/src/html/login.html"
-                    class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:bg-white hover:text-black md:mt-5">Sign
-                    Up/Login</a>
+            <div id="right-signup-nav" class="ml-auto sm:ml-auto mr-auto md:mr-0 mb-10 md:mb-0">
+                <div id="Sign-up" class="mr-4 md:mt-5">
+                    <a id="signup-button" href="/src/html/login.html" aria-label="Sign Up Today!!"
+                        class="md:mt-5 text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:cursor-pointer hover:bg-white hover:text-black ml-auto">Sign
+                        Up/Login</a>
+                </div>
+                <div id="Sign-out-div" class="">
+                    <div id="Sign-out" class="md:mt-5"></div>
+                </div>
             </div>
-        </div>
     </nav>
 
     <main id="main-section" class="mt-3 md:mt-20" style="font-family: FontB;">
@@ -177,6 +181,29 @@
             <img id="logo" fetchpriority="high" class="w-2/3 md:w-3/7 ml-auto mr-auto"
                 src="/src/assets/Images/md-logo.webp" alt="MayDayz BBQ logo">
         </div>
+        <!-- <script>
+            function getOS() {
+                const userAgent = window.navigator.userAgent;
+                if (/Android/i.test(userAgent) || /iPhone|iPad|iPod/i.test(userAgent)) {
+                    return 'Mobile';
+                }
+                console.log("Serving the desktop version")
+                return 'Desktop';
+            }
+
+            const video = document.getElementById('logo-video');
+            const image = document.getElementById('logo-image');
+            const userOS = getOS();
+
+            if (userOS === 'Desktop') {
+                // If it's a desktop OS, show the video
+                video.setAttribute('autoplay', '');
+            } else {
+                // If it's a mobile OS, hide the video and show the image
+                video.style.display = 'none';
+                image.style.display = 'block';
+            }
+        </script> -->
         <div class="text-center mt-9" style="font-family: FontA;">
             <h1 class="uppercase text-4xl md:text-6xl text-red-500">Welcome to MayDayz BBQ</h1>
         </div>
