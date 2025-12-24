@@ -251,5 +251,32 @@
         }, { once: true });
     });
 </script>
+<script>
+    const menu_button = document.getElementById("back-button");
+    function loadIndex() {
+        menu_button.addEventListener("mouseover", () => {
+            const targetPath = "./index.html";
+
+            // Prevent duplicate rules
+            if (!document.getElementById("speculation-menu")) {
+                const specScript = document.createElement('script');
+                specScript.id = "speculation-menu";
+                specScript.type = 'speculationrules';
+
+                const specRules = {
+                    "prerender": [
+                        { "source": "list", "urls": [targetPath] }
+                    ]
+                };
+
+                specScript.textContent = JSON.stringify(specRules);
+                document.head.append(specScript);
+                console.log(`Speculatively prerendering: ${targetPath}`);
+            }
+        }, { once: true });
+    }
+
+    loadIndex();
+</script>
 
 </html>

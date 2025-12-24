@@ -51,7 +51,7 @@
 <body class="bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0">
 
     <div id="back-button" class="mt-10 pl-4">
-        <a href="/Index.html"
+        <a href="/Index.html" onmouseover="loadIndex()"
             class="bg-red-600 text-4xl rounded-2xl p-5  uppercase text-white hover:bg-white hover:text-red-600 hover:cursor-pointer"
             style="font-family: FontC">Go Back</a>
     </div>
@@ -149,6 +149,7 @@
         </div>
     </footer>
 </body>
+
 <script>
     if ("serviceWorker" in navigator) {
         window.addEventListener("load", () => {
@@ -195,6 +196,33 @@
             }
         }, { once: true });
     });
+</script>
+<script>
+    const menu_button = document.getElementById("back-button");
+    function loadIndex() {
+        menu_button.addEventListener("mouseover", () => {
+            const targetPath = "./index.html";
+
+            // Prevent duplicate rules
+            if (!document.getElementById("speculation-menu")) {
+                const specScript = document.createElement('script');
+                specScript.id = "speculation-menu";
+                specScript.type = 'speculationrules';
+
+                const specRules = {
+                    "prerender": [
+                        { "source": "list", "urls": [targetPath] }
+                    ]
+                };
+
+                specScript.textContent = JSON.stringify(specRules);
+                document.head.append(specScript);
+                console.log(`Speculatively prerendering: ${targetPath}`);
+            }
+        }, { once: true });
+    }
+
+    loadIndex();
 </script>
 
 </html>

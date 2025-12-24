@@ -96,7 +96,7 @@
     <div id="MayDayz-Logo">
         <div id="maydayz-link" class="ml-4">
             <div class="w-full sm:w-1/6">
-                <a id="index" href="/Index.html"><img src="/src/assets/Images/MAYDAYZ-FAV.png"
+                <a id="index" onmouseover="loadAbout()" href="/Index.html"><img src="/src/assets/Images/MAYDAYZ-FAV.png"
                         class="mt-6 mx-auto sm:ml-0" width="150" alt="MayDayz Logo"></a>
             </div>
         </div>
@@ -219,6 +219,33 @@
                 });
         });
     }
+</script>
+<script>
+    const back_button = document.getElementById("index");
+    function loadAbout() {
+        back_button.addEventListener("mouseover", () => {
+            const targetPath = "/index.html";
+
+            // Prevent duplicate rules
+            if (!document.getElementById("speculation-about")) {
+                const specScript = document.createElement('script');
+                specScript.id = "speculation-about";
+                specScript.type = 'speculationrules';
+
+                const specRules = {
+                    "prerender": [
+                        { "source": "list", "urls": [targetPath] }
+                    ]
+                };
+
+                specScript.textContent = JSON.stringify(specRules);
+                document.head.append(specScript);
+                console.log(`Speculatively prerendering: ${targetPath}`);
+            }
+        }, { once: true });
+    }
+
+    loadAbout();
 </script>
 
 </html>

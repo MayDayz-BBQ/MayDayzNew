@@ -159,19 +159,21 @@
     <nav id="top-section" class="mt-5" style="font-family: FontC;">
         <div
             class="flex flex-col items-center md:flex-row md:ml-2 gap-7 md:gap-3 text-3xl lg:text-4xl sm:justify-center">
-            <a href="/src/html/about.html"
+            <a id="about_button" onmouseover="loadAbout()" href="/src/html/about.html"
                 class="text-white uppercase rounded-2xl bg-red-700 p-3.5 md:p-4 hover:bg-white hover:text-black md:mt-5">About
                 Us</a>
-            <a href="/src/html/menu.html"
+            <a id="menu_button" onmouseover="loadMenu()" href="/src/html/menu.html"
                 class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:bg-white hover:text-black md:mt-5">Menu</a>
-            <a href="/src/html/catering.html"
+            <a id="catering_button" onmouseover="loadCatering()" href="/src/html/catering.html"
                 class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:bg-white hover:text-black md:mt-5">Catering</a>
-            <a href="https://app.squareup.com/gift/MLENTYY5WR8XF/order" target="_blank"
+            <a id="gift-card" onmouseover="loadGift()" href="https://app.squareup.com/gift/MLENTYY5WR8XF/order"
+                target="_blank"
                 class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:bg-white hover:text-black md:mt-5">Gift
                 Card</a>
             <div id="right-signup-nav" class="ml-auto sm:ml-auto mr-auto md:mr-0 mb-10 md:mb-0">
                 <div id="Sign-up" class="mr-4 md:mt-5">
-                    <a id="signup-button" href="/src/html/login.html" aria-label="Sign Up Today!!"
+                    <a id="signup-button" onmouseover="loadLogin()" href="/src/html/login.html"
+                        aria-label="Sign Up Today!!"
                         class="md:mt-5 text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:cursor-pointer hover:bg-white hover:text-black ml-auto">Sign
                         Up/Login</a>
                 </div>
@@ -195,7 +197,7 @@
             <h2 class="uppercase text-3xl md:text-4xl text-white">We smoked out</h2>
         </div>
         <div class="mt-10 justify-center flex" style="font-family: FontC;">
-            <a id="order-button" href="https://maydayzorder.square.site/"
+            <a id="order-button" onmouseover="loadOrder()" href="https://maydayzorder.square.site/"
                 class="text-white text-3xl md:text-6xl uppercase rounded-4xl bg-red-700 p-4 hover:bg-white hover:text-red-500">Order
                 Now</a>
         </div>
@@ -272,7 +274,64 @@
             </picture>
         </div>
     </footer>
+    <script>
+        /**
+         * Unified Preloader for MayDayz BBQ
+         * Handles Internal (Prerender) and External (Preconnect) links
+         */
+        function initSmartPreload() {
+            const links = [
+                { id: "about_button", type: "internal", path: "/src/html/about.html" },
+                { id: "menu_button", type: "internal", path: "/src/html/menu.html" },
+                { id: "catering_button", type: "internal", path: "/src/html/catering.html" },
+                { id: "signup-button", type: "internal", path: "/src/html/login.html" },
+                { id: "gift-card", type: "external", url: "https://app.squareup.com" },
+                { id: "order-button", type: "external", url: "https://maydayzorder.square.site" }
+            ];
 
+            links.forEach(linkData => {
+                const btn = document.getElementById(linkData.id);
+                if (!btn) return;
+
+                btn.addEventListener("mouseover", () => {
+                    if (linkData.type === "internal") {
+                        // Internal: Speculative Prerender
+                        if (!document.getElementById(`spec-${linkData.id}`)) {
+                            const specScript = document.createElement('script');
+                            specScript.id = `spec-${linkData.id}`;
+                            specScript.type = 'speculationrules';
+                            specScript.textContent = JSON.stringify({
+                                "prerender": [{ "source": "list", "urls": [linkData.path] }]
+                            });
+                            document.head.append(specScript);
+                            console.log(`Prerendering internal: ${linkData.path}`);
+                        }
+                    } else {
+                        // External: Preconnect to Square
+                        if (!document.getElementById("preconnect-square")) {
+                            const preconnect = document.createElement("link");
+                            preconnect.id = "preconnect-square";
+                            preconnect.rel = "preconnect";
+                            preconnect.href = linkData.url;
+                            preconnect.crossOrigin = "anonymous";
+
+                            const dns = document.createElement("link");
+                            dns.rel = "dns-prefetch";
+                            dns.href = linkData.url;
+
+                            document.head.append(preconnect, dns);
+                            console.log(`Preconnecting to external: ${linkData.url}`);
+                        }
+                    }
+                }, { once: true });
+            });
+        }
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", initSmartPreload);
+        } else {
+            initSmartPreload();
+        }
+    </script>
     <script>
         function hidePreloader() {
             const preloader = document.getElementById('preloader');
