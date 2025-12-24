@@ -212,8 +212,14 @@
   .absolute {
     position: absolute;
   }
+  .fixed {
+    position: fixed;
+  }
   .static {
     position: static;
+  }
+  .inset-0 {
+    inset: calc(var(--spacing) * 0);
   }
   .top-0 {
     top: calc(var(--spacing) * 0);
@@ -226,6 +232,9 @@
   }
   .isolate {
     isolation: isolate;
+  }
+  .-z-10 {
+    z-index: calc(10 * -1);
   }
   .z-10 {
     z-index: 10;
@@ -331,6 +340,9 @@
   }
   .h-10 {
     height: calc(var(--spacing) * 10);
+  }
+  .h-full {
+    height: 100%;
   }
   .min-h-screen {
     min-height: 100vh;
@@ -480,6 +492,9 @@
   }
   .bg-\[url\(\'\/src\/assets\/images\/MenuBackground\.webp\'\)\] {
     background-image: url('/src/assets/images/MenuBackground.webp');
+  }
+  .bg-\[url\(\'\/src\/assets\/images\/mobileBackground\.webp\'\)\] {
+    background-image: url('/src/assets/images/mobileBackground.webp');
   }
   .bg-cover {
     background-size: cover;
@@ -878,6 +893,16 @@
   .md\:gap-100 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 100);
+    }
+  }
+  .md\:bg-\[url\(\'\/src\/assets\/images\/MenuBackground\.webp\'\)\] {
+    @media (width >= 48rem) {
+      background-image: url('/src/assets/images/MenuBackground.webp');
+    }
+  }
+  .md\:bg-\[url\(\'\/src\/assets\/images\/mobileBackground\.webp\'\)\] {
+    @media (width >= 48rem) {
+      background-image: url('/src/assets/images/mobileBackground.webp');
     }
   }
   .md\:bg-fixed {
