@@ -20,6 +20,8 @@
     <link rel="preconnect" href="/Index.html">
     <link rel="preload" as="image" href="/src/assets/images/MAYDAYZ-Menu-OCT-1819-25.png">
     <meta name="author" content="MayDayz Smokn BBQ">
+    <meta name="description"
+        content="Authentic Southern BBQ in Charlotte, NC, delivered to your door on weekends! MayDayz Smokn BBQ specializes in Grilling Perfection!">
     <style>
         @font-face {
             font-family: FontB;
@@ -232,12 +234,12 @@
     }
 
     function renderMenu(items) {
-    const container = document.getElementById('render-items');
-    if (!container) return;
+        const container = document.getElementById('render-items');
+        if (!container) return;
 
-    container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-6 max-w-7xl mx-auto";
+        container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-6 max-w-7xl mx-auto";
 
-    container.innerHTML = items.map(item => `
+        container.innerHTML = items.map(item => `
         <div class="flex flex-col bg-black/70 backdrop-blur-sm border-2 border-red-600 rounded-xl overflow-hidden transform transition hover:scale-105 ${item.available ? '' : 'opacity-75 grayscale'}">
             <div class="relative h-64 w-full">
                 <img src="${item.image || '/src/assets/images/MAYDAYZ-FAV.png'}" 
@@ -258,13 +260,13 @@
                 <div class="flex items-center justify-between mt-4">
                     <span class="text-2xl font-bold" style="font-family: FontD">$${item.price}</span>
                     ${item.available && item.checkoutUrl
-                        ? `<a href="${item.checkoutUrl}" target="_blank" class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-2 rounded-lg font-bold transition uppercase" style="font-family: FontC">Order</a>`
-                        : `<a href="${'https://maydayzorder.square.site/'}" target="_blank" class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-2 rounded-lg font-bold transition uppercase" style="font-family: FontC">Order</a>`}
+                ? `<a href="${item.checkoutUrl}" target="_blank" class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-2 rounded-lg font-bold transition uppercase" style="font-family: FontC">Order</a>`
+                : `<a href="${'https://maydayzorder.square.site/'}" target="_blank" class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-2 rounded-lg font-bold transition uppercase" style="font-family: FontC">Order</a>`}
                 </div>
             </div>
         </div>
     `).join('');
-}
+    }
 
     initMenu();
 </script>
