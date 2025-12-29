@@ -55,19 +55,13 @@
             class="bg-red-600 text-4xl rounded-2xl p-5  uppercase text-white hover:bg-white hover:text-red-600 hover:cursor-pointer"
             style="font-family: FontC">Go Back</a>
     </div>
-    <section id="Menu-Picture">
-        <div id="menu" class="mt-15 md:mt-20">
-            <a id="menu-pic-downloadable" href="/src/assets/images/MAYDAYZ-Menu-OCT-1819-25.png"
-                download="Menu September 7th MayDayz BBQ">
-                <img class="ml-auto mr-auto md:w-1/3 shadow-2xl border-4 border-red-500"
-                    src="/SRC/ASSETS/IMAGES/MAYDAYZ-Menu-OCT-1819-25.png" alt="MayDayz Menu"
-                    title="MayDayz Smokn BBQ Menu">
-            </a>
+    <main id="menu-items">
+        <div class="mt-10 text-white text-5xl text-center uppercase" style="font-family: FontC;">
+            <h1>The Smoked Out Menu</h1>
         </div>
-        <div>
-            <h1 class="mt-6 uppercase text-2xl text-white text-center">Click to Download the menu</h1>
-        </div>
-    </section>
+        <div id="log-items" class="mt-5" onload="getMenu()"></div>
+        <div id="render-items" onload="renderMenu()"></div>
+    </main>
     <footer class="bg-black mt-25 p-10 md:mb-0 text-2xl text-white uppercase bg-fixed bottom-1/1"
         style="font-family: FontB;">
         <div id="sm-pics" class="container ml-auto mr-auto gap-4 justify-center flex mt-10">
@@ -180,7 +174,6 @@
         const preloader = document.getElementById('preloader');
         if (preloader) {
             preloader.classList.add('preloader-hidden');
-            // Wait for the CSS transition (0.5s) before removing from DOM
             setTimeout(() => preloader.remove(), 500);
         }
     }</script>
@@ -223,6 +216,57 @@
     }
 
     loadIndex();
+</script>
+<script>
+    async function initMenu() {
+        try {
+            const response = await fetch('/menu.json');
+            const data = await response.json();
+
+            renderMenu(data);
+
+            console.log("Menu successfully rendered!");
+        } catch (error) {
+            console.error("Error loading the menu:", error);
+        }
+    }
+
+    function renderMenu(items) {
+    const container = document.getElementById('render-items');
+    if (!container) return;
+
+    container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-6 max-w-7xl mx-auto";
+
+    container.innerHTML = items.map(item => `
+        <div class="flex flex-col bg-black/70 backdrop-blur-sm border-2 border-red-600 rounded-xl overflow-hidden transform transition hover:scale-105 ${item.available ? '' : 'opacity-75 grayscale'}">
+            <div class="relative h-64 w-full">
+                <img src="${item.image || '/src/assets/images/MAYDAYZ-FAV.png'}" 
+                     class="w-full h-full object-cover" 
+                     alt="${item.name}">
+                ${!item.available ? `
+                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
+                        <span class="text-white font-bold text-3xl border-4 border-white p-2 rotate-[-10deg]" style="font-family: FontD">SOLD OUT</span>
+                    </div>` : ''}
+            </div>
+            
+            <div class="p-6 flex-grow flex flex-col justify-between text-white">
+                <div>
+                    <h3 class="text-3xl mb-2 text-red-500 uppercase" style="font-family: FontC">${item.name}</h3>
+                    <p class="text-sm mb-4 line-clamp-3" style="font-family: FontB">${item.description}</p>
+                </div>
+                
+                <div class="flex items-center justify-between mt-4">
+                    <span class="text-2xl font-bold" style="font-family: FontD">$${item.price}</span>
+                    ${item.available && item.checkoutUrl
+                        ? `<a href="${item.checkoutUrl}" target="_blank" class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-2 rounded-lg font-bold transition uppercase" style="font-family: FontC">Order</a>`
+                        : `<a href="${'https://maydayzorder.square.site/'}" target="_blank" class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-2 rounded-lg font-bold transition uppercase" style="font-family: FontC">Order</a>`}
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+    initMenu();
 </script>
 
 </html>

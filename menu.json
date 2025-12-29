@@ -1,0 +1,173 @@
+[
+    {
+        "id": "3ZS35ODCETGK3FRMOEUHLBFC",
+        "name": "Sampler",
+        "description": "Choose between 3 Meats and 2 sides!",
+        "price": 32,
+        "image": null,
+        "checkoutUrl": null,
+        "available": true
+    },
+    {
+        "id": "44JUVJOLIOOSY5GNUPX6EJGT",
+        "name": "Brisket Plate",
+        "description": "Tender smoked brisket, rich in savory flavors, served with your choice of two sides.",
+        "price": 26,
+        "image": null,
+        "checkoutUrl": null,
+        "available": true
+    },
+    {
+        "id": "C2LDTDNEAT6CAWZ4BVFWYQA3",
+        "name": "Ribs Plate",
+        "description": "Tender ribs coated in a smoky dry rub, cooked to perfection for a deep, rich flavor and fall-off-the-bone texture.",
+        "price": 22,
+        "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p19_i2_w2000.png",
+        "checkoutUrl": "https://maydayzorder.square.site/product/ribs-plate/19",
+        "available": true
+    },
+    {
+        "id": "LGMQYHMH2BDVRBS3PZ6X4DV7",
+        "name": "Pulled Pork Plate",
+        "description": "Tender pulled pork, slow-cooked and slathered in a rich, smoky barbecue sauce, and finished with a tangy splash of vinegar for a perfect balance of flavors.",
+        "price": 22,
+        "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p18_i2_w2000.png",
+        "checkoutUrl": "https://maydayzorder.square.site/product/pulled-pork-plate/18",
+        "available": true
+    },
+    {
+        "id": "3FMWSLUNZ2B73XJHKREQUHO7",
+        "name": "Pulled Chicken Plate",
+        "description": "Tender pulled chicken infused with a tangy vinegar sauce and lightly smoked for a rich, savory flavor.",
+        "price": 22,
+        "image": null,
+        "checkoutUrl": "https://maydayzorder.square.site/product/pulled-chicken-plate/21",
+        "available": true
+    },
+    {
+        "id": "RSSPI6IUGSUVFY4GRQPUPNWJ",
+        "name": "Wing Plate",
+        "description": "Smoked wings glazed with our seasonal, rich cherry sauce, delivering a harmonious blend of savory and sweet flavors.",
+        "price": 22,
+        "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p17_i5_w4000.png",
+        "checkoutUrl": "https://maydayzorder.square.site/product/wing-plate/17",
+        "available": true
+    },
+    {
+        "id": "VXHITPOGZT6FEFZDUBWWMX7C",
+        "name": "Smoked Turkey Plate",
+        "description": "Tender smoked turkey infused with a blend of savory herbs, ensuring each slice is juicy and flavorful.",
+        "price": 22,
+        "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p27_i3_w2000.png",
+        "checkoutUrl": "https://maydayzorder.square.site/product/smoked-turkey-plate/27",
+        "available": true
+    },
+    {
+        "id": "AMHXAR5QTLMRTNDWQ6QY6DL3",
+        "name": "MayDayz LOADED Friez",
+        "description": "Crispy loaded fries topped with savory bacon bits and a rich, velvety cheese sauce, served piping hot for maximum flavor.",
+        "price": 13,
+        "image": null,
+        "checkoutUrl": null,
+        "available": true
+    },
+    {
+        "id": "IP5VB5UOT75H2FW6W3U7NKVH",
+        "name": "Sandwhich and Friez Combo",
+        "description": "A perfectly smoked sandwich filled with your choice of meat, complemented by a side of golden, seasoned, and crispy fries.",
+        "price": 12,
+        "image": null,
+        "checkoutUrl": null,
+        "available": true
+    },
+    {
+        "id": "PPWF3PMAEBCZZ5AZSG5OHZ4E",
+        "name": "Sandwhichez",
+        "description": "Craft your perfect sandwich with the meat of your choice and enjoy a delicious meal that satisfies your cravings. Elevate your dining experience with every bite of this mouthwatering creation!",
+        "price": 8,
+        "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p6_i1_w1200.jpeg",
+        "checkoutUrl": "https://maydayzorder.square.site/product/sandwhichez/6",
+        "available": true
+    },
+    {
+        "id": "3VXT7LVNXZ5LRUSKTQVINZIO",
+        "name": "Apple Cobbler",
+        "description": "Indulge in the irresistible sweetness of our Apple Cobbler, made with fresh ingredients to create the perfect dessert that will satisfy your cravings. Treat yourself to a heavenly slice of this delectable treat today!",
+        "price": 6,
+        "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p14_i1_w3024.jpeg",
+        "checkoutUrl": "https://maydayzorder.square.site/product/apple-cobbler/14",
+        "available": true
+    },
+    {
+        "id": "EL3MAWKEBFFUP4X5LNGRXFS7",
+        "name": "Peach Cobbler",
+        "description": "Indulge in the sweet and savory flavors of our tantalizing Peach Cobbler, a delightful dessert that will surely satisfy your cravings. Treat yourself to a slice of happiness with every bite - order now and experience pure bliss!",
+        "price": 6,
+        "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p15_i1_w2000.png",
+        "checkoutUrl": null,
+        "available": true
+    },
+    {
+        "id": "RTRRU4GPFZ4RSHGHORBW3AKU",
+        "name": "Mac N Cheeze",
+        "description": "Delicious MayDayz BBQ.",
+        "price": 4,
+        "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p20_i2_w2000.jpeg",
+        "checkoutUrl": "https://maydayzorder.square.site/product/mac-n-cheeze/20",
+        "available": true
+    },
+    {
+        "id": "PFPLL4NY3F4MWCZ32FKGGWWC",
+        "name": "Beanz",
+        "description": "Delicious MayDayz BBQ.",
+        "price": 4,
+        "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p22_i2_w4000.png",
+        "checkoutUrl": "https://maydayzorder.square.site/product/beanz/22",
+        "available": true
+    },
+    {
+        "id": "GPEZKHIH5QRLYZM7XZTTA4VT",
+        "name": "Greenz",
+        "description": "A vibrant mix of fresh veggies and tender collards, topped with an assortment of crispy toppings for a delightful crunch.",
+        "price": 4,
+        "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p23_i2_w2000.jpeg",
+        "checkoutUrl": "https://maydayzorder.square.site/product/greenz/23",
+        "available": true
+    },
+    {
+        "id": "V4TQCB2DLMUD22PKO3JNS63Q",
+        "name": "Yamz",
+        "description": "Caramelized sweet potatoes, lightly dusted with cinnamon, offering a delightful crispy texture with every bite.",
+        "price": 4,
+        "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p28_i1_w2000.jpeg",
+        "checkoutUrl": "https://maydayzorder.square.site/product/yamz/28",
+        "available": true
+    },
+    {
+        "id": "7XGQJORVZONEI5CDZPOGFY7B",
+        "name": "MayDayz Friez",
+        "description": "Crispy crinkled potatoes seasoned generously with Old Bay, offering a perfect blend of savory and slightly spicy flavors.",
+        "price": 4,
+        "image": null,
+        "checkoutUrl": "https://maydayzorder.square.site/product/maydayz-friez/32",
+        "available": true
+    },
+    {
+        "id": "VJLPVT6AO6M6SX7232KTIUAT",
+        "name": "Sweet Tea",
+        "description": "Bottled Arizona Sweet Tea",
+        "price": 3,
+        "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p5_i1_w2000.png",
+        "checkoutUrl": "https://maydayzorder.square.site/product/sweet-tea/5",
+        "available": true
+    },
+    {
+        "id": "KJLG5R2R5NASA3NICFNADPEF",
+        "name": "Lemonade",
+        "description": "Minute Maid Lemonade",
+        "price": 3,
+        "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p7_i1_w2000.png",
+        "checkoutUrl": "https://maydayzorder.square.site/product/lemonade/7",
+        "available": true
+    }
+]

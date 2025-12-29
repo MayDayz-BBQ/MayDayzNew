@@ -204,26 +204,9 @@
     </main>
 
     <section class="mt-20 text-center" style="font-family: FontC;">
-        <h3 class="text-4xl text-gray-50 uppercase">Featured Items</h3>
-        <div class="flex flex-wrap mt-6 justify-center" style="font-family: FontB;">
-            <div class="p-10">
-                <div class="hover:transform hover:-translate-y-5 transition-transform">
-                    <picture>
-                        <img src="/src/assets/Images/samplerCompressed.webp" loading="lazy" alt="Sampler" width="350"
-                            height="350" class="rounded-2xl">
-                    </picture>
-                </div>
-                <h3 class="text-white text-3xl mt-2">SAMPLER - $32</h3>
-            </div>
-            <div class="p-10">
-                <div class="hover:transform hover:-translate-y-5 transition-transform">
-                    <picture>
-                        <img src="/src/assets/Images/rplateCompressed.webp" loading="lazy" alt="Rib Plate" width="350"
-                            height="350" class="rounded-2xl">
-                    </picture>
-                </div>
-                <h3 class="text-white text-3xl mt-2 uppercase">Chef's Favorite Rib Plate - $22</h3>
-            </div>
+        <h3 class="text-4xl text-gray-50 uppercase tracking-widest">Featured Items</h3>
+        <div id="featured-container" class="flex flex-wrap mt-6 justify-center gap-10" style="font-family: FontB;">
+            <p class="text-white animate-pulse">Smokin' up the grill...</p>
         </div>
     </section>
 
@@ -354,6 +337,57 @@
                 }
             }, { once: true });
         });
+    </script>
+    <script>
+        async function renderFeaturedItems() {
+            try {
+                const response = await fetch('/menu.json');
+                const allItems = await response.json();
+
+                // Filtering by specific items
+                const featuredNames = ["Sampler", "Ribs Plate"];
+                const featuredItems = allItems.filter(item =>
+                    featuredNames.some(name => item.name.includes(name))
+                );
+
+                const container = document.getElementById('featured-container');
+                if (!container) return;
+
+                container.innerHTML = featuredItems.map(item => `
+            <div class="p-4 group max-w-sm">
+                <div class="relative overflow-hidden rounded-2xl border-2 border-transparent transition-all duration-300">
+                    <picture>
+                        <img src="${item.image || '/src/assets/images/samplerCompressed.webp'}" 
+                             alt="${item.name}" 
+                             width="350" height="350" 
+                             class="rounded-2xl transition-transform duration-500 group-hover:scale-110 ${!item.available ? 'grayscale opacity-50' : ''}">
+                    </picture>
+                    ${!item.available ? `
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+                            <span class="text-white text-2xl font-bold border-2 border-white p-2 rotate-[-5deg]">SOLD OUT</span>
+                        </div>
+                    ` : ''}
+                </div>
+                <h3 class="text-white text-2xl mt-4 uppercase">${item.name} - $${item.price}</h3>
+                ${item.available && item.checkoutUrl ? `
+                    <a href="${item.checkoutUrl}" target="_blank" class="inline-block mt-2 text-red-500 hover:text-white transition-colors uppercase text-sm font-bold tracking-tighter">
+                        Order Now &rarr;
+                    </a>
+                ` : `
+                    <a href="${'https://maydayzorder.square.site/'}" target="_blank" class="inline-block mt-2 text-red-500 hover:text-white transition-colors uppercase text-sm font-bold tracking-tighter">
+                        Order Now &rarr;
+                    </a>
+                `}
+            </div>
+        `).join('');
+
+            } catch (error) {
+                console.error("Featured items failed to load:", error);
+                document.getElementById('featured-container').innerHTML = ""; // Hide if error
+            }
+        }
+
+        renderFeaturedItems();
     </script>
 </body>
 
