@@ -12,16 +12,17 @@
         gtag("config", "G-PN5PZ1Z3KG");
     </script>
     <link rel="manifest" href="/manifest.json">
-    <link rel="icon" href="/src/assets/images/MAYDAYZ-FAV.png">
-    <title>MENU | MAYDAYZ BBQ</title>
+    <link rel="icon" href="https://www.maydayz.com/src/assets/images/MAYDAYZ-FAV.png">
+    <title>MayDayz Smokn BBQ Menu | Charlotte, NC BBQ Plates & Sides</title>
+    <meta name="description"
+        content="Explore the full MayDayz Smokn BBQ menu in Charlotte, NC featuring ribs, brisket, pulled pork, Southern sides, and desserts. Order online for weekend pickup or delivery.">
+    <link rel="canonical" href="https://www.maydayz.com/src/html/menu">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/css/output.css">
     <link rel="preconnect" href="/Index.html">
     <link rel="preload" as="image" href="/src/assets/images/MAYDAYZ-Menu-OCT-1819-25.png">
     <meta name="author" content="MayDayz Smokn BBQ">
-    <meta name="description"
-        content="Authentic Southern BBQ in Charlotte, NC, delivered to your door on weekends! MayDayz Smokn BBQ specializes in Grilling Perfection!">
     <style>
         @font-face {
             font-family: FontB;
@@ -48,6 +49,7 @@
             src: url("src/assets/Fonts/Pridi-Bold.ttf");
         }
     </style>
+
 </head>
 
 <body class="bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0">
@@ -63,6 +65,18 @@
         </div>
         <div id="log-items" class="mt-5" onload="getMenu()"></div>
         <div id="render-items" onload="renderMenu()"></div>
+        <noscript>
+            <section>
+                <h1>MayDayz Smokn BBQ Menu</h1>
+                <ul>
+                    <li>Sampler – $32 – Choose 3 meats and 2 sides</li>
+                    <li>Brisket Plate – $26 – Smoked brisket with sides</li>
+                    <li>Ribs Plate – $22 – Slow-smoked ribs</li>
+                    <li>Mac N Cheeze – $4</li>
+                    <li>Apple Cobbler – $6</li>
+                </ul>
+            </section>
+        </noscript>
     </main>
     <footer class="bg-black mt-25 p-10 md:mb-0 text-2xl text-white uppercase bg-fixed bottom-1/1"
         style="font-family: FontB;">
@@ -144,6 +158,137 @@
                     alt="colon-cancer-ribbon"></span>
         </div>
     </footer>
+
+
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Menu",
+          "name": "MayDayz Smokn BBQ Menu",
+          "url": "https://www.maydayz.com/src/html/menu",
+          "hasMenuSection": [
+            {
+              "@type": "MenuSection",
+              "name": "Plates",
+              "hasMenuItem": [
+                {
+                  "@type": "MenuItem",
+                  "name": "Sampler",
+                  "description": "Choose between 3 meats and 2 sides",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "32",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock"
+                  }
+                },
+                {
+                  "@type": "MenuItem",
+                  "name": "Brisket Plate",
+                  "description": "Tender smoked brisket with two sides",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "26",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock"
+                  }
+                },
+                {
+                  "@type": "MenuItem",
+                  "name": "Ribs Plate",
+                  "image": "https://maydayzorder.square.site/uploads/1/5/0/1/150117646/s220027789334366744_p19_i2_w2000.png",
+                  "description": "Tender dry-rubbed ribs with deep smoky flavor",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "22",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://maydayzorder.square.site/product/ribs-plate/19"
+                  }
+                }
+              ]
+            },
+            {
+              "@type": "MenuSection",
+              "name": "Sides & Desserts",
+              "hasMenuItem": [
+                {
+                  "@type": "MenuItem",
+                  "name": "Mac N Cheeze",
+                  "description": "Classic creamy mac and cheese",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "4",
+                    "priceCurrency": "USD"
+                  }
+                },
+                {
+                  "@type": "MenuItem",
+                  "name": "Apple Cobbler",
+                  "description": "Fresh-baked apple cobbler dessert",
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "6",
+                    "priceCurrency": "USD"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+        </script>
+
+    <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Menu",
+              "name": "MayDayz Smokn BBQ Menu",
+              "url": "https://www.maydayz.com/src/html/menu",
+              "provider": {
+                "@type": "Restaurant",
+                "name": "MayDayz Smokn BBQ",
+                "url": "https://www.maydayz.com",
+                "telephone": "980-499-8399",
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressLocality": "Charlotte",
+                  "addressRegion": "NC",
+                  "addressCountry": "US"
+                }
+              },
+              "hasMenuSection": [
+                {
+                  "@type": "MenuSection",
+                  "name": "Plates",
+                  "hasMenuItem": [
+                    {
+                      "@type": "MenuItem",
+                      "name": "Sampler",
+                      "description": "Choose between 3 meats and 2 sides",
+                      "offers": {
+                        "@type": "Offer",
+                        "price": "32",
+                        "priceCurrency": "USD",
+                        "availability": "https://schema.org/InStock"
+                      }
+                    },
+                    {
+                      "@type": "MenuItem",
+                      "name": "Brisket Plate",
+                      "description": "Tender smoked brisket with two sides",
+                      "offers": {
+                        "@type": "Offer",
+                        "price": "26",
+                        "priceCurrency": "USD",
+                        "availability": "https://schema.org/InStock"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+            </script>
+
 </body>
 
 <script>
@@ -244,7 +389,7 @@
             <div class="relative h-64 w-full">
                 <img src="${item.image || '/src/assets/images/MAYDAYZ-FAV.png'}" 
                      class="w-full h-full object-cover" 
-                     alt="${item.name}">
+                     alt="${item.name} from MayDayz Smokn BBQ in Charlotte, NC">
                 ${!item.available ? `
                     <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
                         <span class="text-white font-bold text-3xl border-4 border-white p-2 rotate-[-10deg]" style="font-family: FontD">SOLD OUT</span>
