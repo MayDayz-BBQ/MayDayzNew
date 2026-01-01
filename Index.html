@@ -25,7 +25,7 @@
     <meta name="twitter:title" content="MayDayz Smokn BBQ">
     <meta name="twitter:description" content="Authentic Southern BBQ in Charlotte, NC!">
     <meta name="twitter:image" content="https://www.maydayz.com/src/assets/Images/MAYDAYZ-FAV.png">
-    <meta name="p:domain_verify" content="23409c4f6e1a6cd28ac2e1b0f18cc362"/>
+    <meta name="p:domain_verify" content="23409c4f6e1a6cd28ac2e1b0f18cc362" />
 
     <link rel="dns-prefetch" href="https://static.klaviyo.com">
     <link rel="preconnect" href="https://clerk.maydayz.com">
@@ -231,8 +231,7 @@
             </a>
             <a href="https://www.pinterest.com/maydayzbbq/">
                 <picture>
-                    <img src="/src/assets/Images/pinterest.webp" width="75" height="75"
-                        alt="pinterest">
+                    <img src="/src/assets/Images/pinterest.webp" width="75" height="75" alt="pinterest">
                 </picture>
             </a>
         </div>
@@ -323,27 +322,18 @@
         }
     </script>
     <script>
-        function hidePreloader() {
+        window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             if (preloader) {
                 preloader.classList.add('preloader-hidden');
                 setTimeout(() => preloader.remove(), 500);
             }
-        }
-        window.onload = hidePreloader;
-        setTimeout(hidePreloader, 5000);
-
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                const href = link.getAttribute('href');
-                if (href && href.startsWith('/')) {
-                    const p = document.createElement('link');
-                    p.rel = 'prefetch';
-                    p.href = href;
-                    document.head.appendChild(p);
-                }
-            }, { once: true });
         });
+
+        setTimeout(() => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) preloader.remove();
+        }, 5000);
     </script>
     <script>
         async function renderFeaturedItems() {
