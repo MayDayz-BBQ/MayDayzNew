@@ -306,6 +306,25 @@
         }
     </script>
     <script>
+        // Clean up any old Service Workers directly from the browser
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(registrations => {
+            for (let registration of registrations) {
+              registration.unregister();
+              console.log("Old SW killed.");
+            }
+          });
+        }
+      
+        // Clear caches from the main thread
+        if ('caches' in window) {
+          caches.keys().then(names => {
+            for (let name of names) caches.delete(name);
+            console.log("Caches cleared.");
+          });
+        }
+      </script>
+    <script>
         async function renderFeaturedItems() {
             try {
                 const response = await fetch('/menu.json');
