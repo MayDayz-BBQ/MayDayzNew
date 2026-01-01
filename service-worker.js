@@ -36,7 +36,3 @@ self.addEventListener("install", (event) => {
     );
   });
   
-  self.addEventListener("fetch", (event) => {
-    // console.log('[SW] Fetch event - passing through for unregistering SW:', event.request.url);
-    event.respondWith(fetch(event.request));
-  });
