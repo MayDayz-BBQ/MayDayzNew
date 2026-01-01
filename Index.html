@@ -264,53 +264,37 @@
         </div>
     </footer>
     <script>
-        /**
-         * Unified Preloader for MayDayz BBQ
-         * Handles Internal (Prerender) and External (Preconnect) links
-         */
+        const hidePreloader = () => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.classList.add('preloader-hidden');
+                setTimeout(() => preloader.remove(), 500);
+            }
+        };
+        window.addEventListener('load', hidePreloader);
+        setTimeout(hidePreloader, 3000); 
         function initSmartPreload() {
             const links = [
-                { id: "about_button", type: "internal", path: "/src/html/about.html" },
-                { id: "menu_button", type: "internal", path: "/src/html/menu.html" },
-                { id: "catering_button", type: "internal", path: "/src/html/catering.html" },
-                { id: "signup-button", type: "internal", path: "/src/html/login.html" },
-                { id: "gift-card", type: "external", url: "https://app.squareup.com" },
-                { id: "order-button", type: "external", url: "https://maydayzorder.square.site" }
+                { id: "about_button", path: "/src/html/about.html" },
+                { id: "menu_button", path: "/src/html/menu.html" },
+                { id: "catering_button", path: "/src/html/catering.html" },
+                { id: "signup-button", path: "/src/html/login.html" }
             ];
-
+    
             links.forEach(linkData => {
                 const btn = document.getElementById(linkData.id);
                 if (!btn) return;
-
-                btn.addEventListener("mouseover", () => {
-                    if (linkData.type === "internal") {
-                        // Internal: Speculative Prerender
-                        if (!document.getElementById(`spec-${linkData.id}`)) {
-                            const specScript = document.createElement('script');
-                            specScript.id = `spec-${linkData.id}`;
-                            specScript.type = 'speculationrules';
-                            specScript.textContent = JSON.stringify({
-                                "prerender": [{ "source": "list", "urls": [linkData.path] }]
-                            });
-                            document.head.append(specScript);
-                            console.log(`Prerendering internal: ${linkData.path}`);
-                        }
-                    } else {
-                        // External: Preconnect to Square
-                        if (!document.getElementById("preconnect-square")) {
-                            const preconnect = document.createElement("link");
-                            preconnect.id = "preconnect-square";
-                            preconnect.rel = "preconnect";
-                            preconnect.href = linkData.url;
-                            preconnect.crossOrigin = "anonymous";
-
-                            const dns = document.createElement("link");
-                            dns.rel = "dns-prefetch";
-                            dns.href = linkData.url;
-
-                            document.head.append(preconnect, dns);
-                            console.log(`Preconnecting to external: ${linkData.url}`);
-                        }
+    
+                // Use 'mouseenter' but ensure it only ever fires ONCE per session
+                btn.addEventListener("mouseenter", () => {
+                    if (!document.getElementById(`spec-${linkData.id}`)) {
+                        const specScript = document.createElement('script');
+                        specScript.id = `spec-${linkData.id}`;
+                        specScript.type = 'speculationrules';
+                        specScript.textContent = JSON.stringify({
+                            "prerender": [{ "source": "list", "urls": [linkData.path] }]
+                        });
+                        document.head.append(specScript);
                     }
                 }, { once: true });
             });
@@ -320,20 +304,6 @@
         } else {
             initSmartPreload();
         }
-    </script>
-    <script>
-        window.addEventListener('load', () => {
-            const preloader = document.getElementById('preloader');
-            if (preloader) {
-                preloader.classList.add('preloader-hidden');
-                setTimeout(() => preloader.remove(), 500);
-            }
-        });
-
-        setTimeout(() => {
-            const preloader = document.getElementById('preloader');
-            if (preloader) preloader.remove();
-        }, 5000);
     </script>
     <script>
         async function renderFeaturedItems() {
