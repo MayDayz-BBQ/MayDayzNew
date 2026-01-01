@@ -264,6 +264,10 @@
         </div>
     </footer>
     <script>
+        if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+            console.log("SW active: skipping speculation to prevent loops.");
+            return;
+        }
         const hidePreloader = () => {
             const preloader = document.getElementById('preloader');
             if (preloader) {
@@ -272,7 +276,7 @@
             }
         };
         window.addEventListener('load', hidePreloader);
-        setTimeout(hidePreloader, 3000); 
+        setTimeout(hidePreloader, 3000);
         function initSmartPreload() {
             const links = [
                 { id: "about_button", path: "/src/html/about.html" },
@@ -280,12 +284,10 @@
                 { id: "catering_button", path: "/src/html/catering.html" },
                 { id: "signup-button", path: "/src/html/login.html" }
             ];
-    
+
             links.forEach(linkData => {
                 const btn = document.getElementById(linkData.id);
                 if (!btn) return;
-    
-                // Use 'mouseenter' but ensure it only ever fires ONCE per session
                 btn.addEventListener("mouseenter", () => {
                     if (!document.getElementById(`spec-${linkData.id}`)) {
                         const specScript = document.createElement('script');
@@ -305,7 +307,7 @@
             initSmartPreload();
         }
     </script>
-    
+
     <script>
         async function renderFeaturedItems() {
             try {
