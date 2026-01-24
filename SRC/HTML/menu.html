@@ -423,9 +423,9 @@
                 
                 <div class="flex items-center justify-between mt-4">
                     <span class="text-2xl font-bold" style="font-family: FontD">$${item.price}</span>
-                    ${item.available && item.checkoutUrl
-                ? `<a href="${item.checkoutUrl}" target="_blank" class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-2 rounded-lg font-bold transition uppercase" style="font-family: FontC">Order</a>`
-                : `<a href="${'https://order.maydayz.com/'}" target="_blank" class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-2 rounded-lg font-bold transition uppercase" style="font-family: FontC">Order</a>`}
+                    ${item.available && item.checkoutUrl //item.checkoutUrl
+                ? `<a href="${'https://www.doordash.com/store/maydayz-smokn-bbq-charlotte-35338400/92660758/?event_type=autocomplete&pickup=false'}" target="_blank" class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-2 rounded-lg font-bold transition uppercase" style="font-family: FontC">Order</a>`
+                : `<a href="${'https://www.doordash.com/store/maydayz-smokn-bbq-charlotte-35338400/92660758/?event_type=autocomplete&pickup=false'}" target="_blank" class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-2 rounded-lg font-bold transition uppercase" style="font-family: FontC">Order</a>`}
                 </div>
             </div>
         </div>
