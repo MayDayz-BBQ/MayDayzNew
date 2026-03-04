@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - MayDayz Smokn BBQ</title>
     <link rel="preconnect" href="https://clerk.maydayz.com">
     <link rel="preconnect" href="https://devoted-mutt-43.clerk.accounts.dev/">
@@ -27,9 +27,6 @@
     <meta property="og:image" content="https://www.maydayz.com/src/assets/Images/MAYDAYZ-FAV.png">
     <meta property="og:url" content="https://www.maydayz.com/login.html">
     <meta property="og:type" content="website">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script
-        src="https://www.google.com/recaptcha/enterprise.js?render=6LeG7b8rAAAAADAo9DoDQIvLiX8mgnjY7DS7laoN"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -61,146 +58,161 @@
     <link rel="icon" type="image/png" href="/src/assets/Images/MAYDAYZ-FAV.png">
 </head>
 
-<body class="bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0">
+<body
+    class="bg-black bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0 text-white min-h-screen flex flex-col">
 
-    <div id="back-button" class="mt-10 pl-4 -mb-20">
-        <a href="/Index.html"
-            class="bg-red-600 text-4xl rounded-2xl p-5  uppercase text-white hover:bg-white hover:text-red-600 hover:cursor-pointer"
-            style="font-family: FontC">Go Back</a>
-    </div>
-
-    <div class="mt-40">
-        <div id="sign-out-button" class="absolute top-0 right-0 z-10 p-4">
+    <header class="p-6">
+        <div id="back-button">
+            <a href="/Index.html"
+                class="inline-block border border-red-600 bg-red-600/80 backdrop-blur-sm text-xl md:text-2xl rounded-full px-6 py-3 uppercase text-white hover:bg-white hover:text-red-600 transition-all shadow-lg"
+                style="font-family: FontC">
+                &larr; Go Back
+            </a>
         </div>
-        <main class="flex flex-col items-center justify-center mt-10 md:mb-10 text-white">
-            <div id="sign-in" class="bg-gray-800 rounded-lg shadow-lg"></div>
+        <div id="sign-out-button" class="absolute top-6 right-6 z-10"></div>
+    </header>
 
-            <div id="phone-form-container" class="hidden bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-                <h2 class="text-2xl mb-4" style="font-family: FontC;">One last step!</h2>
-                <p class="mb-4">Enter your phone number for order updates:</p>
+    <div class="flex-grow flex flex-col items-center justify-center w-full px-4 mt-8 md:mt-12">
+
+        <div id="UNCC-Redirect" class="w-full max-w-md mb-10 text-center">
+            <a href="uncc.html"
+                class="block w-full px-6 py-4 rounded-xl bg-[#005035] text-white text-xl md:text-3xl hover:bg-white hover:text-[#005035] transition-all shadow-[0_0_20px_rgba(0,80,53,0.6)] border border-[#005035]"
+                style="font-family: FontC;" id="uncc-click-here">
+                UNCC STUDENT? CLICK HERE!!
+            </a>
+        </div>
+
+        <main class="w-full max-w-md flex flex-col items-center relative z-20">
+            <div id="sign-in"
+                class="bg-gray-900/80 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-700 p-2 w-full flex justify-center">
+            </div>
+
+            <div id="phone-form-container"
+                class="hidden bg-gray-900/90 backdrop-blur-md p-8 rounded-2xl shadow-2xl border border-gray-700 w-full text-center mt-6">
+                <h2 class="text-3xl mb-4 text-red-500" style="font-family: FontC;">One last step!</h2>
+                <p class="mb-6 text-gray-300">Enter your phone number for order updates:</p>
                 <input type="tel" id="phone-input" placeholder="555-555-5555"
-                    class="p-2 rounded text-black w-full mb-4">
+                    class="p-3 rounded-lg text-black w-full mb-6 text-center text-lg focus:outline-none focus:ring-2 focus:ring-red-600">
                 <button id="save-phone-btn"
-                    class="bg-red-600 px-6 py-2 rounded-xl uppercase hover:bg-white hover:text-red-600 transition shadow-md"
+                    class="w-full bg-red-600 px-6 py-3 rounded-xl uppercase hover:bg-white hover:text-red-600 transition-all shadow-md text-xl"
                     style="font-family: FontC;">
                     Save Number
                 </button>
             </div>
 
-            <div id="user-profile" class="mt-4 hidden"></div>
+            <div id="user-profile" class="mt-4 hidden w-full"></div>
         </main>
     </div>
-    <div id="UNCC-Redirect">
-        <div id="UNCC-Button">
-            <a href="uncc.html"
-                class="flex w-1/2 md:w-1/3  ml-auto mr-auto justify-center text-center p-4 rounded-full hover:cursor-pointer hover:bg-white hover:text-black bg-[#005035] text-white text-2xl"
-                style="font-family: FontC;" id="uncc-click-here">
-                UNCC STUDENT? CLICK HERE!!
-            </a>
-        </div>
-    </div>
-    <nav class="bg-transparent mt-10 uppercase text-white mb-10 md:mt-20 backdrop-blur-lg p-10"
-        style="font-family: FontB;">
-        <div id="privacy-notice" class="text-center text-2xl">
-            <p>This sign up is purely for promotinal use.</p>
-            <p>MayDayz Smokn BBQ will never ask for personal information <br>
-                such as SSN, ID, etc.,</p>
-            <p>Read our <a class="hover:text-yellow-300 text-red-500" href="/src/html/privacy-policy.html">Privacy
-                    Policy</a> for more info.</p>
+
+    <nav class="bg-black/40 backdrop-blur-lg mt-16 p-8 border-t border-white/10" style="font-family: FontB;">
+        <div id="privacy-notice" class="text-center text-lg md:text-xl text-gray-300 max-w-2xl mx-auto space-y-2">
+            <p>This sign up is purely for promotional use.</p>
+            <p>MayDayz Smokn BBQ will never ask for personal information such as SSN, ID, etc.</p>
+            <p class="text-sm mt-4">Read our <a
+                    class="text-red-500 hover:text-white underline decoration-red-500 underline-offset-4 transition-colors"
+                    href="/src/html/privacy-policy.html">Privacy Policy</a> for more info.</p>
         </div>
     </nav>
-    <footer class="bg-black mt-25 p-10 md:mb-0 text-3xl text-white uppercase md:bg-fixed md:bottom-1/1"
-        style="font-family: FontB;">
-        <div id="sm-pics" class="container ml-auto mr-auto gap-4 justify-center flex mt-10">
-            <div id="IG">
-                <a id="IG-Link" class="hover:cursor-pointer" href="https://www.instagram.com/maydayz_bbq/">
-                    <img src="/src/assets/Images/Instagram_Glyph_White.png" width="75" alt="Instagam Logo"
-                        aria-label="Follow Us on IG">
-                </a>
+
+    <footer class="bg-[#0a0a0a] border-t border-gray-800 mt-32 pt-16 pb-8 font-sans text-gray-400">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div class="flex flex-col items-center md:items-start">
+                <picture>
+                    <img src="/src/assets/Images/MAYDAYZ-FAV.png" width="80" height="80" alt="Logo" class="mb-4"
+                        loading="lazy">
+                </picture>
+                <h4 class="text-white text-xl uppercase mb-2" style="font-family: FontC;">MayDayz BBQ</h4>
+                <p class="text-sm text-center md:text-left mb-2">Authentic Southern BBQ with Old School Soul and Modern
+                    Efficiency.</p>
+                <p class="text-red-500 font-semibold text-sm">📍 Proudly based in Charlotte, NC</p>
             </div>
-            <div id="FB">
-                <a id="IG-Link" class="hover:cursor-pointer"
-                    href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/">
-                    <img src="/src/assets/Images//Facebook_Logo_Secondary.png" width="75" alt="Facebook Logo"
-                        aria-label="Follow Us on Facebook">
-                </a>
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white text-lg uppercase mb-4 tracking-wider" style="font-family: FontB;">Quick Links
+                </h4>
+                <nav class="flex flex-col gap-3 text-sm">
+                    <a href="/src/html/menu.html" class="hover:text-red-500 transition-colors">Our Menu</a>
+                    <a href="/src/html/catering.html" class="hover:text-red-500 transition-colors">Catering Services</a>
+                    <a href="/src/html/about.html" class="hover:text-red-500 transition-colors">About Us</a>
+                    <a href="/src/html/login.html" class="hover:text-red-500 transition-colors">Sign Up / Login</a>
+                </nav>
             </div>
-            <div id="TT">
-                <a id="TikTok-Link" class="hover:cursor-pointer" href="https://www.tiktok.com/@maydayzbbq">
-                    <img src="/src/assets/Images/TikTok-logo-RGB-Stacked-white-simplified.png" width="75"
-                        alt="TikTok Logo" aria-label="Follow us on TikTok">
-                </a>
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white text-lg uppercase mb-4 tracking-wider" style="font-family: FontB;">Support & Legal
+                </h4>
+                <nav class="flex flex-col gap-3 text-sm">
+                    <a href="mailto:maydayzbbq@maydayz.com"
+                        class="hover:text-red-500 transition-colors">maydayzbbq@maydayz.com</a>
+                    <a href="tel:833-509-4486" class="hover:text-red-500 transition-colors">(833) 509-4486</a>
+                    <a href="/src/html/privacy-policy.html" target="_blank"
+                        class="hover:text-red-500 transition-colors mt-2">Privacy Policy</a>
+                    <a href="/src/html/MaydayzSmoknBarBeCueLLCTermsofService.html" target="_blank"
+                        class="hover:text-red-500 transition-colors">Terms of Service</a>
+                </nav>
             </div>
-            <div>
-                <a href="https://www.pinterest.com/maydayzbbq/" target="_blank">
-                    <picture>
-                        <img src="/src/assets/Images/pinterest.webp" width="50" alt="pinterest">
-                    </picture>
-                </a>
-            </div>
-        </div>
-        <div id="sm-text" class="mt-10 text-center" id="social-media ">
-            <h1>Follow us</h1>
-        </div>
-        <div id="soxiety-logo">
-            <div>
-                <h2 class="uppercase text-center mt-10" style="font-family: FontC;">Site created with detail by</h2>
-            </div>
-            <div class="uppercase text-center text-3xl" style="font-family: FontB;" id="logo">
-                <h3>SO<span class="text-red-500">XI</span>ETY</h3>
-            </div>
-        </div>
-        <div id="Terms-Links" class="flex gap-100 mt-6 justify-center">
-            <div id="terms-container">
-                <div id="priv-link-container" class="">
-                    <a id="privacy-policy" class="hover:cursor-pointer hover:text-red-600"
-                        href="/src/html/privacy-policy.html" target="_blank">
-                        Privacy Policy
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white text-lg uppercase mb-4 tracking-wider" style="font-family: FontB;">Join the Family
+                </h4>
+                <div id="Square-Loyalty-Form" class="w-full max-w-xs mb-6">
+                    <form action="https://squareup.com/outreach/kjtWQw/subscribe" method="POST" target="_blank"
+                        class="flex flex-col gap-2">
+                        <input type="email" name="email_address" placeholder="Your Email Address"
+                            class="w-full bg-gray-900 border border-gray-700 text-white rounded px-4 py-2 text-sm focus:outline-none focus:border-red-500 transition-colors">
+                        <input type="hidden" name="embed" value="true">
+                        <button
+                            class="w-full bg-red-700 hover:bg-red-600 text-white font-semibold rounded px-4 py-2 text-sm transition-colors uppercase tracking-wider"
+                            type="submit">
+                            Join Loyalty Program
+                        </button>
+                    </form>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/maydayz_bbq/"
+                        class="opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="/src/assets/Images/Instagram_Glyph_White.webp" width="30" height="30" alt="Instagram"
+                            loading="lazy">
+                    </a>
+                    <a href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/"
+                        class="opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="/src/assets/Images/Facebook_Logo_Secondary.webp" width="30" height="30" alt="Facebook"
+                            loading="lazy">
+                    </a>
+                    <a href="https://www.tiktok.com/@maydayzbbq"
+                        class="opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="/src/assets/Images/TikTok-logo-RGB-Stacked-white-simplified.webp" width="30"
+                            height="30" alt="TikTok" loading="lazy">
+                    </a>
+                    <a href="https://www.pinterest.com/maydayzbbq/"
+                        class="opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="/src/assets/Images/pinterest.webp" width="30" height="30" alt="Pinterest"
+                            loading="lazy">
                     </a>
                 </div>
-                <div id="terms-link-container">
-                    <a id="terms-of-service" class="hover:cursor-pointer hover:text-red-600"
-                        href="/src/html/MaydayzSmoknBarBeCueLLCTermsofService.html" target="_blank">
-                        Terms of Service
-                    </a>
-                </div>
-            </div>
-            <div id="contant-link-container" class="">
-                <div id="email-link">
-                    <a id="email" class="hover:cursor-pointer hover:text-red-600" href="mailto:maydayzbbq@maydayz.com">
-                        Email Us
-                    </a>
-                </div>
-                <div id="phone-link">
-                    <a id="email" class="hover:cursor-pointer hover:text-red-600" href="tel:833-509-4486">
-                        Call Us
-                    </a>
-                </div>
             </div>
         </div>
-        <div id="logo">
-            <div id="notice-container" class="">
-                <img src="/src/assets/Images/MAYDAYZ-FAV.png" class="ml-auto mr-auto" width="75">
-                <p class="text-center text-xs" style="font-family: FontB;">©2025 MayDayz Smokn BBQ</p>
+
+        <div
+            class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between text-xs">
+            <p>© 2025 MayDayz Smokn BBQ. All rights reserved.</p>
+
+            <div class="flex items-center gap-3 my-4 md:my-0 text-gray-500 uppercase tracking-widest"
+                style="font-family: FontB;">
+                <img src="/src/assets/Images/Ribbon.webp" width="20" height="20" alt="Ribbon" loading="lazy">
+                <span>In loving memory of Annette Tomlin</span>
+                <img src="/src/assets/Images/Ribbon.webp" width="20" height="20" alt="Ribbon" loading="lazy">
             </div>
-        </div>
-        <div id="ms-annette-tribute" class="text-xl justify-center mt-10 flex " style="font-family: FontB;"><span> <img
-                    src="/src/assets/Images/Ribbon.png" width="75" alt="colon-cancer-ribbon"> </span>
-            <p class="translate-y-7">In loving
-                memory of Annette Tomlin</p> <span><img src="/src/assets/Images/Ribbon.png" width="75"
-                    alt="colon-cancer-ribbon"></span>
-        </div>
-        <div id="Square-Loyalty-Form" class="mt-7 flex justify-end">
-            <form action="https://squareup.com/outreach/kjtWQw/subscribe" method="POST" target="_blank">
-                <input type="email" name="email_address" placeholder="Your Email Address"
-                    style="height: 38px; padding: 0 16px; font-size: 14px; border: 1px solid #bec3c8; border-radius: 3px; margin-right: 8px; font-family: 'Helvetica Neue', Helvetica, sans-serif;"><input
-                    type="hidden" name="embed" value="true"><button class="bg-red-700" type="submit"
-                    style="cursor: pointer; color: white; height: 40px; border: 0; border-radius: 3px; font-size: 14px; padding: 0 16px; font-family: 'Helvetica Neue', Helvetica, sans-serif; font-weight: 500;">Join
-                    Our Loyalty
-                    Program</button>
-            </form>
+
+            <div class="flex items-center gap-2">
+                <span style="font-family: FontC;">Site crafted by</span>
+                <span class="text-lg font-bold" style="font-family: FontB;">SO<span
+                        class="text-red-600">XI</span>ETY</span>
+            </div>
         </div>
     </footer>
+
     <script async crossorigin="anonymous" data-clerk-publishable-key="pk_live_Y2xlcmsubWF5ZGF5ei5jb20k"
         src="https://clerk.maydayz.com/npm/@clerk/clerk-js@5/dist/clerk.browser.js" type="text/javascript">
         </script>

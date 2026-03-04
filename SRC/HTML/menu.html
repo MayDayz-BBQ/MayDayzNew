@@ -23,6 +23,9 @@
     <link rel="preconnect" href="/Index.html">
     <link rel="preload" as="image" href="/src/assets/images/MAYDAYZ-Menu-OCT-1819-25.png">
     <meta name="author" content="MayDayz Smokn BBQ">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
         @font-face {
             font-family: FontB;
@@ -48,27 +51,67 @@
             font-family: FontE;
             src: url("src/assets/Fonts/Pridi-Bold.ttf");
         }
-    </style>
 
+        /* 3D Flip Card Mechanics */
+        .perspective-1000 {
+            perspective: 300px;
+        }
+
+        .flip-card-inner {
+            transition: transform 0.5s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+
+        .is-flipped {
+            transform: rotateY(180deg);
+        }
+
+        @media (min-width: 768px) {
+            .group:hover .flip-card-inner {
+                transform: rotateY(180deg);
+            }
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .flip-card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
 </head>
 
-<body class="bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0">
+<body
+    class="bg-black bg-[url('/src/assets/images/MenuBackground.webp')] bg-cover bg-fixed m-0 p-0 min-h-screen flex flex-col text-white">
 
-    <div id="back-button" class="mt-10 pl-4">
-        <a href="/Index.html" onmouseover="loadIndex()"
-            class="bg-red-600 text-4xl rounded-2xl p-5  uppercase text-white hover:bg-white hover:text-red-600 hover:cursor-pointer"
-            style="font-family: FontC">Go Back</a>
-    </div>
-    <main id="menu-items">
-        <div class="mt-10 text-white text-5xl text-center uppercase" style="font-family: FontC;">
+    <header class="sticky top-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10 p-4 shadow-lg">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div id="back-button">
+                <a onmouseover="loadIndex()" href="/Index.html"
+                    class="inline-block border border-red-600 bg-red-600/80 backdrop-blur-sm text-lg md:text-xl rounded-full px-6 py-2 uppercase text-white hover:bg-white hover:text-red-600 transition-all shadow-md"
+                    style="font-family: FontC">
+                    &larr; Go Back
+                </a>
+            </div>
+            <img src="/src/assets/Images/MAYDAYZ-FAV.png" class="h-12 w-12 object-contain" alt="MayDayz Logo">
+        </div>
+    </header>
+
+    <main id="menu-items" class="flex-grow pb-24">
+        <div class="mt-16 text-red-500 text-5xl md:text-6xl text-center uppercase drop-shadow-lg tracking-widest"
+            style="font-family: FontC;">
             <h1>The Smoked Out Menu</h1>
         </div>
-        <div id="log-items" class="mt-5" onload="getMenu()"></div>
-        <div id="render-items" onload="renderMenu()"></div>
+
+        <div id="render-items" class="mt-12"></div>
+
         <noscript>
-            <section>
+            <section class="p-10 text-white text-center">
                 <h1>MayDayz Smokn BBQ Menu</h1>
-                <ul>
+                <ul class="mt-4">
                     <li>Sampler – $32 – Choose 3 meats and 2 sides</li>
                     <li>Brisket Plate – $26 – Smoked brisket with sides</li>
                     <li>Ribs Plate – $22 – Slow-smoked ribs</li>
@@ -78,101 +121,100 @@
             </section>
         </noscript>
     </main>
-    <footer class="bg-black mt-25 p-10 md:mb-0 text-2xl text-white uppercase bg-fixed bottom-1/1"
-        style="font-family: FontB;">
-        <div id="sm-pics" class="container ml-auto mr-auto gap-4 justify-center flex mt-10">
-            <div id="IG">
-                <a id="IG-Link" class="hover:cursor-pointer" href="https://www.instagram.com/maydayz_bbq/">
-                    <img src="/src/assets/Images/Instagram_Glyph_White.webp" width="75" alt="Instagam Logo"
-                        aria-label="Follow Us on IG" title="Follow us on IG">
-                </a>
-            </div>
-            <div id="FB">
-                <a id="FB-Link" class="hover:cursor-pointer"
-                    href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/">
-                    <img src="/src/assets/Images//Facebook_Logo_Secondary.webp" width="75" alt="Facebook Logo"
-                        aria-label="Follow Us on Facebook" title="Follow us on Facebook">
-                </a>
-            </div>
-            <div id="TT">
-                <a id="TikTok-Link" class="hover:cursor-pointer" href="https://www.tiktok.com/@maydayzbbq">
-                    <img src="/src/assets/Images/TikTok-logo-RGB-Stacked-white-simplified.webp" width="75"
-                        alt="TikTok Logo" aria-label="Follow us on TikTok" title="Follow us on TikTok">
-                </a>
-            </div>
-            <div>
-                <a href="https://www.pinterest.com/maydayzbbq/" target="_blank">
-                    <picture>
-                        <img src="/src/assets/Images/pinterest.webp" width="50" alt="pinterest">
-                    </picture>
-                </a>
-            </div>
-        </div>
-        <div id="sm-text" class="mt-10 text-center" id="social-media ">
-            <h1>Follow us</h1>
-        </div>
-        <div id="soxiety-logo">
-            <div>
-                <h2 class="uppercase text-center mt-10" style="font-family: FontC;">Site created with detail by</h2>
-            </div>
-            <div class="uppercase text-center text-3xl" style="font-family: FontB;" id="logo"
-                title="©Soxiety Technolgy Soltions">
-                <h3>SO<span class="text-red-500">XI</span>ETY</h3>
-            </div>
-        </div>
-        <div id="Terms-Links" class="flex gap-20 md:gap-100 mt-6 justify-center">
-            <div id="terms-container">
-                <div id="priv-link-container" class="">
-                    <a id="privacy-policy" class="hover:cursor-pointer hover:text-red-600"
-                        href="/src/html/privacy-policy.html" target="_blank">
-                        Privacy Policy
-                    </a>
-                </div>
-                <div id="terms-link-container">
-                    <a id="terms-of-service" class="hover:cursor-pointer hover:text-red-600"
-                        href="/src/html/MaydayzSmoknBarBeCueLLCTermsofService.html" target="_blank">
-                        Terms of Service
-                    </a>
-                </div>
-            </div>
-            <div id="contant-link-container" class="">
-                <div id="email-link">
-                    <a id="email" class="hover:cursor-pointer hover:text-red-600" href="mailto:maydayzbbq@maydayz.com">
-                        Email Us
-                    </a>
-                </div>
-                <div id="phone-link">
-                    <a id="phone" class="hover:cursor-pointer hover:text-red-600" href="tel:833-509-4486">
-                        Call Us
-                    </a>
-                </div>
+
+    <footer class="bg-[#0a0a0a] border-t border-gray-800 pt-16 pb-8 font-sans text-gray-400 w-full mt-auto">
+        <div
+            class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 text-center md:text-left">
+            <div class="flex flex-col items-center md:items-start">
+                <img src="/src/assets/Images/MAYDAYZ-FAV.png" width="80" height="80" alt="Logo" class="mb-4"
+                    loading="lazy">
+                <h4 class="text-white text-xl uppercase mb-2" style="font-family: FontC;">MayDayz BBQ</h4>
+                <p class="text-sm mb-2">Authentic Southern BBQ with Old School Soul and Modern Efficiency.</p>
+                <p class="text-red-500 font-semibold text-sm">📍 Charlotte, NC</p>
             </div>
 
-        </div>
-        <div id="logo">
-            <div id="notice-container" class="">
-                <img src="/src/assets/Images/MAYDAYZ-FAV.png" alt="Maydayz Logo for copyright" class="ml-auto mr-auto"
-                    width="75" title="Maydayz Logo">
-                <p class="text-center text-xs" style="font-family: FontB;">©2025 MayDayz Smokn BBQ</p>
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white text-lg uppercase mb-4 tracking-wider" style="font-family: FontB;">Quick Links
+                </h4>
+                <nav class="flex flex-col gap-3 text-sm">
+                    <a href="/src/html/menu.html" class="text-red-500 hover:text-white transition-colors">Our Menu</a>
+                    <a href="/src/html/catering.html" class="hover:text-red-500 transition-colors">Catering Services</a>
+                    <a href="/src/html/about.html" class="hover:text-red-500 transition-colors">About Us</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white text-lg uppercase mb-4 tracking-wider" style="font-family: FontB;">Support & Legal
+                </h4>
+                <nav class="flex flex-col gap-3 text-sm">
+                    <a href="mailto:maydayzbbq@maydayz.com"
+                        class="hover:text-red-500 transition-colors">maydayzbbq@maydayz.com</a>
+                    <a href="tel:833-509-4486" class="hover:text-red-500 transition-colors">(833) 509-4486</a>
+                    <a href="/src/html/privacy-policy.html" target="_blank"
+                        class="hover:text-red-500 transition-colors mt-2">Privacy Policy</a>
+                    <a href="/src/html/MaydayzSmoknBarBeCueLLCTermsofService.html" target="_blank"
+                        class="hover:text-red-500 transition-colors">Terms of Service</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white text-lg uppercase mb-4 tracking-wider" style="font-family: FontB;">Join the Family
+                </h4>
+                <div id="Square-Loyalty-Form" class="w-full max-w-xs mb-6 mx-auto md:mx-0">
+                    <form action="https://squareup.com/outreach/kjtWQw/subscribe" method="POST" target="_blank"
+                        class="flex flex-col gap-2">
+                        <input type="email" name="email_address" placeholder="Your Email Address"
+                            class="w-full bg-gray-900 border border-gray-700 text-white rounded px-4 py-2 text-sm focus:outline-none focus:border-red-500 transition-colors">
+                        <input type="hidden" name="embed" value="true">
+                        <button
+                            class="w-full bg-red-700 hover:bg-red-600 text-white font-semibold rounded px-4 py-2 text-sm transition-colors uppercase tracking-wider"
+                            type="submit">
+                            Join Loyalty Program
+                        </button>
+                    </form>
+                </div>
+
+                <div class="flex gap-4 justify-center md:justify-start">
+                    <a href="https://www.instagram.com/maydayz_bbq/"
+                        class="opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="/src/assets/Images/Instagram_Glyph_White.webp" width="30" height="30"
+                            alt="Instagram Logo" loading="lazy">
+                    </a>
+                    <a href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/"
+                        class="opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="/src/assets/Images/Facebook_Logo_Secondary.webp" width="30" height="30"
+                            alt="Facebook Logo" loading="lazy">
+                    </a>
+                    <a href="https://www.tiktok.com/@maydayzbbq"
+                        class="opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="/src/assets/Images/TikTok-logo-RGB-Stacked-white-simplified.webp" width="30"
+                            height="30" alt="TikTok Logo" loading="lazy">
+                    </a>
+                    <a href="https://www.pinterest.com/maydayzbbq/"
+                        class="opacity-70 hover:opacity-100 transition-opacity" target="_blank">
+                        <img src="/src/assets/Images/pinterest.webp" width="30" height="30" alt="pinterest"
+                            loading="lazy">
+                    </a>
+                </div>
             </div>
         </div>
-        <div id="ms-annette-tribute" class="text-xl justify-center mt-10 flex " style="font-family: FontB;"><span> <img
-                    src="/src/assets/Images/Ribbon.webp" width="75" alt="colon-cancer-ribbon"> </span>
-            <p class="md:translate-y-7"
-                title="Honoring Annette Tomlin who was a loved member of the Charlotte Community and MayDayz family.">In
-                loving
-                memory of Annette Tomlin</p> <span><img src="/src/assets/Images/Ribbon.webp" width="75"
-                    alt="colon-cancer-ribbon"></span>
-        </div>
-        <div id="Square-Loyalty-Form" class="mt-7 flex justify-end">
-            <form action="https://squareup.com/outreach/kjtWQw/subscribe" method="POST" target="_blank">
-                <input type="email" name="email_address" placeholder="Your Email Address"
-                    style="height: 38px; padding: 0 16px; font-size: 14px; border: 1px solid #bec3c8; border-radius: 3px; margin-right: 8px; font-family: 'Helvetica Neue', Helvetica, sans-serif;"><input
-                    type="hidden" name="embed" value="true"><button class="bg-red-700" type="submit"
-                    style="cursor: pointer; color: white; height: 40px; border: 0; border-radius: 3px; font-size: 14px; padding: 0 16px; font-family: 'Helvetica Neue', Helvetica, sans-serif; font-weight: 500;">Join
-                    Our Loyalty
-                    Program</button>
-            </form>
+
+        <div
+            class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between text-xs">
+            <p>© 2025 MayDayz Smokn BBQ. All rights reserved.</p>
+            <div class="flex items-center gap-3 my-4 md:my-0 text-gray-500 uppercase tracking-widest"
+                style="font-family: FontB;">
+                <img src="/src/assets/Images/Ribbon.webp" width="20" height="20" alt="colon-cancer-ribbon"
+                    loading="lazy">
+                <span>In loving memory of Annette Tomlin</span>
+                <img src="/src/assets/Images/Ribbon.webp" width="20" height="20" alt="colon-cancer-ribbon"
+                    loading="lazy">
+            </div>
+            <div class="flex items-center gap-2">
+                <span style="font-family: FontC;">Site crafted by</span>
+                <span class="text-lg font-bold" style="font-family: FontB;">SO<span
+                        class="text-red-600">XI</span>ETY</span>
+            </div>
         </div>
     </footer>
 
@@ -196,7 +238,7 @@
                     "@type": "Offer",
                     "price": "32",
                     "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock"
+                    "availability": "https://schema.org/InStock",
                     "url": "https://order.maydayz.com/?location=L6PRCYW6TS8ME&item=3ZS35ODCETGK3FRMOEUHLBFC"
                   }
                 },
@@ -208,7 +250,7 @@
                     "@type": "Offer",
                     "price": "26",
                     "priceCurrency": "USD",
-                    "availability": "https://schema.org/InStock"
+                    "availability": "https://schema.org/InStock",
                     "url": "https://order.maydayz.com/?location=L6PRCYW6TS8ME&item=44JUVJOLIOOSY5GNUPX6EJGT"
                   }
                 },
@@ -255,184 +297,186 @@
             }
           ]
         }
-        </script>
+    </script>
 
     <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Menu",
+            "name": "MayDayz Smokn BBQ Menu",
+            "url": "https://www.maydayz.com/src/html/menu",
+            "provider": {
+            "@type": "Restaurant",
+            "name": "MayDayz Smokn BBQ",
+            "url": "https://www.maydayz.com",
+            "telephone": "980-499-8399",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Charlotte",
+                "addressRegion": "NC",
+                "addressCountry": "US"
+            }
+            },
+            "hasMenuSection": [
             {
-              "@context": "https://schema.org",
-              "@type": "Menu",
-              "name": "MayDayz Smokn BBQ Menu",
-              "url": "https://www.maydayz.com/src/html/menu",
-              "provider": {
-                "@type": "Restaurant",
-                "name": "MayDayz Smokn BBQ",
-                "url": "https://www.maydayz.com",
-                "telephone": "980-499-8399",
-                "address": {
-                  "@type": "PostalAddress",
-                  "addressLocality": "Charlotte",
-                  "addressRegion": "NC",
-                  "addressCountry": "US"
-                }
-              },
-              "hasMenuSection": [
+                "@type": "MenuSection",
+                "name": "Plates",
+                "hasMenuItem": [
                 {
-                  "@type": "MenuSection",
-                  "name": "Plates",
-                  "hasMenuItem": [
-                    {
-                      "@type": "MenuItem",
-                      "name": "Sampler",
-                      "description": "Choose between 3 meats and 2 sides",
-                      "offers": {
-                        "@type": "Offer",
-                        "price": "32",
-                        "priceCurrency": "USD",
-                        "availability": "https://schema.org/InStock"
-                      }
-                    },
-                    {
-                      "@type": "MenuItem",
-                      "name": "Brisket Plate",
-                      "description": "Tender smoked brisket with two sides",
-                      "offers": {
-                        "@type": "Offer",
-                        "price": "26",
-                        "priceCurrency": "USD",
-                        "availability": "https://schema.org/InStock"
-                      }
+                    "@type": "MenuItem",
+                    "name": "Sampler",
+                    "description": "Choose between 3 meats and 2 sides",
+                    "offers": {
+                    "@type": "Offer",
+                    "price": "32",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock"
                     }
-                  ]
+                },
+                {
+                    "@type": "MenuItem",
+                    "name": "Brisket Plate",
+                    "description": "Tender smoked brisket with two sides",
+                    "offers": {
+                    "@type": "Offer",
+                    "price": "26",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock"
+                    }
                 }
-              ]
+                ]
             }
-            </script>
+            ]
+        }
+    </script>
 
-</body>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker
+                    .register("/service-worker.js")
+                    .then((registration) => {
+                        console.log(
+                            "Service Worker registered with scope:",
+                            "Service Worker registration initiated for unregistration:",
+                            registration.scope
+                        );
+                    })
+                    .catch((error) => {
+                        console.error("Service Worker registration failed:", error);
+                    });
+            });
+        }
+    </script>
 
-<script>
-    if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-            navigator.serviceWorker
-                .register("/service-worker.js")
-                .then((registration) => {
-                    console.log(
-                        "Service Worker registered with scope:",
-                        "Service Worker registration initiated for unregistration:",
-                        registration.scope
-                    );
-                })
-                .catch((error) => {
-                    console.error("Service Worker registration failed:", error);
-                });
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                const linkHref = link.getAttribute('href');
+                if (linkHref && linkHref.startsWith('/')) {
+                    const prefetchLink = document.createElement('link');
+                    prefetchLink.rel = 'prefetch';
+                    prefetchLink.href = linkHref;
+                    document.head.appendChild(prefetchLink);
+                }
+            }, { once: true });
         });
-    }
-</script>
-<script>
-    window.onload = function () {
-        hidePreloader();
-    };
+    </script>
+    <script>
+        const menu_button = document.getElementById("back-button");
+        function loadIndex() {
+            if (!menu_button) return;
+            menu_button.addEventListener("mouseover", () => {
+                const targetPath = "./index.html";
 
-    // Failsafe: Hide preloader after 5 seconds even if everything hasn't loaded
-    setTimeout(hidePreloader, 5000);
+                if (!document.getElementById("speculation-menu")) {
+                    const specScript = document.createElement('script');
+                    specScript.id = "speculation-menu";
+                    specScript.type = 'speculationrules';
 
-    function hidePreloader() {
-        const preloader = document.getElementById('preloader');
-        if (preloader) {
-            preloader.classList.add('preloader-hidden');
-            setTimeout(() => preloader.remove(), 500);
+                    const specRules = {
+                        "prerender": [
+                            { "source": "list", "urls": [targetPath] }
+                        ]
+                    };
+
+                    specScript.textContent = JSON.stringify(specRules);
+                    document.head.append(specScript);
+                    console.log(`Speculatively prerendering: ${targetPath}`);
+                }
+            }, { once: true });
         }
-    }</script>
-<script>
-    document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('mouseenter', () => {
-            const linkHref = link.getAttribute('href');
-            if (linkHref && linkHref.startsWith('/')) {
-                const prefetchLink = document.createElement('link');
-                prefetchLink.rel = 'prefetch';
-                prefetchLink.href = linkHref;
-                document.head.appendChild(prefetchLink);
+
+        loadIndex();
+    </script>
+    <script>
+        async function initMenu() {
+            try {
+                const response = await fetch('/menu.json');
+                const data = await response.json();
+
+                renderMenu(data);
+                console.log("Menu successfully rendered!");
+            } catch (error) {
+                console.error("Error loading the menu:", error);
             }
-        }, { once: true });
-    });
-</script>
-<script>
-    const menu_button = document.getElementById("back-button");
-    function loadIndex() {
-        menu_button.addEventListener("mouseover", () => {
-            const targetPath = "./index.html";
-
-            // Prevent duplicate rules
-            if (!document.getElementById("speculation-menu")) {
-                const specScript = document.createElement('script');
-                specScript.id = "speculation-menu";
-                specScript.type = 'speculationrules';
-
-                const specRules = {
-                    "prerender": [
-                        { "source": "list", "urls": [targetPath] }
-                    ]
-                };
-
-                specScript.textContent = JSON.stringify(specRules);
-                document.head.append(specScript);
-                console.log(`Speculatively prerendering: ${targetPath}`);
-            }
-        }, { once: true });
-    }
-
-    loadIndex();
-</script>
-<script>
-    async function initMenu() {
-        try {
-            const response = await fetch('/menu.json');
-            const data = await response.json();
-
-            renderMenu(data);
-
-            console.log("Menu successfully rendered!");
-        } catch (error) {
-            console.error("Error loading the menu:", error);
         }
-    }
 
-    function renderMenu(items) {
-        const container = document.getElementById('render-items');
-        if (!container) return;
+        function renderMenu(items) {
+            const container = document.getElementById('render-items');
+            if (!container) return;
 
-        container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-6 max-w-7xl mx-auto";
+            container.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-6 max-w-7xl mx-auto";
 
-        container.innerHTML = items.map(item => `
-        <div class="flex flex-col bg-black/70 backdrop-blur-sm border-2 border-red-600 rounded-xl overflow-hidden transform transition hover:scale-105 ${item.available ? '' : 'opacity-75 grayscale'}">
-            <div class="relative h-64 w-full">
-                <img src="${item.image || '/src/assets/images/MAYDAYZ-FAV.png'}" 
-                     class="w-full h-full object-cover" 
-                     alt="${item.name} from MayDayz Smokn BBQ in Charlotte, NC">
-                ${!item.available ? `
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
-                        <span class="text-white font-bold text-3xl border-4 border-white p-2 rotate-[-10deg]" style="font-family: FontD">SOLD OUT</span>
-                    </div>` : ''}
-            </div>
-            
-            <div class="p-6 flex-grow flex flex-col justify-between text-white">
-                <div>
-                    <h3 class="text-3xl mb-2 text-red-500 uppercase" style="font-family: FontC">${item.name}</h3>
-                    <p class="text-sm mb-4 line-clamp-3" style="font-family: FontB">${item.description}</p>
-                </div>
+            container.innerHTML = items.map(item => `
+            <div class="group relative h-[26rem] w-full perspective-1000 cursor-pointer ${!item.available ? 'opacity-75 grayscale' : ''}" 
+                 onclick="if(window.innerWidth < 768) this.querySelector('.flip-card-inner').classList.toggle('is-flipped')">
                 
-                <div class="flex items-center justify-between mt-4">
-                    <span class="text-2xl font-bold" style="font-family: FontD">$${item.price}</span>
-                    ${item.available && item.checkoutUrl //item.checkoutUrl
-                ? `<a href="${'https://www.doordash.com/store/maydayz-smokn-bbq-charlotte-35338400/92660758/?event_type=autocomplete&pickup=false'}" target="_blank" class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-2 rounded-lg font-bold transition uppercase" style="font-family: FontC">Order</a>`
-                : `<a href="${'https://www.doordash.com/store/maydayz-smokn-bbq-charlotte-35338400/92660758/?event_type=autocomplete&pickup=false'}" target="_blank" class="bg-red-600 hover:bg-white hover:text-red-600 text-white px-6 py-2 rounded-lg font-bold transition uppercase" style="font-family: FontC">Order</a>`}
+                <div class="flip-card-inner absolute w-full h-full shadow-2xl rounded-2xl">
+                    
+                    <div class="flip-card-front absolute w-full h-full bg-black backdrop-blur-md border border-black rounded-2xl overflow-hidden flex flex-col">
+                        <div class="relative h-2/3 w-full">
+                            <img src="${item.image || '/src/assets/images/MAYDAYZ-FAV.png'}" 
+                                 class="w-full h-full object-cover" 
+                                 alt="${item.name} from MayDayz Smokn BBQ in Charlotte, NC">
+                            ${!item.available ? `
+                                <div class="absolute inset-0 bg-black flex items-center justify-center">
+                                    <span class="text-red-500 font-bold text-3xl border-4 border-red-500 p-2 rotate-[-10deg] bg-black tracking-widest" style="font-family: FontD">SOLD OUT</span>
+                                </div>` : ''}
+                        </div>
+                        
+                        <div class="p-4 flex flex-col items-center justify-center h-1/3 bg-black border-t border-gray-800">
+                            <h3 class="text-3xl text-white uppercase text-center tracking-wider" style="font-family: FontC">${item.name}</h3>
+                            <p class="text-[#FFD700] text-sm mt-2 uppercase tracking-widest animate-pulse" style="font-family: FontB">
+                                <span class="hidden md:inline">Hover to see more</span>
+                                <span class="inline md:hidden">Tap to see more</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flip-card-back absolute w-full h-full bg-black border border-red-600 rounded-2xl flex flex-col p-8 text-white justify-between shadow-[0_0_30px_rgba(185,28,28,0.2)]">
+                        <div>
+                            <h3 class="text-3xl mb-4 text-red-500 uppercase border-b border-black pb-3" style="font-family: FontC">${item.name}</h3>
+                            <p class="text-lg leading-relaxed text-gray-300" style="font-family: FontB">${item.description}</p>
+                        </div>
+                        
+                        <div class="flex items-center justify-between mt-6">
+                            <span class="text-4xl font-bold text-white" style="font-family: FontD">$${item.price}</span>
+                            <a href="${item.checkoutUrl || 'https://www.doordash.com/store/maydayz-smokn-bbq-charlotte-35338400/92660758/?event_type=autocomplete&pickup=false'}" 
+                               target="_blank" 
+                               onclick="event.stopPropagation()" 
+                               class="bg-red-700 hover:bg-red-600 text-white px-6 py-3 rounded-xl font-bold transition uppercase tracking-widest shadow-[0_0_15px_rgba(185,28,28,0.4)]" 
+                               style="font-family: FontC">Order</a>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
-        </div>
-    `).join('');
-    }
+        `).join('');
+        }
 
-    initMenu();
-</script>
+        initMenu();
+    </script>
+</body>
 
 </html>

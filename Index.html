@@ -1,5 +1,3 @@
-<!--WE SMOKED OUT!!-->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -144,136 +142,181 @@
     </style>
 </head>
 
-<body class="bg-black m-0 p-0">
+<body class="bg-black m-0 p-0 text-white">
     <picture>
         <source srcset="/src/assets/images/MenuBackground.webp" media="(min-width: 768px)">
         <img src="/src/assets/images/mobileBackground.webp" alt=""
-            class="fixed inset-0 w-full h-full object-cover -z-10 bg-fixed">
+            class="fixed inset-0 w-full h-full object-cover -z-10 bg-fixed opacity-90">
     </picture>
 
-    <div id="preloader" class="preloader-container">
+    <!-- <div id="preloader" class="preloader-container">
         <picture>
             <img src="/src/assets/images/md-logo.webp" alt="Loading..." width="150">
         </picture>
-    </div>
+    </div> -->
 
-    <nav id="top-section" class="mt-5" style="font-family: FontC;">
-        <div
-            class="flex flex-col items-center md:flex-row md:ml-2 gap-7 md:gap-3 text-3xl lg:text-4xl sm:justify-center">
-            <a id="about_button" onmouseover="loadAbout()" href="/src/html/about.html"
-                class="text-white uppercase rounded-2xl bg-red-700 p-3.5 md:p-4 hover:bg-white hover:text-black md:mt-5">About
-                Us</a>
-            <a id="menu_button" onmouseover="loadMenu()" href="/src/html/menu.html"
-                class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:bg-white hover:text-black md:mt-5">Menu</a>
-            <a id="catering_button" onmouseover="loadCatering()" href="/src/html/catering.html"
-                class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:bg-white hover:text-black md:mt-5">Catering</a>
-            <a id="gift-card" onmouseover="loadGift()" href="https://app.squareup.com/gift/MLENTYY5WR8XF/order"
-                target="_blank"
-                class="text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:bg-white hover:text-black md:mt-5">Gift
-                Card</a>
-            <div id="right-signup-nav" class="ml-auto sm:ml-auto mr-auto md:mr-0 mb-10 md:mb-0">
-                <div id="Sign-up" class="mr-4 md:mt-5">
+    <header class="sticky top-0 z-50 bg-black/60 backdrop-blur-md border-b border-white/10 p-4">
+        <nav id="top-section" class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between"
+            style="font-family: FontC;">
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 text-xl lg:text-2xl">
+                <a id="about_button" onmouseover="loadAbout()" href="/src/html/about.html"
+                    class="text-white uppercase transition-colors hover:text-red-500">About Us</a>
+                <a id="menu_button" onmouseover="loadMenu()" href="/src/html/menu.html"
+                    class="text-white uppercase transition-colors hover:text-red-500">Menu</a>
+                <a id="catering_button" onmouseover="loadCatering()" href="/src/html/catering.html"
+                    class="text-white uppercase transition-colors hover:text-red-500">Catering</a>
+                <a id="gift-card" onmouseover="loadGift()" href="https://app.squareup.com/gift/MLENTYY5WR8XF/order"
+                    target="_blank" class="text-white uppercase transition-colors hover:text-red-500">Gift Card</a>
+            </div>
+
+            <div id="right-signup-nav" class="mt-4 md:mt-0 flex items-center gap-4">
+                <div id="Sign-up">
                     <a id="signup-button" onmouseover="loadLogin()" href="/src/html/login.html"
                         aria-label="Sign Up Today!!"
-                        class="md:mt-5 text-white uppercase rounded-2xl bg-red-700 p-3.5 hover:cursor-pointer hover:bg-white hover:text-black ml-auto">Sign
-                        Up/Login</a>
+                        class="text-white uppercase rounded-full border border-red-700 bg-red-700/80 px-6 py-2 hover:bg-white hover:text-black hover:border-white transition-all shadow-lg backdrop-blur-sm">
+                        Sign Up / Login
+                    </a>
                 </div>
-                <div id="Sign-out-div" class="">
-                    <div id="Sign-out" class="md:mt-5"></div>
+                <div id="Sign-out-div">
+                    <div id="Sign-out"></div>
                 </div>
             </div>
-    </nav>
+        </nav>
+    </header>
 
-    <main id="main-section" class="mt-3 md:mt-20" style="font-family: FontB;">
-        <div class="logo-container">
+    <main id="main-section" class="mt-12 md:mt-24 max-w-5xl mx-auto px-4" style="font-family: FontB;">
+        <div class="block justify-center drop-shadow-2xl">
             <picture>
-                <img id="logo" fetchpriority="high" class="w-2/3 md:w-3/7 ml-auto mr-auto"
+                <img id="logo" fetchpriority="high" class="w-3/4 md:w-3/5 ml-auto mr-auto"
                     src="/src/assets/Images/md-logo.webp" alt="MayDayz BBQ logo">
             </picture>
         </div>
-        <div class="text-center mt-9" style="font-family: FontA;">
-            <h1 class="uppercase text-4xl md:text-6xl text-red-500">MayDayz Smokn BBQ</h1>
+        <div class="text-center mt-12" style="font-family: FontA;">
+            <h1 class="uppercase text-5xl md:text-7xl text-red-600 drop-shadow-lg tracking-wide">MayDayz Smokn BBQ</h1>
         </div>
-        <div class="text-center mt-1 md:mt-3" style="font-family: FontC;">
-            <h2 class="uppercase text-3xl md:text-4xl text-white">We smoked out</h2>
+        <div class="text-center mt-2 md:mt-4" style="font-family: FontC;">
+            <h2 class="uppercase text-3xl md:text-5xl text-gray-200 tracking-wider">We Smoked Out</h2>
+            <p class="text-lg md:text-xl text-gray-400 mt-2 font-sans tracking-normal capitalize">Grilling Perfection
+                out of Charlotte, NC</p>
         </div>
-        <div class="mt-10 justify-center flex" style="font-family: FontC;">
+        <div class="mt-12 justify-center flex" style="font-family: FontC;">
             <a id="order-button" onmouseover="loadOrder()"
                 href="https://www.doordash.com/store/maydayz-smokn-bbq-charlotte-35338400/92660758/?event_type=autocomplete&pickup=false"
-                class="text-white text-3xl md:text-6xl uppercase rounded-4xl bg-red-700 p-4 hover:bg-white hover:text-red-500">Order
-                Now</a>
+                class="text-white text-3xl md:text-5xl uppercase rounded-full bg-red-700 px-10 py-5 hover:bg-white hover:text-red-600 transition-all shadow-[0_0_20px_rgba(185,28,28,0.5)] transform hover:scale-105">
+                Order Now
+            </a>
         </div>
     </main>
 
-    <section class="mt-20 text-center" style="font-family: FontC;">
-        <h3 class="text-4xl text-gray-50 uppercase tracking-widest">Featured Items</h3>
-        <div id="featured-container" class="flex flex-wrap mt-6 justify-center gap-10" style="font-family: FontB;">
+    <section class="mt-32 text-center max-w-7xl mx-auto px-4" style="font-family: FontC;">
+        <h3
+            class="text-3xl md:text-4xl text-gray-200 uppercase tracking-[0.2em] border-b border-gray-700 pb-4 inline-block">
+            Featured Items</h3>
+        <div id="featured-container" class="flex flex-wrap mt-10 justify-center gap-8 md:gap-12"
+            style="font-family: FontB;">
             <p class="text-white animate-pulse">Smokin' up the grill...</p>
         </div>
     </section>
 
-    <footer class="bg-black mt-25 p-10 text-2xl text-white uppercase" style="font-family: FontB;">
-        <div class="flex gap-4 justify-center mt-10">
-            <a href="https://www.instagram.com/maydayz_bbq/">
+    <footer class="bg-black border-t border-gray-800 mt-32 pt-16 pb-8 font-sans text-gray-400">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div class="flex flex-col items-center md:items-start">
                 <picture>
-                    <img src="/src/assets/Images/Instagram_Glyph_White.webp" width="75" height="75" alt="Instagram">
+                    <img src="/src/assets/Images/MAYDAYZ-FAV.png" width="80" height="80" alt="Logo" class="mb-4"
+                        loading="lazy">
                 </picture>
-            </a>
-            <a href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/">
-                <picture>
-                    <img src="/src/assets/Images/Facebook_Logo_Secondary.webp" width="75" height="75" alt="Facebook">
-                </picture>
-            </a>
-            <a href="https://www.tiktok.com/@maydayzbbq">
-                <picture>
-                    <img src="/src/assets/Images/TikTok-logo-RGB-Stacked-white-simplified.webp" width="75" height="75"
-                        alt="TikTok">
-                </picture>
-            </a>
-            <a href="https://www.pinterest.com/maydayzbbq/">
-                <picture>
-                    <img src="/src/assets/Images/pinterest.webp" width="75" height="75" alt="pinterest">
-                </picture>
-            </a>
+                <h4 class="text-white text-xl uppercase mb-2" style="font-family: FontC;">MayDayz BBQ</h4>
+                <p class="text-sm text-center md:text-left mb-2">Authentic Southern BBQ with Old School Soul and Modern
+                    Efficiency.</p>
+                <p class="text-red-500 font-semibold text-sm">📍 Proudly based in Charlotte, NC</p>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white text-lg uppercase mb-4 tracking-wider" style="font-family: FontB;">Quick Links
+                </h4>
+                <nav class="flex flex-col gap-3 text-sm">
+                    <a href="/src/html/menu.html" class="hover:text-red-500 transition-colors">Our Menu</a>
+                    <a href="/src/html/catering.html" class="hover:text-red-500 transition-colors">Catering Services</a>
+                    <a href="/src/html/about.html" class="hover:text-red-500 transition-colors">About Us</a>
+                    <a href="/src/html/login.html" class="hover:text-red-500 transition-colors">Sign Up / Login</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white text-lg uppercase mb-4 tracking-wider" style="font-family: FontB;">Support & Legal
+                </h4>
+                <nav class="flex flex-col gap-3 text-sm">
+                    <a href="mailto:maydayzbbq@maydayz.com"
+                        class="hover:text-red-500 transition-colors">maydayzbbq@maydayz.com</a>
+                    <a href="tel:833-509-4486" class="hover:text-red-500 transition-colors">(833) 509-4486</a>
+                    <a href="/src/html/privacy-policy.html" target="_blank"
+                        class="hover:text-red-500 transition-colors mt-2">Privacy Policy</a>
+                    <a href="/src/html/MaydayzSmoknBarBeCueLLCTermsofService.html" target="_blank"
+                        class="hover:text-red-500 transition-colors">Terms of Service</a>
+                </nav>
+            </div>
+
+            <div class="flex flex-col items-center md:items-start">
+                <h4 class="text-white text-lg uppercase mb-4 tracking-wider" style="font-family: FontB;">Join the Family
+                </h4>
+                <div id="Square-Loyalty-Form" class="w-full max-w-xs mb-6">
+                    <form action="https://squareup.com/outreach/kjtWQw/subscribe" method="POST" target="_blank"
+                        class="flex flex-col gap-2">
+                        <input type="email" name="email_address" placeholder="Your Email Address"
+                            class="w-full bg-black border border-red-500 text-white rounded px-4 py-2 text-sm focus:outline-none focus:border-red-500 transition-colors">
+                        <input type="hidden" name="embed" value="true">
+                        <button
+                            class="w-full bg-red-700 hover:bg-red-600 text-white font-semibold rounded px-4 py-2 text-sm transition-colors uppercase tracking-wider"
+                            type="submit">
+                            Join Loyalty Program
+                        </button>
+                    </form>
+                </div>
+
+                <div class="flex gap-4">
+                    <a href="https://www.instagram.com/maydayz_bbq/"
+                        class="opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="/src/assets/Images/Instagram_Glyph_White.webp" width="30" height="30" alt="Instagram"
+                            loading="lazy">
+                    </a>
+                    <a href="https://www.facebook.com/people/MayDayz-Smokn-Bar-Be-Que/61562127020412/"
+                        class="opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="/src/assets/Images/Facebook_Logo_Secondary.webp" width="30" height="30" alt="Facebook"
+                            loading="lazy">
+                    </a>
+                    <a href="https://www.tiktok.com/@maydayzbbq"
+                        class="opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="/src/assets/Images/TikTok-logo-RGB-Stacked-white-simplified.webp" width="30"
+                            height="30" alt="TikTok" loading="lazy">
+                    </a>
+                    <a href="https://www.pinterest.com/maydayzbbq/"
+                        class="opacity-70 hover:opacity-100 transition-opacity">
+                        <img src="/src/assets/Images/pinterest.webp" width="30" height="30" alt="Pinterest"
+                            loading="lazy">
+                    </a>
+                </div>
+            </div>
         </div>
-        <p class="text-center mt-4">Follow us</p>
-        <div class="text-center mt-10">
-            <h2 style="font-family: FontC;">Site created with detail by</h2>
-            <h3 class="text-3xl">SO<span class="text-red-500">XI</span>ETY</h3>
-        </div>
-        <div class="flex flex-wrap gap-10 mt-6 justify-center text-sm">
-            <a href="/src/html/privacy-policy.html" target="_blank" class="hover:text-red-600">Privacy Policy</a>
-            <a href="/src/html/MaydayzSmoknBarBeCueLLCTermsofService.html" target="_blank"
-                class="hover:text-red-600">Terms of Service</a>
-            <a href="mailto:maydayzbbq@maydayz.com" class="hover:text-red-600">Email Us</a>
-            <a href="tel:833-509-4486" class="hover:text-red-600">Call Us</a>
-        </div>
-        <div class="text-center mt-10">
-            <picture>
-                <img src="/src/assets/Images/MAYDAYZ-FAV.png" width="75" height="75" alt="Logo" class="mx-auto">
-            </picture>
-            <p class="text-xs">©2025 MayDayz Smokn BBQ</p>
-        </div>
-        <div class="flex justify-center items-center mt-10 text-xl gap-2">
-            <picture>
-                <img src="/src/assets/Images/Ribbon.webp" width="50" height="50" alt="Ribbon">
-            </picture>
-            <p>In loving memory of Annette Tomlin</p>
-            <picture>
-                <img src="/src/assets/Images/Ribbon.webp" width="50" height="50" alt="Ribbon">
-            </picture>
-        </div>
-        <div id="Square-Loyalty-Form" class="mt-7 flex justify-end">
-            <form action="https://squareup.com/outreach/kjtWQw/subscribe" method="POST" target="_blank">
-                <input type="email" name="email_address" placeholder="Your Email Address"
-                    style="height: 38px; padding: 0 16px; font-size: 14px; border: 1px solid #bec3c8; border-radius: 3px; margin-right: 8px; font-family: 'Helvetica Neue', Helvetica, sans-serif;"><input
-                    type="hidden" name="embed" value="true"><button class="bg-red-700" type="submit"
-                    style="cursor: pointer; color: white; height: 40px; border: 0; border-radius: 3px; font-size: 14px; padding: 0 16px; font-family: 'Helvetica Neue', Helvetica, sans-serif; font-weight: 500;">Join
-                    Our Loyalty
-                    Program</button>
-            </form>
+
+        <div
+            class="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between text-xs">
+            <p>© 2025 MayDayz Smokn BBQ. All rights reserved.</p>
+
+            <div class="flex items-center gap-3 my-4 md:my-0 text-gray-500 uppercase tracking-widest"
+                style="font-family: FontB;">
+                <img src="/src/assets/Images/Ribbon.webp" width="20" height="20" alt="Ribbon" loading="lazy">
+                <span>In loving memory of Annette Tomlin</span>
+                <img src="/src/assets/Images/Ribbon.webp" width="20" height="20" alt="Ribbon" loading="lazy">
+            </div>
+
+            <div class="flex items-center gap-2">
+                <span style="font-family: FontC;">Site crafted by</span>
+                <span class="text-lg font-bold" style="font-family: FontB;">SO<span
+                        class="text-red-600">XI</span>ETY</span>
+            </div>
         </div>
     </footer>
+
     <script>
         if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
             console.log("SW active: skipping speculation to prevent loops.");
@@ -335,7 +378,7 @@
                 if (!container) return;
 
                 container.innerHTML = featuredItems.map(item => `
-            <div class="p-4 group max-w-sm">
+            <div class="p-4 group max-w-sm bg-gray-900/40 rounded-3xl border border-gray-800 backdrop-blur-sm shadow-xl">
                 <div class="relative overflow-hidden rounded-2xl border-2 border-transparent transition-all duration-300">
                     <picture>
                         <img src="${item.image || '/src/assets/images/samplerCompressed.webp'}" 
@@ -344,21 +387,23 @@
                              class="rounded-2xl transition-transform duration-500 group-hover:scale-110 ${!item.available ? 'grayscale opacity-50' : ''}">
                     </picture>
                     ${!item.available ? `
-                        <div class="absolute inset-0 flex items-center justify-center bg-black/40">
-                            <span class="text-white text-2xl font-bold border-2 border-white p-2 rotate-[-5deg]">SOLD OUT</span>
+                        <div class="absolute inset-0 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+                            <span class="text-white text-2xl font-bold border-2 border-red-500 text-red-500 p-2 rotate-[-5deg] tracking-widest bg-black/50">SOLD OUT</span>
                         </div>
                     ` : ''}
                 </div>
-                <h3 class="text-white text-2xl mt-4 uppercase">${item.name} - $${item.price}</h3>
-                ${item.available && item.checkoutUrl ? `
-                    <a href="${'https://www.doordash.com/store/maydayz-smokn-bbq-charlotte-35338400/92660758/?event_type=autocomplete&pickup=false'}" target="_blank" class="inline-block mt-2 text-red-500 hover:text-white transition-colors uppercase text-sm font-bold tracking-tighter">
-                        Order Now &rarr;
-                    </a>
-                ` : `
-                    <a href="${'https://www.doordash.com/store/maydayz-smokn-bbq-charlotte-35338400/92660758/?event_type=autocomplete&pickup=false'}" target="_blank" class="inline-block mt-2 text-red-500 hover:text-white transition-colors uppercase text-sm font-bold tracking-tighter">
-                        Order Now &rarr;
-                    </a>
-                `}
+                <div class="mt-6 flex flex-col items-center">
+                    <h3 class="text-white text-2xl uppercase tracking-wider">${item.name} - $${item.price}</h3>
+                    ${item.available && item.checkoutUrl ? `
+                        <a href="${'https://www.doordash.com/store/maydayz-smokn-bbq-charlotte-35338400/92660758/?event_type=autocomplete&pickup=false'}" target="_blank" class="inline-block mt-4 text-red-500 border border-red-500 px-6 py-2 rounded-full hover:bg-red-600 hover:text-white transition-colors uppercase text-sm font-bold tracking-widest">
+                            Order Now &rarr;
+                        </a>
+                    ` : `
+                        <a href="${'https://www.doordash.com/store/maydayz-smokn-bbq-charlotte-35338400/92660758/?event_type=autocomplete&pickup=false'}" target="_blank" class="inline-block mt-4 text-red-500 border border-red-500 px-6 py-2 rounded-full hover:bg-red-600 hover:text-white transition-colors uppercase text-sm font-bold tracking-widest">
+                            Order Now &rarr;
+                        </a>
+                    `}
+                </div>
             </div>
         `).join('');
 
